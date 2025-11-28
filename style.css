@@ -336,9 +336,10 @@ img {
 
 /* Footer */
 .site-footer {
-    padding: var(--spacing-xl) 0;
-    border-top: 1px solid rgba(2, 13, 24, 0.1);
-    margin-top: var(--spacing-xl);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(2, 13, 24, 0.05);
+    margin-top: 6rem;
 }
 
 .footer-content {
@@ -347,6 +348,7 @@ img {
     align-items: center;
     flex-wrap: wrap;
     gap: var(--spacing-md);
+    padding: 2rem 3.5rem;
 }
 
 .footer-content p {
