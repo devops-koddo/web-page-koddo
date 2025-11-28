@@ -82,9 +82,9 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: var(--spacing-md) 0;
+    padding: 2rem 3rem;
     z-index: 1000;
-    background: rgba(243, 239, 232, 0.8);
+    background: transparent;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(2, 13, 24, 0.05);
 }
@@ -93,10 +93,11 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 var(--spacing-md);
 }
 
 .logo-img {
-    height: 40px;
+    height: 65px;
 }
 
 .main-nav ul {
@@ -105,7 +106,7 @@ img {
 }
 
 .main-nav a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-text-primary);
@@ -123,7 +124,7 @@ img {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: 100px;
     /* Header height */
 }
 
