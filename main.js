@@ -55,3 +55,6 @@ menuOverlay.addEventListener('click', (e) => {
         menuOverlay.classList.remove('active');
     }
 });
+
+// Page load fade-in effect
+document.getElementById('app').style.opacity = '1';
