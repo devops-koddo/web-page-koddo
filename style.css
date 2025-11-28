@@ -489,9 +489,26 @@ img {
         padding-top: var(--spacing-xl);
     }
 
+    .main-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .footer-content p {
+        order: 2;
+    }
+
+    .social-links {
+        order: 1;
+        margin-bottom: 1rem;
     }
 }
 
