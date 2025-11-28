@@ -18,7 +18,17 @@ document.addEventListener('mousemove', (e) => {
         const speed = (index + 1) * 20;
         const xOffset = (window.innerWidth / 2 - e.clientX) / speed;
         const yOffset = (window.innerHeight / 2 - e.clientY) / speed;
-        
+
         shape.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
     });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.site-header');
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
 });
