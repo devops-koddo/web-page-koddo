@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koddo Software Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="tech-grid"></div>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="logo">
+          <img src="/assets/logo-web-transparent.png" alt="Koddo Software Studio" class="logo-img">
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="vertical-text">フューチャー</div>
+          <h1 class="hero-title">
+            We craft <span class="highlight">digital gravity</span>.
+            <div class="japan-stroke" style="width: 300px; height: 20px; bottom: 10px; left: 0;"></div>
+          </h1>
+          <p class="hero-subtitle">
+            Koddo Software Studio builds premium web experiences with precision and style.
+          </p>
+          <a href="#contact" class="btn">Start a Project</a>
+        </div>
+        <div class="hero-background">
+          <!-- Abstract tech shapes will go here via CSS/JS -->
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+        </div>
+      </section>
+
+      <section id="work" class="work-section">
+        <div class="container">
+          <h2 class="section-title" style="position: relative; display: inline-block;">
+            Selected Work
+            <div class="japan-stroke" style="width: 100%; height: 15px; bottom: 5px; left: -10px; opacity: 0.6;"></div>
+          </h2>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card glass-card">
+              <div class="project-image">
+                <!-- Placeholder for project image -->
+                <div class="placeholder-img"></div>
+              </div>
+              <div class="project-info">
+                <h3>Project Alpha</h3>
+                <p>E-commerce platform with real-time inventory.</p>
+                <span class="tag">React</span> <span class="tag">Node.js</span>
+              </div>
+            </article>
+            <!-- Project 2 -->
+            <article class="project-card glass-card">
+              <div class="project-image">
+                <!-- Placeholder for project image -->
+                <div class="placeholder-img"></div>
+              </div>
+              <div class="project-info">
+                <h3>Neon Dash</h3>
+                <p>Interactive dashboard for analytics.</p>
+                <span class="tag">Vue</span> <span class="tag">D3.js</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container">
+          <h2 class="section-title" style="position: relative; display: inline-block;">
+            About Us
+            <div class="japan-stroke" style="width: 100%; height: 15px; bottom: 5px; left: -10px; opacity: 0.6;"></div>
+          </h2>
+          <div class="about-content glass-card">
+            <p>Inspired by the future, grounded in code. We are a team of passionate developers and designers.</p>
+          </div>
+        </div>
+      </section>
+      <div class="vertical-text" style="left: 2%; right: auto; top: 60%; font-size: 6rem;">テック</div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-logo">
+          <img src="/assets/logo-new.png" alt="Koddo" style="height: 30px;">
+        </div>
+        <p>&copy; 2025 Koddo Software Studio. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,425 @@
+/* Fonts */
+
+:root {
+    /* Colors */
+    --color-bg: #F3EFE8;
+    --color-text-primary: #020D18;
+    --color-text-secondary: #4a5568;
+    /* Darker gray for readability on light bg */
+    --color-accent: #D53B32;
+    /* Japan Red */
+    --color-secondary: #00bf63;
+
+    /* Card Colors */
+    --color-card-bg: rgba(255, 255, 255, 0.4);
+    --color-card-border: rgba(2, 13, 24, 0.1);
+
+    /* Typography */
+    --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+    --font-family-heading: 'Asimovian', 'Nunito Sans', sans-serif;
+    --font-size-base: 16px;
+    --font-size-h1: 4.5rem;
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 1.5rem;
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.highlight {
+    color: var(--color-text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-md) 0;
+    z-index: 1000;
+    background: rgba(243, 239, 232, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(2, 13, 24, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.main-nav a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.main-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    /* Header height */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: var(--font-family-heading);
+    font-size: 5rem;
+    /* Larger for impact */
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    font-weight: 900;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 500px;
+    color: var(--color-text-secondary);
+}
+
+/* Hero Background Shapes */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-accent);
+    top: -100px;
+    right: -100px;
+    animation: float 10s infinite ease-in-out;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-text-primary);
+    bottom: 10%;
+    left: -50px;
+    animation: float 15s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, -20px);
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-text-primary);
+    transition: var(--transition-medium);
+    z-index: -1;
+}
+
+.btn:hover {
+    color: var(--color-bg);
+    box-shadow: 0 0 20px rgba(62, 254, 143, 0.4);
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.section-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-h2);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xl);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 5px solid var(--color-accent);
+    padding-left: var(--spacing-md);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--color-card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-card-border);
+    padding: var(--spacing-lg);
+    border-radius: 0;
+    /* Sharper edges for tech feel */
+    transition: var(--transition-medium);
+}
+
+.glass-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+/* Work Section */
+.work-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-image {
+    height: 200px;
+    background: #000;
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    position: relative;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0a1929, #020d18);
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .placeholder-img {
+    transform: scale(1.05);
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-info p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(2, 13, 24, 0.2);
+    color: var(--color-text-secondary);
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* About Section */
+.about-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.about-content {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    max-width: 800px;
+}
+
+/* Footer */
+.site-footer {
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid rgba(2, 13, 24, 0.1);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-links a {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-links a:hover {
+    color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --font-size-h1: 3rem;
+    }
+
+    .hero-content {
+        padding-top: var(--spacing-xl);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Japan Tech Utilities */
+.japan-stroke {
+    position: absolute;
+    z-index: -1;
+    background: var(--color-accent);
+    transform: skew(-15deg);
+    opacity: 0.8;
+}
+
+.tech-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(2, 13, 24, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 13, 24, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: var(--font-family-heading);
+    color: var(--color-text-primary);
+    opacity: 0.1;
+    font-size: 8rem;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    z-index: 0;
+    pointer-events: none;
+    font-weight: 900;
+    letter-spacing: 1rem;
+}
