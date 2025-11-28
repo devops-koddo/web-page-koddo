@@ -32,3 +32,26 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+// Menu button toggle
+const menuBtn = document.querySelector('.menu-btn');
+const menuOverlay = document.querySelector('.menu-overlay');
+
+menuBtn.addEventListener('click', () => {
+    menuOverlay.classList.toggle('active');
+});
+
+// Close menu on link click
+const menuLinks = document.querySelectorAll('.mobile-nav a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuOverlay.classList.remove('active');
+    });
+});
+
+// Close menu on overlay click
+menuOverlay.addEventListener('click', (e) => {
+    if (e.target === menuOverlay) {
+        menuOverlay.classList.remove('active');
+    }
+});
