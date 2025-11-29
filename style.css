@@ -249,23 +249,45 @@ img {
     position: relative;
     z-index: 10;
     max-width: 800px;
+    text-align: center;
 }
 
 .hero-title {
     font-family: var(--font-family-heading);
-    font-size: 5rem;
+    font-size: 13rem;
     /* Larger for impact */
     line-height: 1.1;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0.5rem;
     color: var(--color-text-primary);
     font-weight: 900;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    white-space: nowrap;
+    animation: slide 23s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(13%);
+    }
+    100% {
+        transform: translateX(-148%);
+    }
+}
+
+.hero-subtitle-container {
+    max-width: 500px;
+    margin: 0 auto 1rem;
+    text-align: center;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    margin-bottom: var(--spacing-lg);
-    max-width: 500px;
+    margin-bottom: 0;
     color: var(--color-text-secondary);
+    text-align: center;
 }
 
 /* Hero Background Shapes */
@@ -318,7 +340,7 @@ img {
 
 /* Buttons */
 .btn {
-    display: inline-block;
+    display: block;
     padding: 1rem 2.5rem;
     border: 1px solid var(--color-text-primary);
     color: var(--color-text-primary);
@@ -330,6 +352,8 @@ img {
     background: transparent;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .btn::before {
@@ -539,8 +563,8 @@ img {
     opacity: 0.1;
     font-size: 8rem;
     position: absolute;
-    top: 20%;
-    right: 5%;
+    top: 15%;
+    left: 5%;
     z-index: 0;
     pointer-events: none;
     font-weight: 900;
