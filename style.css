@@ -62,6 +62,27 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    opacity: 0.7;
+}
+
+.cursor.hover {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -475,6 +496,23 @@ img {
     letter-spacing: 1px;
 }
 
+/* Project Card Variants */
+.variant-1 .placeholder-img {
+    background: linear-gradient(45deg, #d53b32, #b8322a);
+}
+
+.variant-2 .placeholder-img {
+    background: linear-gradient(45deg, #00bf63, #00a055);
+}
+
+.variant-3 .placeholder-img {
+    background: linear-gradient(45deg, #020d18, #0a1929);
+}
+
+.variant-4 .placeholder-img {
+    background: linear-gradient(45deg, #4a5568, #2d3748);
+}
+
 /* Partners Section */
 .partners-section {
     padding: var(--spacing-lg) 0;
@@ -566,9 +604,54 @@ img {
     right: -60px;
 }
 
-/* About Section */
-.about-section {
+/* Contact Section */
+.contact-section {
     padding: var(--spacing-xl) 0;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--color-card-border);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 .about-content {

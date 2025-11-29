@@ -59,3 +59,31 @@ menuOverlay.addEventListener('click', (e) => {
 // Page load fade-in effect
 document.getElementById('app').style.opacity = '1';
 
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 20 + 'px';
+    cursor.style.top = e.clientY - 20 + 'px';
+});
+
+document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+});
+
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+});
+
+// Hover effect for interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .project-card, .partner-item');
+
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+    });
+});
+
