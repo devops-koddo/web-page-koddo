@@ -546,6 +546,7 @@ img {
     padding: var(--spacing-lg) 0;
     width: 100%;
     position: relative;
+    text-align: right;
 }
 
 .partners-section .section-title {
