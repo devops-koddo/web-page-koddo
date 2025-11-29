@@ -67,19 +67,19 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1);
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.1s ease;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .cursor.hover {
     transform: scale(1.2);
-    opacity: 1;
+    opacity: 0.8;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
@@ -439,50 +439,94 @@ img {
 
 /* Work Section */
 .work-section {
-    padding: var(--spacing-xl) 0;
+    /* padding: var(--spacing-xl) 0; */
+    padding: 0 7rem;
+    width: 100%;
+
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
+.work-section .containerwork {
+    margin: 0px;
+
 }
 
-.project-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.project-detail {
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.project-detail:nth-child(1) {
+    background: linear-gradient(135deg, rgba(213, 59, 50, 0.05), rgba(255, 255, 255, 0.1));
+}
+
+.project-detail:nth-child(2) {
+    background: linear-gradient(135deg, rgba(0, 191, 99, 0.05), rgba(255, 255, 255, 0.1));
+}
+
+.project-detail:nth-child(3) {
+    background: linear-gradient(135deg, rgba(2, 13, 24, 0.05), rgba(255, 255, 255, 0.1));
 }
 
 .project-image {
-    height: 200px;
-    background: #000;
-    margin-bottom: var(--spacing-md);
-    overflow: hidden;
-    position: relative;
-}
-
-.placeholder-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #0a1929, #020d18);
-    transition: transform 0.5s ease;
+    z-index: 1;
 }
 
-.project-card:hover .placeholder-img {
-    transform: scale(1.05);
+.mockup-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.project-info h3 {
-    font-size: 1.5rem;
+.project-title {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    z-index: 2;
     color: var(--color-text-primary);
-    margin-bottom: var(--spacing-sm);
+    max-width: 40vw;
 }
 
-.project-info p {
+.project-title h3 {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.project-description {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    z-index: 2;
     color: var(--color-text-secondary);
+    text-align: right;
+    max-width: 400px;
+}
+
+.project-description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
     margin-bottom: var(--spacing-md);
-    font-size: 0.9rem;
+}
+
+.project-tech {
+    margin-bottom: 0;
+}
+
+.mockup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .tag {
@@ -496,29 +540,12 @@ img {
     letter-spacing: 1px;
 }
 
-/* Project Card Variants */
-.variant-1 .placeholder-img {
-    background: linear-gradient(45deg, #d53b32, #b8322a);
-}
-
-.variant-2 .placeholder-img {
-    background: linear-gradient(45deg, #00bf63, #00a055);
-}
-
-.variant-3 .placeholder-img {
-    background: linear-gradient(45deg, #020d18, #0a1929);
-}
-
-.variant-4 .placeholder-img {
-    background: linear-gradient(45deg, #4a5568, #2d3748);
-}
 
 /* Partners Section */
 .partners-section {
     padding: var(--spacing-lg) 0;
     width: 100%;
     position: relative;
-    text-align: right;
 }
 
 .partners-section .section-title {
@@ -715,6 +742,25 @@ img {
 
     .hero-spacer {
         height: 1.5rem;
+    }
+
+    .project-title {
+        max-width: 80vw;
+    }
+
+    .project-title h3 {
+        font-size: 2.5rem;
+    }
+
+    .project-description {
+        left: 5%;
+        right: auto;
+        text-align: left;
+        max-width: 90%;
+    }
+
+    .project-description p {
+        font-size: 1rem;
     }
 
     .btn {
