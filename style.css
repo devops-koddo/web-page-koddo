@@ -365,7 +365,7 @@ img {
     background: transparent;
     position: relative;
     overflow: hidden;
-    margin: 0;
+    margin: 1rem 0 0 0;
     width: fit-content;
     text-align: left;
 }
@@ -480,6 +480,7 @@ img {
     padding: var(--spacing-lg) 0;
     width: 100%;
     position: relative;
+    text-align: right;
 }
 
 .partners-section .section-title {
@@ -487,7 +488,7 @@ img {
     display: inline-block; 
     margin-bottom: 0; 
     margin-left: 7rem; 
-    margin-right: 1.5rem;
+    margin-right: 7rem;
 }
 
 .partners-grid {
@@ -502,6 +503,7 @@ img {
     -ms-overflow-style: none;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    justify-content: center;
 }
 
 .partners-grid::-webkit-scrollbar {
@@ -674,7 +676,7 @@ img {
     text-orientation: upright;
     font-family: var(--font-family-heading);
     color: var(--color-text-primary);
-    opacity: 0.05;
+    opacity: 0.02;
     font-size: 8rem;
     position: absolute;
     top: 15%;
