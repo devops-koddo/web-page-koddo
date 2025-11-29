@@ -59,6 +59,16 @@ menuOverlay.addEventListener('click', (e) => {
 // Page load fade-in effect
 document.getElementById('app').style.opacity = '1';
 
+// Scroll progress bar
+const scrollProgress = document.querySelector('.scroll-progress');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
+});
+
 // Custom cursor
 const cursor = document.querySelector('.cursor');
 
@@ -87,7 +97,25 @@ interactiveElements.forEach(el => {
     });
 });
 
-// Animate project titles on scroll
+// Smooth scroll for nav links
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Animate sections and project titles on scroll
+const sections = document.querySelectorAll('.work-section, .contact-section');
 const projectTitles = document.querySelectorAll('.project-title, .project-description');
 
 const observer = new IntersectionObserver((entries) => {
@@ -96,7 +124,11 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
+
+sections.forEach(section => {
+    observer.observe(section);
+});
 
 projectTitles.forEach(title => {
     observer.observe(title);
