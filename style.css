@@ -96,7 +96,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 3rem;
+    padding: 2rem 6rem;
     z-index: 1000;
     background: transparent;
     backdrop-filter: blur(10px);
@@ -241,8 +241,9 @@ img {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     position: relative;
     overflow: hidden;
@@ -255,7 +256,8 @@ img {
     z-index: 10;
     max-width: 800px;
     text-align: center;
-    margin: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
     padding-left: 3rem;
     padding-right: 3rem;
 }
@@ -396,8 +398,6 @@ img {
     margin-bottom: var(--spacing-xl);
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-left: 5px solid var(--color-accent);
-    padding-left: var(--spacing-md);
 }
 
 /* Glassmorphism Card */
@@ -473,6 +473,95 @@ img {
     margin-right: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Partners Section */
+.partners-section {
+    padding: var(--spacing-lg) 0;
+    width: 100%;
+    position: relative;
+}
+
+.partners-section .section-title {
+    position: relative;
+    display: inline-block; 
+    margin-bottom: 0; 
+    margin-left: 7rem; 
+    margin-right: 1.5rem;
+}
+
+.partners-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.partners-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.partner-item {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    transition: var(--transition-medium);
+    scroll-snap-align: start;
+}
+
+.partner-item:hover {
+    transform: scale(1.05);
+}
+
+.partner-logo {
+    max-width: 100%;
+    max-height: 80px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner-item:hover .partner-logo {
+    filter: grayscale(0%);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+}
+
+.carousel-btn:hover {
+    background: var(--color-secondary);
+}
+
+.prev-btn {
+    left: -60px;
+}
+
+.next-btn {
+    right: -60px;
 }
 
 /* About Section */

@@ -58,3 +58,4 @@ menuOverlay.addEventListener('click', (e) => {
 
 // Page load fade-in effect
 document.getElementById('app').style.opacity = '1';
+
