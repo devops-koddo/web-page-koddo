@@ -138,6 +138,7 @@ img {
 .main-nav ul {
     display: flex;
     gap: var(--spacing-lg);
+    justify-content: center;
 }
 
 .main-nav a {
@@ -153,7 +154,6 @@ img {
 }
 
 .menu-btn {
-    display: none;
     padding: 0.5rem 1.5rem;
     border: 1px solid var(--color-text-primary);
     color: var(--color-text-primary);
@@ -161,10 +161,12 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: var(--transition-medium);
+    transition: var(--transition-medium), opacity 0.3s, visibility 0.3s;
     background: transparent;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .menu-btn::before {
@@ -194,7 +196,8 @@ img {
 }
 
 .site-header.scrolled .menu-btn {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .menu-overlay {
@@ -493,6 +496,14 @@ img {
     z-index: 2;
     color: var(--color-text-primary);
     max-width: 40vw;
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-title.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .project-title h3 {
@@ -510,6 +521,14 @@ img {
     color: var(--color-text-secondary);
     text-align: right;
     max-width: 400px;
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-description.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .project-description p {
@@ -635,6 +654,10 @@ img {
 /* Contact Section */
 .contact-section {
     padding: var(--spacing-xl) 0;
+}
+
+.contact-section .container {
+    text-align: center;
 }
 
 .contact-content {

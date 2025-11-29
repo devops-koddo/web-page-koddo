@@ -87,3 +87,18 @@ interactiveElements.forEach(el => {
     });
 });
 
+// Animate project titles on scroll
+const projectTitles = document.querySelectorAll('.project-title, .project-description');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.5 });
+
+projectTitles.forEach(title => {
+    observer.observe(title);
+});
+
