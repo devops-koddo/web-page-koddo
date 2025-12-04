@@ -141,9 +141,13 @@ img {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 var(--spacing-md);
+}
+
+.main-nav {
+    margin-left: auto;
 }
 
 .logo-img {
@@ -703,6 +707,7 @@ img {
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: var(--color-text-primary);
+    text-align: left;
 }
 
 .form-group input,
@@ -774,13 +779,54 @@ img {
 }
 
 /* Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet styles */
+    .site-header {
+        padding: 2rem 4rem;
+    }
+
+    .hero-title {
+        font-size: 9rem;
+    }
+
+    .hero-content {
+        margin-left: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .work-section {
+        padding: 0 4rem;
+    }
+
+    .partners-section .section-title {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .footer-content {
+        padding: 2rem 2rem;
+    }
+
+    .vertical-text {
+        font-size: 6rem;
+        left: 3%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .site-header {
+        padding: 2rem 3rem;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --font-size-h1: 3rem;
     }
 
     .hero-content {
-        padding-top: var(--spacing-xl);
+        padding-top: 1rem;
     }
 
     .hero-subtitle-container {
@@ -821,6 +867,9 @@ img {
 
     .menu-btn {
         display: block;
+        opacity: 1;
+        visibility: visible;
+        margin-left: auto;
     }
 
     .footer-content {
@@ -835,6 +884,90 @@ img {
     .social-links {
         order: 1;
         margin-bottom: 1rem;
+    }
+
+    .site-header {
+        padding: 1rem 2rem;
+    }
+
+    .header-content {
+        padding: 0;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+    }
+
+    .hero-subtitle-container {
+        text-align: center;
+    }
+
+    .btn {
+        margin: 1rem auto;
+    }
+
+    .work-section {
+        padding: 0 2rem;
+    }
+
+    .partners-section .section-title {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .partner-item {
+        flex: 0 0 150px;
+    }
+
+    .vertical-text {
+        font-size: 4rem;
+        left: 2%;
+    }
+
+    .project-detail {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-image {
+        position: relative;
+        height: auto;
+        order: 1;
+    }
+
+    .project-title {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin: 2rem;
+        opacity: 1;
+        transform: none;
+        order: 2;
+        max-width: none;
+    }
+
+    .project-description {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin: 2rem;
+        opacity: 1;
+        transform: none;
+        order: 3;
+        text-align: left;
+        max-width: none;
+    }
+
+    .hero-title {
+        font-size: 12rem;
+        white-space: nowrap;
     }
 }
 
