@@ -1,12 +1,12 @@
 {
-  "name": "corp-page-gravity",
+  "name": "koddo-page-web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8000",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --port 8000"
   },
   "devDependencies": {
     "vite": "^7.2.4"
