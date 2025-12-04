@@ -448,7 +448,7 @@ img {
     background: var(--color-card-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-card-border);
-    padding: var(--spacing-lg);
+    /* padding: var(--spacing-lg); */
     border-radius: 0;
     /* Sharper edges for tech feel */
     transition: var(--transition-medium);
