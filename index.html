@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="../public/KODDO SOSU - web icon dark .png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koddo Software Studio</title>
+  <title>KODDO | Data Engineering & Software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -21,24 +21,28 @@
     <header class="site-header">
       <div class="header-content">
         <div class="logo">
-          <img src="/logo-web-transparent.png" alt="Koddo Software Studio" class="logo-img">
+          <img src="/KODDO SOSU - logo light red.png" alt="KODDO Engineering" class="logo-img">
         </div>
         <nav class="main-nav">
           <ul>
-            <li><a href="#work">Work</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Start a Project</a></li>
           </ul>
         </nav>
-        <button class="menu-btn">Menu</button>
+        <button class="menu-btn">
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+
     <div class="menu-overlay">
       <nav class="mobile-nav">
         <ul>
-          <li><a href="#work">Work</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -47,112 +51,140 @@
 
     <main>
       <section class="hero">
-        <div class="hero-content">
-          <div class="vertical-text">デジタル</div>
-          <!-- <div class="hero-spacer"></div> -->
-          <h1 class="hero-title">
-            DATA ENGINEERING   MOBILE DEVELOPMENT   ERP INTEGRATIONS   MACHINE LEARNING   WEB DEVELOPMENT
-          </h1>
-          <div class="hero-spacer"></div>
-          <div class="hero-subtitle-container">
+        <div class="hero-visuals">
+          <div class="glow-sphere sphere-1"></div>
+          <div class="glow-sphere sphere-2"></div>
+          <div class="grid-overlay"></div>
+        </div>
+        
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              iOS & Android Elite Development
+            </div>
+            <h1 class="hero-title">
+              Engineering <span class="text-gradient">Data</span>,<br>
+              Building <span class="text-gradient">Impact</span>.
+            </h1>
             <p class="hero-subtitle">
-              We create premium software experiences with precision and style.
+              Diseñamos ecosistemas digitales de alto rendimiento. Desde aplicaciones móviles nativas hasta integraciones complejas con SAP y Machine Learning.
             </p>
-            <a href="#contact" class="btn">Start a Project</a>
-          </div>
-        </div>
-        <div class="partners-section">
-          <h2 class="section-title">
-            Trusted By
-            <div class="japan-stroke" style="width: 100%; height: 15px; bottom: 5px; left: -10px; opacity: 0.6;"></div>
-          </h2>
-          <div class="partners-grid">
-            <div class="partner-item glass-card">
-              <img src="/logo-web-transparent.png" alt="Partner 1" class="partner-logo">
-            </div>
-            <div class="partner-item glass-card">
-              <img src="/logo-web-transparent.png" alt="Partner 2" class="partner-logo">
-            </div>
-            <div class="partner-item glass-card">
-              <img src="/logo-web-transparent.png" alt="Partner 3" class="partner-logo">
-            </div>
-            <div class="partner-item glass-card">
-              <img src="/logo-web-transparent.png" alt="Partner 4" class="partner-logo">
-            </div>
-            <div class="partner-item glass-card">
-              <img src="/logo-web-transparent.png" alt="Partner 5" class="partner-logo">
-            </div>
-            <div class="partner-item glass-card">
-              <img src="/logo-web-transparent.png" alt="Partner 6" class="partner-logo">
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Elevate Your Business</a>
+              <a href="#work" class="btn btn-secondary">View Work</a>
             </div>
           </div>
         </div>
-        <div class="hero-background">
-          <!-- Abstract tech shapes will go here via CSS/JS -->
-          <div class="shape shape-1"></div>
-          <!-- <div class="shape shape-2"></div> -->
+        
+        <div class="hero-footer">
+          <div class="scroll-indicator">
+            <span class="scroll-text">Explore Koddo</span>
+            <span class="scroll-line"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Core Expertise</h2>
+            <p class="section-tagline">Soluciones integrales para la transformación digital.</p>
+          </div>
+          
+          <div class="services-grid">
+            <div class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <h3>Mobile Development</h3>
+              <p>Nuestro "Hook" de excelencia. Apps nativas iOS y Android con UX de clase mundial.</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <h3>Data Engineering</h3>
+              <p>Arquitecturas de datos sólidas, analítica avanzada e Inteligencia de Negocio.</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3>ERP Integrations</h3>
+              <p>Conectamos tu core de negocio (SAP, TOTVS) con ecosistemas modernos.</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              </div>
+              <h3>Machine Learning</h3>
+              <p>Modelos predictivos y automatización inteligente para decisiones accionables.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-text">
+              <h2 class="section-title">The Koddo Vision</h2>
+              <p>KODDO es una empresa de Ingeniería de Datos y Software dedicada a diseñar, integrar y mantener ecosistemas digitales empresariales.</p>
+              <p>Acompañamos a organizaciones que ya iniciaron su transformación digital y buscan llevarla al siguiente nivel. Desarrollamos soluciones a medida alineadas a los procesos reales del negocio.</p>
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number">SAP</span>
+                  <span class="stat-label">Expert Integration</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">AI</span>
+                  <span class="stat-label">Ready Solutions</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-image">
+              <div class="image-wrapper glass-card">
+                <!-- Placeholder for high-end tech image -->
+                <div class="tech-abstract-anim"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="work" class="work-section">
-        <div class="containerwork">
-          <h2 class="section-title" style="position: relative; display: inline-block;">
-            Selected Work
-            <div class="japan-stroke" style="width: 100%; height: 15px; bottom: 5px; left: -10px; opacity: 0.6;"></div>
-          </h2>
-
-          <!-- Project 1: Billing Portal -->
-          <div class="project-detail">
-            <div class="project-image">
-              <img src="/assets/web-mockup.png" alt="IFALAPP Portal" class="mockup-img">
-            </div>
-            <div class="project-title">
-              <h3>IFALAPP - Billing Portal</h3>
-            </div>
-            <div class="project-description">
-              <p>A sophisticated web portal for IFA company, seamlessly integrating with SAP Business One ERP for streamlined billing and invoicing operations. Includes automated invoice generation, payment processing, financial reporting, and user-friendly dashboards for efficient business management.</p>
-              <div class="project-tech">
-                <span class="tag">Angular</span>
-                <span class="tag">NestJS</span>
-                <span class="tag">SAP Service Layer</span>
+        <div class="container">
+          <h2 class="section-title">Selected Case Studies</h2>
+          
+          <div class="projects-vertical">
+            <!-- Project 1 -->
+            <div class="project-item glass-card">
+              <div class="project-content">
+                <span class="project-category">ERP & Web Portal</span>
+                <h3>RCM - Mobile Application</h3>
+                <p>Integración sofisticada con SAP Business One para automatización de facturación y dashboards financieros.</p>
+                <div class="project-tags">
+                  <span>NestJS</span> <span>Angular</span> <span>SAP</span>
+                </div>
+              </div>
+              <div class="project-preview">
+                <img src="/assets/web-mockup.png" alt="RCM" class="preview-img">
               </div>
             </div>
-          </div>
 
-          <!-- Project 2: Mobile App -->
-          <div class="project-detail">
-            <div class="project-image">
-              <img src="/assets/mobile-mockup.png" alt="Agrosales App" class="mockup-img">
-            </div>
-            <div class="project-title">
-              <h3>Agrosales - Mobile App</h3>
-            </div>
-            <div class="project-description">
-              <p>A Flutter-powered Android application for Agronegocios Union, providing field salespeople with intelligent product insights and sales optimization. Includes real-time inventory tracking, customer management, data-driven recommendations, and offline capabilities for rural areas.</p>
-              <div class="project-tech">
-                <span class="tag">Flutter</span>
-                <span class="tag">NestJS</span>
-                <span class="tag">AWS</span>
-                <span class="tag">Python</span>
+            <!-- Project 2 -->
+            <div class="project-item glass-card">
+              <div class="project-content">
+                <span class="project-category">Mobile Excellence</span>
+                <h3>Agrosales - Intelligent Sales</h3>
+                <p>App nativa Android para fuerza de ventas con tracking de inventario en tiempo real y recomendaciones por IA.</p>
+                <div class="project-tags">
+                  <span>Flutter</span> <span>Python</span> <span>AWS</span>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Project 3: ERP -->
-          <div class="project-detail">
-            <div class="project-image">
-              <img src="/assets/erp-mockup.png" alt="MOS ERP" class="mockup-img">
-            </div>
-            <div class="project-title">
-              <h3>MOS - ERP System</h3>
-            </div>
-            <div class="project-description">
-              <p>A robust ERP system developed for Radioactivo, a logistics company. Streamlines operations with inventory management, shipping tracking, financial reporting, and integrated logistics workflows for enhanced efficiency and scalability.</p>
-              <div class="project-tech">
-                <span class="tag">React</span>
-                <span class="tag">NestJS</span>
-                <span class="tag">AWS</span>
-                <span class="tag">PostgreSQL</span>
+              <div class="project-preview">
+                <img src="/assets/mobile-mockup.png" alt="Agrosales" class="preview-img">
               </div>
             </div>
           </div>
@@ -161,23 +193,27 @@
 
       <section id="contact" class="contact-section">
         <div class="container">
-          <h2 class="section-title" style="position: relative; display: inline-block;">
-            Contact Us
-            <div class="japan-stroke" style="width: 100%; height: 15px; bottom: 5px; left: -10px; opacity: 0.6;"></div>
-          </h2>
-          <div class="contact-content glass-card">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjVs9eGKjHhTr6hRWx17P-qhmZZBvaJC9AKSdsIKgAq1ieYA/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          <div class="contact-card glass-card">
+            <div class="contact-info">
+              <h2 class="section-title">Let's Build the Future</h2>
+              <p>¿Listo para llevar tu empresa al siguiente nivel empresarial? Hablemos de tu próximo proyecto.</p>
+            </div>
+            <div class="contact-form-container">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjVs9eGKjHhTr6hRWx17P-qhmZZBvaJC9AKSdsIKgAq1ieYA/viewform?embedded=true" width="100%" height="500" frameborder="0">Loading...</iframe>
+            </div>
           </div>
         </div>
       </section>
-      <div class="vertical-text" style="right: 5%; bottom: 10%; top: auto; left: auto; font-size: 8rem;">メタモルフォシス</div>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-content">
-        <p>&copy; 2025 Koddo Software Studio. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#">Terms and Conditions</a>
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2025 KODDO Engineering. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
         </div>
       </div>
     </footer>
