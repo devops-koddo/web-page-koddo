@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | KODDO Engineering Insights</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    
+    <div id="app">
+        <header class="site-header scrolled">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/"><img src="/logo-red-nobk.png" alt="KODDO" class="logo-img" style="height: 50px;"></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/#services">Servicios</a></li>
+                        <li><a href="/#work">Proyectos</a></li>
+                        <li><a href="/blog.html" class="active">Blog</a></li>
+                        <li><a href="/#contact" class="nav-cta">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main style="padding-top: 150px;">
+            <div class="container">
+                <h1 class="section-title">Engineering <span class="text-gradient">Insights</span></h1>
+                <p class="section-tagline">Exploremos las posibilidades y el futuro.</p>
+                
+                <div id="blog-list" class="blog-preview-grid" style="margin-top: 4rem;">
+                    <!-- Posts will be rendered here -->
+                    <p>Cargando artículos...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-bottom glass-card">
+                    <p>&copy; 2026 KODDO. <a href="/" style="color: var(--color-accent); text-decoration: none;">Volver al Inicio</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module">
+        async function loadPosts() {
+            try {
+                const response = await fetch('/blog/posts.json');
+                const posts = await response.json();
+                const container = document.getElementById('blog-list');
+                
+                container.innerHTML = posts.map(post => `
+                    <article class="blog-card glass-card">
+                        <div class="blog-card-image">
+                            <img src="${post.image}" alt="${post.title}">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-category">${post.category}</span>
+                            <h3>${post.title}</h3>
+                            <p>${post.excerpt}</p>
+                            <div class="blog-card-footer">
+                                <span class="blog-date">${post.date}</span>
+                                <a href="/blog/${post.id}/" class="blog-link">Leer artículo</a>
+                            </div>
+                        </div>
+                    </article>
+                `).join('');
+            } catch (e) {
+                console.error("Error loading posts:", e);
+            }
+        }
+        loadPosts();
+    </script>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -89,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.15 });
 
+    window.siteObserver = observer; // Exportar para uso dinámico
+
     document.querySelectorAll('.glass-card, .section-title, .hero-content, .project-item').forEach(el => {
         el.classList.add('reveal-init');
         observer.observe(el);
@@ -104,4 +106,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Carga dinámica de los últimos posts en el Index
+    const latestPostsContainer = document.getElementById('latest-posts-container');
+    if (latestPostsContainer) {
+        async function fetchLatestPosts() {
+            try {
+                const response = await fetch('/blog/posts.json');
+                const posts = await response.json();
+                
+                // Tomamos los 2 más recientes
+                const latestPosts = posts.slice(0, 2);
+                
+                latestPostsContainer.innerHTML = latestPosts.map(post => `
+                    <article class="blog-card glass-card reveal-init">
+                        <div class="blog-card-image">
+                            <img src="${post.image}" alt="${post.title}" loading="lazy">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-category">${post.category}</span>
+                            <h3>${post.title}</h3>
+                            <p>${post.excerpt}</p>
+                            <div class="blog-card-footer">
+                                <span class="blog-date">${post.date}</span>
+                                <a href="/blog/${post.id}/" class="blog-link">
+                                    Leer más 
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                `).join('');
+
+                // Re-activar el Intersection Observer para los nuevos elementos
+                document.querySelectorAll('.blog-card').forEach(el => {
+                    if (window.siteObserver) window.siteObserver.observe(el);
+                });
+                
+            } catch (e) {
+                console.error("Error cargando posts en index:", e);
+                latestPostsContainer.innerHTML = "<p>Error al cargar artículos.</p>";
+            }
+        }
+        fetchLatestPosts();
+    }
 });

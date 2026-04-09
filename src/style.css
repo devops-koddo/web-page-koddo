@@ -939,6 +939,116 @@ section {
     border-color: white;
 }
 
+/* Blog Preview Section */
+.blog-preview-section {
+    background: radial-gradient(circle at 50% 50%, rgba(212, 59, 49, 0.05) 0%, transparent 80%);
+}
+
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.blog-card {
+    padding: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-card-image {
+    height: 240px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+}
+
+.blog-card-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-category {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.blog-card h3 {
+    font-family: var(--font-family-heading);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    color: white;
+}
+
+.blog-card p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.blog-card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.blog-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+}
+
+.blog-link:hover {
+    color: var(--color-accent);
+    gap: 12px;
+}
+
+.section-actions.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 968px) {
+    .blog-preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Contact Section Refinement */
 .contact-section {
     position: relative;
