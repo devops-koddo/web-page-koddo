@@ -488,7 +488,111 @@ section {
 }
 
 .services-section {
-    background: radial-gradient(circle at 50% 0%, rgba(255, 45, 85, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 0%, rgba(212, 59, 49, 0.05) 0%, transparent 70%);
+}
+
+/* About Section Refinement */
+.about-section {
+    position: relative;
+    background: radial-gradient(circle at 100% 50%, rgba(212, 59, 49, 0.03) 0%, transparent 50%);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.about-text strong {
+    color: white;
+    font-weight: 600;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-family: var(--font-family-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-secondary);
+    font-weight: 700;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 40px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--glass-border), transparent);
+    overflow: hidden;
+}
+
+.tech-abstract-anim {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-alt);
+    border-radius: 38px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-abstract-anim::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg, transparent, var(--color-accent), transparent 30%);
+    animation: rotate 10s linear infinite;
+}
+
+.tech-abstract-anim::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--color-bg-alt);
+    border-radius: 36px;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .projects-vertical {
