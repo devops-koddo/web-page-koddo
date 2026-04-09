@@ -26,6 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseenter', () => follower.classList.add('active'));
             el.addEventListener('mouseleave', () => follower.classList.remove('active'));
         });
+
+        // Hide cursor when entering iframes (like the contact form)
+        const hideCursor = () => {
+            cursor.style.opacity = '0';
+            follower.style.opacity = '0';
+        };
+        const showCursor = () => {
+            cursor.style.opacity = '1';
+            follower.style.opacity = '1';
+        };
+
+        document.querySelectorAll('iframe, .contact-form-container').forEach(el => {
+            el.addEventListener('mouseenter', hideCursor);
+            el.addEventListener('mouseleave', showCursor);
+        });
     }
 
     // Scroll & Header Logic
