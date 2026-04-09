@@ -1,87 +1,89 @@
 import './style.css'
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('KODDO Engineering Ecosystem Active');
-    
-    const app = document.getElementById('app');
     const header = document.querySelector('.site-header');
     const scrollProgress = document.querySelector('.scroll-progress');
-    const menuBtn = document.querySelector('.menu-btn');
-    const menuOverlay = document.querySelector('.menu-overlay');
+    const cursor = document.querySelector('.cursor');
+    
+    // Custom Liquid Cursor Interaction
+    if (cursor) {
+        const follower = document.createElement('div');
+        follower.className = 'cursor-follower';
+        document.body.appendChild(follower);
 
-    // 1. Reveal App on load
-    app.style.opacity = '1';
+        document.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            
+            // Smarter follower logic
+            requestAnimationFrame(() => {
+                follower.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0)`;
+            });
+        });
 
-    // 2. Navbar & Scroll Progress logic
+        // Add hover effects for interactive elements
+        document.querySelectorAll('a, button, .glass-card').forEach(el => {
+            el.addEventListener('mouseenter', () => follower.classList.add('active'));
+            el.addEventListener('mouseleave', () => follower.classList.remove('active'));
+        });
+    }
+
+    // Scroll & Header Logic
     window.addEventListener('scroll', () => {
-        // Header transition
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-
-        // Progress bar calculation
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        if (scrollProgress) {
-            scrollProgress.style.width = scrollPercent + '%';
+        const winScroll = window.pageYOffset;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        if (scrollProgress) scrollProgress.style.width = scrolled + '%';
+        if (header) {
+            header.classList.toggle('scrolled', winScroll > 50);
         }
     });
 
-    // 3. Smooth scroll for all anchor links
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    if (menuBtn && menuOverlay) {
+        menuBtn.addEventListener('click', () => {
+            const isActive = menuOverlay.classList.toggle('active');
+            menuBtn.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+
+        // Close on link click
+        menuOverlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // Semantic Intersection Observer for Animations (LLM Friendly)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.glass-card, .section-title, .hero-content, .project-item').forEach(el => {
+        el.classList.add('reveal-init');
+        observer.observe(el);
+    });
+
+    // Smooth Anchor Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                // Close mobile menu if open
-                if (menuOverlay) menuOverlay.classList.remove('active');
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
-    });
-
-    // 4. Mobile Menu Toggle (Safe Check)
-    if (menuBtn && menuOverlay) {
-        menuBtn.addEventListener('click', () => {
-            menuOverlay.classList.toggle('active');
-            const isActive = menuOverlay.classList.contains('active');
-            menuBtn.setAttribute('aria-expanded', isActive);
-        });
-    }
-
-    // 5. Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target); // Animates only once
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.glass-card, .project-item, .section-title').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.8s ease-out';
-        revealObserver.observe(el);
-    });
-});
-
-// Helper for animations (re-injecting opacity via JS for better control)
-document.addEventListener('scroll', () => {
-    document.querySelectorAll('.visible').forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
     });
 });

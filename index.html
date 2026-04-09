@@ -25,30 +25,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "SoftwareCompany",
     "name": "KODDO Ingeniería de Datos y Software",
     "alternateName": "KODDO Technologies",
     "url": "https://koddo.tech/",
     "logo": "https://koddo.tech/logo-red-dark.webp",
     "image": "https://koddo.tech/assets/web-mockup.png",
-    "description": "Firma de ingeniería especializada en desarrollo de aplicaciones móviles de alto rendimiento e integración de ecosistemas de datos empresariales.",
+    "description": "Firma de ingeniería de élite especializada en aplicaciones móviles nativas, integración de ERPs (SAP Business One) y arquitectura de datos de alto rendimiento.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Santa Cruz de la Sierra",
       "addressCountry": "BO"
     },
+    "serviceArea": "Global",
     "knowsAbout": [
       "Mobile Development (Flutter, Dart, Swift, Kotlin)",
-      "Data Engineering",
-      "SAP Business One Integration",
+      "Data Engineering & Architecture",
+      "SAP Business One & ERP Integration",
       "Backend Architecture (NestJS, Node.js, Python)",
-      "Machine Learning Solutions",
-      "LLM integrations",
+      "Machine Learning & LLM integrations",
       "Cloud Platforms (AWS, Azure, GCP)"
      ],
     "offers": {
       "@type": "Offer",
-      "serviceType": "Software Engineering"
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Software Engineering Services",
+        "serviceType": "Elite Mobile & Data Development"
+      }
     }
   }
   </script>
@@ -75,8 +79,9 @@
     <header class="site-header">
       <div class="header-content">
         <div class="logo">
-           <img src="/logo-red-nobk.png" alt="KODDO Technologies Home" class="logo-img" width="500" height="auto">
+           <img src="/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img">
         </div>
+        
         <nav class="main-nav" aria-label="Navegación principal">
           <ul>
             <li><a href="#services">Servicios</a></li>
@@ -85,8 +90,24 @@
             <li><a href="#contact" class="nav-cta">Iniciar un Proyecto</a></li>
           </ul>
         </nav>
+
+        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
       </div>
     </header>
+
+    <div class="menu-overlay" aria-hidden="true">
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#work">Proyectos</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#contact" class="nav-cta">Iniciar un Proyecto</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
@@ -116,6 +137,13 @@
             </div>
           </div>
         </div>
+        
+        <div class="hero-footer">
+          <div class="scroll-indicator">
+            <span class="scroll-text">Explore Koddo</span>
+            <span class="scroll-line"></span>
+          </div>
+        </div>
       </section>
 
       <section id="services" class="services-section" aria-labelledby="services-title">
@@ -126,12 +154,15 @@
           </div>
           
           <div class="services-grid">
-            <article class="service-card glass-card">
+            <article class="service-card glass-card bento-hero">
               <div class="service-icon-container">
                 <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
               </div>
-              <h3>Mobile Development</h3>
-              <p>Nuestro gancho de excelencia. Apps nativas iOS y Android con UX de clase mundial que resuelven problemas de campo y ventas.</p>
+              <div class="card-content">
+                <span class="card-tag">Elite Performance</span>
+                <h3>Mobile Development</h3>
+                <p>Nuestra insignia de ingeniería. Desarrollamos aplicaciones nativas de alto rendimiento (iOS/Android) diseñadas para operar en entornos críticos de ventas y logística.</p>
+              </div>
             </article>
 
             <article class="service-card glass-card">
@@ -139,23 +170,15 @@
                 <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
               </div>
               <h3>Data Engineering</h3>
-              <p>El motor invisible. Estructuramos tus datos para que la información fluya sin fricciones entre tus apps y tu oficina central.</p>
+              <p>Arquitectura de datos para la toma de decisiones. Construimos puentes invisibles entre tus aplicaciones y tu inteligencia de negocio.</p>
             </article>
 
             <article class="service-card glass-card">
               <div class="service-icon-container">
                 <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
               </div>
-              <h3>ERP Integrations</h3>
-              <p>Conectamos tus soluciones con SAP Business One, TOTVS y otros sistemas robustos para automatizar la facturación y el inventario.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              </div>
-              <h3>Machine Learning</h3>
-              <p>Hacemos tus apps inteligentes. Modelos de recomendación y predicción que ayudan a tu equipo a tomar mejores decisiones en tiempo real.</p>
+              <h3>ERP & Cloud</h3>
+              <p>Integración profunda con SAP Business One y TOTVS. Automatizamos el flujo de inventario y finanzas en tiempo real.</p>
             </article>
           </div>
         </div>
@@ -265,9 +288,42 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-bottom">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img footer-logo">
+            <p class="footer-tagline">Engineering Data, Building Impact.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-nav-group">
+            <h4 class="footer-title">Soluciones</h4>
+            <ul>
+              <li><a href="#services">Mobile Development</a></li>
+              <li><a href="#services">Data Engineering</a></li>
+              <li><a href="#services">ERP Integrations</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4 class="footer-title">Compañía</h4>
+            <ul>
+              <li><a href="#about">Nosotros</a></li>
+              <li><a href="#work">Casos de Éxito</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom glass-card">
           <p>&copy; 2026 KODDO Ingeniería de Datos y Software. Todos los derechos reservados.</p>
-          <nav class="footer-links">
+          <nav class="footer-legal">
             <a href="#">Privacidad</a>
             <a href="#">Términos</a>
           </nav>
