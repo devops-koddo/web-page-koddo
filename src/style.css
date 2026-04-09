@@ -28,7 +28,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none; /* For custom cursor interaction */
 }
 
 /* Base Body Update */
@@ -40,6 +39,23 @@ body {
     letter-spacing: -0.01em;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    cursor: auto; /* Default cursor for mobile */
+}
+
+@media (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
+
+.cursor, .cursor-follower {
+    display: none;
+}
+
+@media (pointer: fine) {
+    .cursor, .cursor-follower {
+        display: block;
+    }
 }
 
 /* Premium Text Gradient */
@@ -255,9 +271,114 @@ body {
 }
 
 @media (max-width: 768px) {
-    .main-nav { display: none; }
-    .menu-btn { display: flex; }
-    .logo-img { height: 24px; }
+    .hero {
+        padding-top: 140px;
+        text-align: center;
+        min-height: auto;
+        padding-bottom: 100px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 12vw, 3.8rem); /* Un poco más pequeño para evitar saltos raros */
+        letter-spacing: -1px;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.5;
+        width: 100%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem; /* Espacio más ajustado entre botones */
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 320px; /* Evita que los botones se vean ridículamente anchos en pantallas grandes de móvil */
+        text-align: center;
+        padding: 1.1rem 2rem;
+        font-size: 0.85rem;
+        margin: 0 auto;
+    }
+
+    .hero-footer {
+        bottom: 20px;
+    }
+
+    /* Footer Mobile Refinement */
+    .site-footer {
+        padding: 60px 0 30px;
+        margin-top: 80px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        height: 100px; /* Logo un poco más pequeño en móvil para no saturar */
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-tagline {
+        margin: 0 auto 2rem;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-nav-group ul {
+        align-items: center;
+    }
+
+    .footer-nav-group a:hover {
+        transform: translateY(-2px); /* En móvil es mejor hacia arriba que hacia el lado */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .footer-legal {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
 }
 
 /* Hero Section Enhancement */
@@ -265,7 +386,21 @@ body {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 5%; /* Añadido margen horizontal del 5% */
+    padding: 0 5%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* Margen fijo más cómodo en móvil */
+    }
+    
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    section {
+        padding: 60px 0; /* Menos espacio entre secciones en móvil */
+    }
 }
 
 .hero-visuals {
@@ -392,7 +527,27 @@ body {
 }
 
 @media (max-width: 768px) {
-    .services-grid { grid-template-columns: 1fr; }
+    .main-nav { display: none; }
+    .menu-btn { display: flex; }
+    .logo-img { height: 40px; } /* Ajustado para que se vea bien en móvil */
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .image-wrapper {
+        aspect-ratio: 16/9; /* Menos alto en móvil */
+    }
 }
 
 .card-tag {
