@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Indica la ruta de tu sitemap para LLMs y buscadores
+Sitemap: https://koddo.tech/sitemap.xml

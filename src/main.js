@@ -1,125 +1,87 @@
 import './style.css'
 
-console.log('Koddo Software Studio loaded.');
-
-// Simple interaction for the "Start a Project" button
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        console.log('Button clicked');
-    });
-});
-
-// Remove cursor and parallax logic as they are causing issues
-// document.addEventListener('mousemove', (e) => { ... });
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('KODDO Engineering Ecosystem Active');
+    
+    const app = document.getElementById('app');
     const header = document.querySelector('.site-header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+    const scrollProgress = document.querySelector('.scroll-progress');
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-// Menu button toggle
-const menuBtn = document.querySelector('.menu-btn');
-const menuOverlay = document.querySelector('.menu-overlay');
+    // 1. Reveal App on load
+    app.style.opacity = '1';
 
-menuBtn.addEventListener('click', () => {
-    menuOverlay.classList.toggle('active');
-});
+    // 2. Navbar & Scroll Progress logic
+    window.addEventListener('scroll', () => {
+        // Header transition
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
 
-// Close menu on link click
-const menuLinks = document.querySelectorAll('.mobile-nav a');
-menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        menuOverlay.classList.remove('active');
-    });
-});
-
-// Close menu on overlay click
-menuOverlay.addEventListener('click', (e) => {
-    if (e.target === menuOverlay) {
-        menuOverlay.classList.remove('active');
-    }
-});
-
-// Page load fade-in effect
-document.getElementById('app').style.opacity = '1';
-
-// Scroll progress bar
-const scrollProgress = document.querySelector('.scroll-progress');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-});
-
-// Custom cursor
-const cursor = document.querySelector('.cursor');
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX - 20 + 'px';
-    cursor.style.top = e.clientY - 20 + 'px';
-});
-
-document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-});
-
-document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-});
-
-// Hover effect for interactive elements
-const interactiveElements = document.querySelectorAll('a, button, .project-card, .partner-item');
-
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-    });
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-    });
-});
-
-// Smooth scroll for nav links
-const navLinks = document.querySelectorAll('a[href^="#"]');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        // Progress bar calculation
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        if (scrollProgress) {
+            scrollProgress.style.width = scrollPercent + '%';
         }
     });
-});
 
-// Animate sections and project titles on scroll
-const sections = document.querySelectorAll('.work-section, .contact-section');
-const projectTitles = document.querySelectorAll('.project-title, .project-description');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+    // 3. Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                if (menuOverlay) menuOverlay.classList.remove('active');
+            }
+        });
     });
-}, { threshold: 0.3 });
 
-sections.forEach(section => {
-    observer.observe(section);
+    // 4. Mobile Menu Toggle (Safe Check)
+    if (menuBtn && menuOverlay) {
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.toggle('active');
+            const isActive = menuOverlay.classList.contains('active');
+            menuBtn.setAttribute('aria-expanded', isActive);
+        });
+    }
+
+    // 5. Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target); // Animates only once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.glass-card, .project-item, .section-title').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.8s ease-out';
+        revealObserver.observe(el);
+    });
 });
 
-projectTitles.forEach(title => {
-    observer.observe(title);
+// Helper for animations (re-injecting opacity via JS for better control)
+document.addEventListener('scroll', () => {
+    document.querySelectorAll('.visible').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    });
 });
-

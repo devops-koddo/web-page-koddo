@@ -1,12 +1,12 @@
 {
   "name": "koddo-page-web",
   "private": true,
-  "version": "2.0.0",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 8081",
+    "dev": "vite --port 8082",
     "build": "vite build",
-    "preview": "vite preview --port 8081"
+    "preview": "vite preview --port 8082"
   },
   "devDependencies": {
     "vite": "^7.2.4"

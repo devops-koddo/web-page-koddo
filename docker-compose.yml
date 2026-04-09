@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  koddo-web:
+    build: .
+    image: ghcr.io/${{ github.repository_owner }}/koddo-web:latest
+    container_name: koddo-web-page
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    external: true
