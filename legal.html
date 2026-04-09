@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>KODDO | Legal & Privacidad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    .legal-content {
+      padding-top: 180px;
+      padding-bottom: 100px;
+    }
+    .legal-card {
+      padding: clamp(2rem, 5vw, 5rem);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: var(--liquid-blur);
+      border-radius: 48px;
+    }
+    .legal-text h2 {
+      font-family: var(--font-family-heading);
+      font-size: 2rem;
+      color: var(--color-accent);
+      margin: 3rem 0 1.5rem;
+      letter-spacing: -1px;
+    }
+    .legal-text p {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    .legal-text ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .legal-text li {
+      color: var(--color-text-secondary);
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .legal-text li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 6px;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 3rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+    .back-home:hover {
+      color: var(--color-accent);
+      transform: translateX(-5px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+  
+  <div id="app">
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo">
+           <a href="/"><img src="/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img"></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/#services">Servicios</a></li>
+            <li><a href="/#work">Proyectos</a></li>
+            <li><a href="/#contact" class="nav-cta">Iniciar un Proyecto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="legal-content">
+      <div class="container">
+        <a href="/" class="back-home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Volver al Inicio
+        </a>
+        
+        <article class="legal-card">
+          <div class="section-header">
+            <h1 class="section-title">Legal & <span class="text-gradient">Privacidad</span></h1>
+            <p class="section-tagline">Transparencia en la ingeniería de datos y el desarrollo de software.</p>
+          </div>
+
+          <div class="legal-text">
+            <h2>1. Introducción</h2>
+            <p>En KODDO, la integridad de los datos y la seguridad de la información son pilares fundamentales de nuestra arquitectura. Este documento establece los términos bajo los cuales operamos y protegemos la información en nuestros ecosistemas digitales.</p>
+
+            <h2>2. Política de Privacidad</h2>
+            <p>Nuestra gestión de datos se rige por principios de seguridad de grado empresarial. Recopilamos información estrictamente necesaria para la ejecución de proyectos de ingeniería y desarrollo móvil.</p>
+            <ul>
+              <li><strong>Protección de Datos:</strong> Implementamos cifrado avanzado en todas las integraciones de ERP y aplicaciones móviles.</li>
+              <li><strong>Uso de Información:</strong> Los datos recolectados se utilizan exclusivamente para optimizar la UX y el rendimiento operativo de las soluciones entregadas.</li>
+              <li><strong>No Divulgación:</strong> KODDO mantiene acuerdos de confidencialidad estrictos, garantizando que su core de negocio permanezca privado.</li>
+            </ul>
+
+            <h2>3. Términos de Servicio</h2>
+            <p>El acceso a nuestras plataformas e integraciones implica la aceptación de estándares técnicos de uso responsable. KODDO se reserva el derecho de optimizar y actualizar arquitecturas para garantizar la continuidad del negocio.</p>
+
+            <h2>4. Propiedad Intelectual</h2>
+            <p>Todas las metodologías, algoritmos de Machine Learning y frameworks propietarios utilizados en el desarrollo de nuestras soluciones son propiedad intelectual de KODDO Engineering, a menos que se especifique lo contrario en acuerdos contractuales individuales.</p>
+
+            <h2>5. Contacto Legal</h2>
+            <p>Para consultas técnicas sobre nuestra arquitectura de seguridad o el manejo de datos, puede contactarnos directamente a través de nuestra plataforma de comunicación oficial.</p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom glass-card">
+          <p>&copy; 2026 KODDO Ingeniería de Datos y Software. Todos los derechos reservados.</p>
+          <nav class="footer-legal">
+            <a href="/">Inicio</a>
+            <a href="https://www.linkedin.com/company/koddo" target="_blank">LinkedIn</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
