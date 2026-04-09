@@ -321,7 +321,7 @@ body {
     }
 
     .hero-footer {
-        bottom: 20px;
+        display: none; /* Ocultamos el indicador de scroll en móvil para evitar solapamiento */
     }
 
     /* Footer Mobile Refinement */
