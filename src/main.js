@@ -1,6 +1,9 @@
 import './style.css'
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Show body after CSS/JS is ready to prevent FOUC
+    document.body.classList.add('js-loaded');
+
     const header = document.querySelector('.site-header');
     const scrollProgress = document.querySelector('.scroll-progress');
     const cursor = document.querySelector('.cursor');

@@ -22,42 +22,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareCompany",
-    "name": "KODDO Ingeniería de Datos y Software",
-    "alternateName": "KODDO Technologies",
-    "url": "https://koddo.tech/",
-    "logo": "https://koddo.tech/logo-red-dark.webp",
-    "image": "https://koddo.tech/assets/web-mockup.png",
-    "description": "Firma de ingeniería de élite especializada en aplicaciones móviles nativas, integración de ERPs (SAP Business One) y arquitectura de datos de alto rendimiento.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Santa Cruz de la Sierra",
-      "addressCountry": "BO"
-    },
-    "serviceArea": "Global",
-    "knowsAbout": [
-      "Mobile Development (Flutter, Dart, Swift, Kotlin)",
-      "Data Engineering & Architecture",
-      "SAP Business One & ERP Integration",
-      "Backend Architecture (NestJS, Node.js, Python)",
-      "Machine Learning & LLM integrations",
-      "Cloud Platforms (AWS, Azure, GCP)"
-     ],
-    "offers": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Software Engineering Services",
-        "serviceType": "Elite Mobile & Data Development"
-      }
-    }
-  }
-  </script>
-
   <style>
+    /* Critical CSS to prevent FOUC */
+    :root {
+      --color-bg: #000000;
+      --color-text-primary: #f5f5f7;
+      --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-base);
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    body.js-loaded {
+      opacity: 1;
+    }
     .sr-only {
       position: absolute;
       width: 1px;
@@ -69,6 +51,9 @@
       border: 0;
     }
   </style>
+  
+  <link rel="preload" href="/src/style.css" as="style">
+  <link rel="stylesheet" href="/src/style.css">
 </head>
 
 <body>
