@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (latestPostsContainer) {
         async function fetchLatestPosts() {
             try {
-                const response = await fetch('/blog/posts.json');
+                const response = await fetch('src/posts.json');
                 const posts = await response.json();
                 
                 // Tomamos los 2 más recientes
