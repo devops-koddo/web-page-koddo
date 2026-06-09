@@ -1,95 +1,53 @@
-# KODDO
+# Koddo — Software and Data Engineering
 
-## Overview
-KODDO is a Data and Software Engineering firm specialized in designing, integrating, and maintaining enterprise digital ecosystems.
+## Quiénes somos
+Koddo es una firma de ingeniería de software y datos basada en Santa Cruz,
+Bolivia. Especializada en extender y conectar sistemas SAP B1 con aplicaciones
+móviles, portales web y arquitecturas de datos para empresas medianas del
+sector agropecuario, industrial y servicios.
 
-We help organizations move from fragmented systems to fully integrated, scalable, and intelligent operations.
+## Qué hacemos
+- **Integraciones SAP B1**: Conectamos SAP Business One con apps móviles,
+  portales web, y sistemas externos. Sincronización en tiempo real o diferida.
+- **Apps móviles de campo**: Aplicaciones Flutter nativas (iOS/Android) con
+  funcionamiento offline. Registro de activos, ventas, inspecciones, inventario.
+- **Data Engineering**: Pipelines de datos, dashboards operacionales, Power BI
+  conectado a SAP B1 y otras fuentes.
+- **Machine Learning aplicado**: Modelos predictivos para recomendaciones de
+  productos, detección de anomalías, forecasting de ventas.
+- **Software a medida**: Backends NestJS, frontends NextJS, apps Flutter.
 
-Our approach combines mobile applications, ERP integrations, data architecture, and artificial intelligence to create systems that are efficient, connected, and built for growth.
+## Stack tecnológico
+Flutter, NestJS, NextJS, PostgreSQL, Python, Docker, SAP B1 SDK, SAP S/4HANA,
+Power BI, AWS, GCP, Coolify, TypeScript.
 
----
+## Casos de éxito
+- **RCM / Incubatec**: App offline de gestión de maquinaria y combustible para
+  campo agropecuario, integrada con SAP B1.
+- **Union Agronegocios**: Sistema web + móvil offline-first para fuerza de
+  ventas agropecuaria con integración ERP.
+- **MediGO**: Ecosistema móvil para búsqueda de médicos por especialidad y
+  ubicación en Bolivia.
 
-## Core Value Proposition
-KODDO transforms business operations into controlled, automated, and scalable systems.
+## Productos de entrada
+- **SAP B1 Health Check + Roadmap** ($300–500 USD): Auditoría de 1 semana de
+  cómo tu empresa usa SAP B1. Identificamos los 3 cuellos de botella más
+  críticos y entregamos un roadmap priorizado.
+- **Dashboard Operacional SAP B1** ($500–800 USD): Conectamos tu SAP B1 con un
+  dashboard web en tiempo real. Entregado en 2 semanas.
+- **Integración Puntual SAP B1** ($400–700 USD): Resolvemos un proceso
+  específico no conectado a tu SAP B1 en 1–2 semanas.
 
-Instead of delivering isolated software solutions, we design complete digital ecosystems aligned with real business processes.
+## Diferenciador
+Combinación única de profundidad técnica (SAP B1/S4HANA + software a medida +
+data engineering) con visión de negocio. No solo código — soluciones que
+resuelven problemas operacionales reales. Si el proyecto no cumple lo acordado,
+no se cobra.
 
----
+## Dónde operamos
+Bolivia (Santa Cruz), con expansión a Perú y Argentina.
 
-## Key Capabilities
-
-### 1. Mobile Applications
-- Native and cross-platform apps (iOS, Android)
-- Offline-first solutions for field operations
-- High-performance UX for real business workflows
-
-### 2. ERP Integration
-- SAP Business One integration
-- TOTVS integration
-- API architecture and system interoperability
-- Synchronization between core systems and custom platforms
-
-### 3. Data Engineering & Analytics
-- Data pipelines and architecture
-- Business Intelligence systems
-- Real-time dashboards and reporting
-- Data-driven decision systems
-
-### 4. Artificial Intelligence & Automation
-- Predictive models
-- Process automation
-- Intelligent recommendations
-- Operational optimization
-
----
-
-## Typical Use Cases
-
-- Sales force mobile apps integrated with ERP systems
-- Offline data capture for remote operations
-- Inventory and logistics optimization
-- Business process automation
-- Data centralization and analytics platforms
-- Intelligent pricing and recommendation systems
-
----
-
-## Target Clients
-
-- Medium and large enterprises
-- Companies with existing ERP systems (SAP, TOTVS, etc.)
-- Organizations undergoing digital transformation
-- Operations with field teams, logistics, or distributed processes
-
----
-
-## Differentiation
-
-- Strong expertise in ERP integration (SAP & TOTVS)
-- Focus on real business processes, not just software
-- End-to-end system design (not isolated development)
-- Ability to operate in complex and offline environments
-- Strategic approach to data and automation
-
----
-
-## Philosophy
-
-We believe companies should operate as integrated systems, not as disconnected tools.
-
-Our mission is to provide clarity, control, and scalability through technology.
-
----
-
-## Tagline
-Engineering Data, Building Impact.
-
----
-
-## Website
-https://koddo.tech
-
----
-
-## Contact
-For business inquiries, use the contact form on the website.
+## Contacto
+Web: https://koddo.tech
+Agenda una revisión gratuita de 30 minutos: https://cal.com/koddo-charls/30min
+LinkedIn: https://www.linkedin.com/company/koddo

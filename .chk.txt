@@ -1,0 +1,7 @@
+=== PRIVACY footer+contact ===
+113:    footer {
+356:  <footer>
+358:  </footer>
+=== TERMS ===
+227:        <p>Estos Términos se rigen por las leyes aplicables del domicilio del desarrollador. Cualquier disputa se intentará resolver mediante negociación de buena fe en <a href="mailto:charls@koddo.tech">charls@koddo.tech</a>. Si no se resuelve en 30 días, se someterá a los tribunales competentes correspondientes.</p>
+330:        <p>These Terms are governed by the applicable laws of the developer's place of business. Any dispute shall first be addressed via good-faith negotiation at <a href="mailto:charls@koddo.tech">charls@koddo.tech</a>. If unresolved within 30 days, disputes shall be submitted to the competent courts of the developer's jurisdiction.</p>

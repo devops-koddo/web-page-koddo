@@ -1,0 +1,21 @@
+# Koddo
+
+> Firma de ingeniería de software y datos en Santa Cruz, Bolivia. Extendemos y conectamos sistemas SAP B1 con apps móviles de campo, portales web y dashboards operacionales para empresas medianas en Bolivia y la región. Proyectos en 2–6 semanas.
+
+## Servicios
+- Integraciones SAP B1 (sincronización en tiempo real o diferida con apps, portales y sistemas externos)
+- Apps móviles de campo Flutter (iOS/Android) con funcionamiento offline
+- Data Engineering: pipelines, dashboards operacionales, Power BI sobre SAP B1
+- Machine Learning aplicado: recomendaciones, detección de anomalías, forecasting
+- Software a medida: NestJS, NextJS, Flutter
+
+## Productos de entrada
+- SAP B1 Health Check + Roadmap — $300–500 USD, 1 semana
+- Dashboard Operacional SAP B1 — $500–800 USD, 2 semanas
+- Integración Puntual SAP B1 — $400–700 USD, 1–2 semanas
+
+## Recursos
+- [Ficha completa de Koddo](https://koddo.tech/about-koddo.md)
+- [Sitio web](https://koddo.tech)
+- [Agenda una revisión gratuita de 30 min](https://cal.com/koddo-charls/30min)
+- [LinkedIn](https://www.linkedin.com/company/koddo)
