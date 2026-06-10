@@ -42,21 +42,6 @@ body {
     cursor: auto; /* Default cursor for mobile */
 }
 
-@media (pointer: fine) {
-    * {
-        cursor: none !important;
-    }
-}
-
-.cursor, .cursor-follower {
-    display: none;
-}
-
-@media (pointer: fine) {
-    .cursor, .cursor-follower {
-        display: block;
-    }
-}
 
 /* Premium Text Gradient */
 .text-gradient {
@@ -579,39 +564,6 @@ body {
     transform: translateY(0) scale(1);
 }
 
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(212, 59, 49, 0.3); /* Actualizado al nuevo color */
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9998;
-    transition: width 0.3s, height 0.3s, background 0.3s, opacity 0.3s ease; /* Añadida opacidad */
-}
-
-.cursor-follower.active {
-    width: 60px; /* Reducido de 80px a 60px */
-    height: 60px; /* Reducido de 80px a 60px */
-    background: rgba(212, 59, 49, 0.05);
-    border-color: var(--color-accent);
-}
-
-.cursor {
-    width: 8px;
-    height: 8px;
-    background: var(--color-accent);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    box-shadow: 0 0 15px var(--color-accent);
-    transition: opacity 0.3s ease; /* Añadida opacidad */
-}
 
 /* Section Distribution Optimizations */
 section {

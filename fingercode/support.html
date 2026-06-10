@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Soporte — FingerCode</title>
+  <meta name="description" content="Soporte y preguntas frecuentes de FingerCode, la app para recuperar PINs olvidados mediante memoria muscular.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://koddo.tech/fingercode/support.html">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --bg-raised: #0a0a0a;
+      --border: rgba(255,255,255,0.08);
+      --border-bright: rgba(255,255,255,0.18);
+      --text-primary: #f5f5f7;
+      --text-secondary: rgba(255,255,255,0.48);
+      --text-tertiary: rgba(255,255,255,0.22);
+      --white: #ffffff;
+      --cyan: #00E5FF;
+      --cyan-glow: rgba(0, 229, 255, 0.35);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .nav-logo {
+      font-size: 1rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.3px; text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.82rem; font-weight: 500; color: var(--text-tertiary);
+      text-decoration: none; transition: color 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav-back:hover { color: var(--text-secondary); }
+
+    /* PAGE HEADER */
+    .page-hero {
+      padding-top: 128px;
+      padding-bottom: 64px;
+    }
+    .page-eyebrow {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 16px;
+    }
+    .page-title {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;
+      letter-spacing: -1.5px; color: var(--white);
+      line-height: 1.08; margin-bottom: 12px;
+    }
+    .page-sub {
+      font-size: 1rem; color: var(--text-secondary); line-height: 1.65;
+    }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--border); margin: 56px 0; }
+
+    /* SECTION LABEL */
+    .sec-label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 24px;
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .faq-item { background: var(--bg); }
+    .faq-item:hover { background: #0a0a0a; }
+
+    .faq-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 22px 24px; text-align: left;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      color: var(--white); font-family: var(--font);
+      font-size: 0.95rem; font-weight: 600; line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .faq-btn:hover { color: rgba(255,255,255,0.9); }
+
+    .faq-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1px solid var(--border-bright);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--text-tertiary);
+      font-size: 0.9rem; line-height: 1;
+      transition: all 0.25s; user-select: none;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      border-color: rgba(255,255,255,0.3);
+      color: var(--text-secondary);
+    }
+
+    .faq-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    .faq-item.open .faq-body { max-height: 400px; }
+    .faq-body-inner {
+      padding: 0 24px 22px;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 16px;
+    }
+    .faq-body-inner p + p { margin-top: 8px; }
+    .faq-body-inner strong { color: rgba(255,255,255,0.72); }
+
+    /* PRIVACY POINTS */
+    .privacy-points { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .pp { background: var(--bg); padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; }
+    .pp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 4px var(--cyan-glow); flex-shrink: 0; margin-top: 7px; }
+    .pp-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .pp-text p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* LEGAL NOTE */
+    .legal-note {
+      padding: 22px 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+    .legal-note h3 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .legal-note p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
+
+    /* LEGAL LINKS */
+    .legal-links {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .legal-link {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 24px; background: var(--bg);
+      text-decoration: none; color: var(--text-secondary);
+      font-size: 0.9rem; font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .legal-link:hover { background: #0a0a0a; color: var(--white); }
+    .legal-link svg { opacity: 0.3; flex-shrink: 0; }
+    .legal-link:hover svg { opacity: 0.6; }
+
+    /* CONTACT */
+    .contact-card {
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--bg-raised);
+    }
+    .contact-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--white); text-decoration: none;
+      font-size: 0.9rem; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .contact-email:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; }
+    .footer .container { max-width: 720px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-left { display: flex; flex-direction: column; gap: 4px; }
+    .footer-product { font-size: 0.875rem; font-weight: 700; color: var(--white); }
+    .footer-by { font-size: 0.74rem; color: var(--text-tertiary); }
+    .footer-by a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-by a:hover { color: var(--text-secondary); }
+    .footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="/fingercode/" class="nav-logo">
+      <img src="/images/fingercode-icon.png" alt="FingerCode" style="height:30px;width:30px;object-fit:contain;border-radius:7px;">
+      FingerCode
+    </a>
+    <a href="/fingercode/" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+      Volver
+    </a>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-eyebrow">Soporte</div>
+        <h1 class="page-title">¿En qué podemos ayudarte?</h1>
+        <p class="page-sub">Preguntas frecuentes, información de privacidad y contacto directo.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- FAQ -->
+      <p class="sec-label">Preguntas frecuentes</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿FingerCode puede romper el bloqueo de un iPhone?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p><strong>No.</strong> FingerCode no interactúa con ningún dispositivo, no hackea nada y no intenta ningún tipo de acceso forzado. Es una herramienta de captura y análisis que funciona enteramente dentro de la propia app.</p>
+            <p>Lo que hace es ayudarte a ti a recordar tu propio PIN capturando el patrón de tu memoria muscular. El resultado es una lista de secuencias probables que podés probar manualmente en tu dispositivo.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Mis datos se suben a algún servidor?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p><strong>No.</strong> FingerCode es 100% offline. No tiene servidores, no requiere conexión a internet y no recopila ningún dato. Todo lo que capturás se almacena únicamente en la memoria local de tu iPhone.</p>
+            <p>Si eliminás la app, todos los datos desaparecen permanentemente. No hay nada en la nube.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Qué tipos de PIN puedo intentar recuperar?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Cualquier PIN numérico que hayas usado repetidamente: el PIN de un iPhone anterior, una tarjeta bancaria, una caja fuerte, una cerradura digital, una app con código de acceso, un candado de taquilla, etc.</p>
+            <p>La técnica funciona mejor cuanto más tiempo hayas usado ese PIN en el pasado.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Cuántos intentos necesito hacer?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Depende de cuánto tiempo llevas sin usar el PIN. En general, <strong>entre 50 y 200 intentos</strong> suele ser suficiente para que emerja un patrón claro.</p>
+            <p>La app te muestra métricas en tiempo real para que puedas ver cuándo la certeza se estabiliza y decidir cuándo parar.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Para qué sirven los modos "Formas" y "En blanco"?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p><strong>Formas:</strong> reemplaza los números por símbolos de colores. Activa la memoria espacial en lugar de la memoria numérica. Útil cuando no recordás los dígitos pero sí el "camino" que hacía tu mano.</p>
+            <p><strong>En blanco:</strong> círculos vacíos, sin ninguna pista. Forzás el movimiento puramente por memoria muscular — el modo más exigente y el más confiable cuando funciona.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Por qué el teclado se atenúa entre intentos?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>El ritmo guiado por vibración evita que entres en "bucles rápidos" mecánicos donde simplemente repetís la última secuencia sin pensar.</p>
+            <p>Cada intento debe ser una reproducción independiente y genuina de tu memoria. La vibración marca el momento exacto en que podés volver a teclear.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Cómo funciona la métrica de "Certeza"?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>La certeza combina dos factores: <strong>frecuencia</strong> (cuántas veces apareció esa secuencia) y <strong>consistencia</strong> (si aparece de forma distribuida a lo largo de la sesión).</p>
+            <p>Una secuencia que aparece muchas veces Y de forma consistente en el tiempo tiene certeza alta. Esa es la señal más fiable de memoria muscular real.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿La app funciona sin conexión a internet?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p><strong>Sí, completamente.</strong> FingerCode funciona igual en avión, en zonas sin señal o con el Wi-Fi apagado. Toda la lógica, los datos y el análisis son locales.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            ¿Puedo usar FingerCode para el PIN de otra persona?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>FingerCode está diseñada para recuperar <strong>tus propios PINs</strong> o los de dispositivos sobre los que tenés autoridad legítima (un familiar fallecido, un menor a tu cargo, un dispositivo de empresa del que sos responsable).</p>
+            <p>Usarla para intentar acceder a dispositivos ajenos sin autorización puede ser un delito. El usuario es responsable del uso que haga de la app.</p>
+          </div></div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- PRIVACIDAD -->
+      <p class="sec-label">Política de privacidad</p>
+      <div class="privacy-points">
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Sin recopilación de datos</h4>
+            <p>FingerCode no recopila, procesa ni transmite ningún dato personal. Ni siquiera sabemos cuántos usuarios tiene la app.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Sin analíticas ni telemetría</h4>
+            <p>No usamos herramientas de analítica, seguimiento de errores en la nube ni SDKs de terceros que recopilen datos.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Almacenamiento local únicamente</h4>
+            <p>Todos los análisis e intentos se guardan en CoreData en tu dispositivo. Al desinstalar la app, todos los datos se eliminan permanentemente.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Sin publicidad</h4>
+            <p>La app no muestra publicidad y no comparte datos con ninguna red publicitaria.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- LEGAL -->
+      <p class="sec-label">Documentos legales</p>
+      <div class="legal-links">
+        <a href="/fingercode/legal/privacy.html" class="legal-link">
+          Política de privacidad
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
+        </a>
+        <a href="/fingercode/legal/terms.html" class="legal-link">
+          Términos de uso
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
+        </a>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- USO RESPONSABLE -->
+      <p class="sec-label">Uso responsable</p>
+      <div class="legal-note">
+        <h3>FingerCode es una herramienta de recuperación personal</h3>
+        <p>Está diseñada para ayudarte a recuperar PINs propios o de dispositivos sobre los que tenés autoridad legítima. No está pensada para acceder a dispositivos ajenos sin consentimiento. El desarrollador no se hace responsable del uso indebido de la aplicación.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- CONTACTO -->
+      <p class="sec-label">Contacto</p>
+      <div class="contact-card">
+        <h3>¿No encontraste tu respuesta?</h3>
+        <p>Escribinos y te respondemos en menos de 48 horas (días hábiles).</p>
+        <a href="mailto:soporte@koddo.tech" class="contact-email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          soporte@koddo.tech
+        </a>
+      </div>
+
+    </div><!-- /container -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-product">FingerCode</span>
+          <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/fingercode/">Producto</a></li>
+          <li><a href="/fingercode/legal/privacy.html">Privacidad</a></li>
+          <li><a href="/fingercode/legal/terms.html">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
