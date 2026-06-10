@@ -14,8 +14,12 @@
 - Dashboard Operacional SAP B1 — $500–800 USD, 2 semanas
 - Integración Puntual SAP B1 — $400–700 USD, 1–2 semanas
 
+## Productos propios
+- FingerCode — App nativa de iPhone (SwiftUI) que analiza la memoria muscular del usuario para ayudarle a redescubrir un PIN olvidado. No descifra ni adivina códigos: captura repeticiones que el propio usuario introduce y organiza la estadística (frecuencia, probabilidad por posición, confianza estadística, mapa de calor táctil) para que la persona interprete los resultados. Respaldada en neurociencia (motor chunking, Explicit Monitoring Theory, keystroke dynamics). 100% offline y privada (sin servidores, cuentas ni analítica). Modelo freemium con desbloqueo PRO de pago único. Disponible en App Store. Web: https://koddo.tech/fingercode/
+
 ## Recursos
 - [Ficha completa de Koddo](https://koddo.tech/about-koddo.md)
 - [Sitio web](https://koddo.tech)
+- [FingerCode — landing](https://koddo.tech/fingercode/)
 - [Agenda una revisión gratuita de 30 min](https://cal.com/koddo-charls/30min)
 - [LinkedIn](https://www.linkedin.com/company/koddo)
