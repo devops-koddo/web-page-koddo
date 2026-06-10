@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <title>Política de Privacidad — FingerCode</title>
-  <meta name="description" content="Política de privacidad de FingerCode. La app no recopila, transmite ni almacena ningún dato fuera de tu dispositivo.">
+  <title>Privacy Policy — FingerCode</title>
+  <meta name="description" content="FingerCode's privacy policy. The app does not collect, transmit or store any data outside your device.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://koddo.tech/fingercode/legal/privacy.html">
+  <link rel="canonical" href="https://koddo.tech/fingercode/legal/privacy">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/fingercode/legal/privacy">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/fingercode/es/legal/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/fingercode/legal/privacy">
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +61,7 @@
     }
     .nav-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 7px; }
 
+    .nav-right { display: flex; align-items: center; gap: 18px; }
     .nav-back {
       display: flex; align-items: center; gap: 6px;
       font-size: 0.82rem; font-weight: 500;
@@ -65,6 +69,12 @@
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
 
     /* PAGE HERO */
     .page-hero { padding-top: 120px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
@@ -164,18 +174,21 @@
       <img src="/images/fingercode-icon.png" alt="FingerCode">
       FingerCode
     </a>
-    <a href="/fingercode/support.html" class="nav-back">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
-      Soporte
-    </a>
+    <div class="nav-right">
+      <a href="/fingercode/es/legal/privacy" class="lang-switch" data-lang-switch>ES</a>
+      <a href="/fingercode/support" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Support
+      </a>
+    </div>
   </nav>
 
   <main>
     <div class="page-hero">
       <div class="container">
         <div class="page-eyebrow">Legal</div>
-        <h1 class="page-title">Política de Privacidad</h1>
-        <p class="page-meta">Última actualización: junio 2026</p>
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="page-meta">Last updated: June 2026</p>
       </div>
     </div>
 
@@ -183,60 +196,60 @@
       <div class="container">
 
         <div class="highlight-box">
-          <p><strong>Resumen ejecutivo:</strong> FingerCode no recopila, almacena ni transmite ningún dato personal. Todo funciona exclusivamente en tu dispositivo. No hay servidores, no hay cuentas, no hay analíticas.</p>
+          <p><strong>Executive summary:</strong> FingerCode does not collect, store or transmit any personal data. Everything runs exclusively on your device. There are no servers, no accounts, no analytics.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">1. Quién somos</h2>
-          <p>FingerCode es una aplicación para iPhone desarrollada por <strong>Koddo</strong> (Koddo Ingeniería de Datos y Software). Podés contactarnos en <strong>charls@koddo.tech</strong>.</p>
+          <h2 class="section-title">1. Who we are</h2>
+          <p>FingerCode is an iPhone application developed by <strong>Koddo</strong> (Koddo Ingeniería de Datos y Software). You can contact us at <strong>charls@koddo.tech</strong>.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">2. Datos que recopilamos</h2>
-          <p><strong>No recopilamos ningún dato personal.</strong> FingerCode opera completamente sin conexión a internet. La app no tiene acceso a tu nombre, correo electrónico, ubicación, contactos ni ninguna otra información personal.</p>
-          <p>Los únicos datos que existen son los que vos generás al usar la app (análisis de PINs, intentos de captura, resultados estadísticos) y estos se almacenan exclusivamente en la memoria local de tu iPhone mediante SwiftData.</p>
+          <h2 class="section-title">2. Data we collect</h2>
+          <p><strong>We collect no personal data.</strong> FingerCode operates completely offline. The app has no access to your name, email, location, contacts or any other personal information.</p>
+          <p>The only data that exists is what you generate by using the app (PIN analyses, capture attempts, statistical results), and it is stored exclusively in your iPhone's local memory using SwiftData.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">3. Cómo usamos los datos</h2>
-          <p>Los datos generados en la app se usan únicamente para mostrarte los resultados de tus análisis dentro de la propia app. Nosotros no tenemos acceso a ellos en ningún momento.</p>
+          <h2 class="section-title">3. How we use data</h2>
+          <p>The data generated in the app is used only to show you the results of your analyses within the app itself. We never have access to it at any point.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">4. Almacenamiento y seguridad</h2>
-          <p>Todos los datos se guardan localmente en tu dispositivo usando SwiftData. No se sincronizan con iCloud (a menos que el usuario lo active en el futuro de forma opcional). Al desinstalar la app, todos los datos se eliminan permanentemente.</p>
-          <p>La seguridad de los datos en tu dispositivo está protegida por los mecanismos estándar de iOS (encriptación del dispositivo, Face ID / Touch ID, etc.).</p>
+          <h2 class="section-title">4. Storage and security</h2>
+          <p>All data is stored locally on your device using SwiftData. It is not synced to iCloud (unless the user enables it optionally in the future). When you uninstall the app, all data is permanently deleted.</p>
+          <p>The security of the data on your device is protected by standard iOS mechanisms (device encryption, Face ID / Touch ID, etc.).</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">5. Servicios de terceros</h2>
-          <p>FingerCode <strong>no integra ningún SDK de terceros</strong> que recopile datos. Específicamente, no usamos:</p>
+          <h2 class="section-title">5. Third-party services</h2>
+          <p>FingerCode <strong>integrates no third-party SDKs</strong> that collect data. Specifically, we do not use:</p>
           <ul>
-            <li>Herramientas de analítica (Firebase, Mixpanel, Amplitude, etc.)</li>
-            <li>Redes publicitarias de ningún tipo</li>
-            <li>Servicios de reporte de errores en la nube (Crashlytics, Sentry, etc.)</li>
-            <li>SDKs de redes sociales</li>
+            <li>Analytics tools (Firebase, Mixpanel, Amplitude, etc.)</li>
+            <li>Ad networks of any kind</li>
+            <li>Cloud crash-reporting services (Crashlytics, Sentry, etc.)</li>
+            <li>Social-media SDKs</li>
           </ul>
         </div>
 
         <div class="section">
-          <h2 class="section-title">6. Privacidad de menores</h2>
-          <p>FingerCode no está dirigida específicamente a menores de 13 años. Al no recopilar ningún dato personal, no existe riesgo de recopilación inadvertida de datos de menores.</p>
+          <h2 class="section-title">6. Children's privacy</h2>
+          <p>FingerCode is not specifically directed at children under 13. Because we collect no personal data, there is no risk of inadvertently collecting children's data.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">7. Tus derechos</h2>
-          <p>Dado que no recopilamos ningún dato personal, no hay datos que solicitar, corregir ni eliminar en nuestros sistemas. Para eliminar los datos que la app guarda localmente en tu dispositivo, simplemente desinstalá la app.</p>
+          <h2 class="section-title">7. Your rights</h2>
+          <p>Since we collect no personal data, there is no data to request, correct or delete in our systems. To delete the data the app stores locally on your device, simply uninstall the app.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">8. Cambios a esta política</h2>
-          <p>Si en el futuro modificamos esta política de privacidad, publicaremos la versión actualizada en esta misma URL con la fecha de actualización. Te recomendamos revisarla periódicamente.</p>
+          <h2 class="section-title">8. Changes to this policy</h2>
+          <p>If we modify this privacy policy in the future, we will publish the updated version at this same URL with the update date. We recommend reviewing it periodically.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">9. Contacto</h2>
-          <p>Para cualquier consulta sobre privacidad, escribinos a <strong>charls@koddo.tech</strong>. Respondemos en menos de 48 horas hábiles.</p>
+          <h2 class="section-title">9. Contact</h2>
+          <p>For any privacy questions, write to us at <strong>charls@koddo.tech</strong>. We reply within 48 business hours.</p>
         </div>
 
       </div>
@@ -251,13 +264,33 @@
           <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
         </div>
         <ul class="footer-links">
-          <li><a href="/fingercode/">Producto</a></li>
-          <li><a href="/fingercode/support.html">Soporte</a></li>
-          <li><a href="/fingercode/legal/terms.html">Términos de uso</a></li>
+          <li><a href="/fingercode/">Product</a></li>
+          <li><a href="/fingercode/support">Support</a></li>
+          <li><a href="/fingercode/legal/terms">Terms of Use</a></li>
+          <li><a href="/fingercode/es/legal/privacy">Español</a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Language auto-detection: send Spanish browsers to /es/ on first visit,
+    // unless the user has already chosen a language manually.
+    (function () {
+      try {
+        var stored = localStorage.getItem('fc_lang');
+        if (!stored && /^es/i.test(navigator.language || navigator.userLanguage || '')) {
+          location.replace('/fingercode/es/legal/privacy');
+          return;
+        }
+      } catch (e) {}
+    })();
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('fc_lang', 'es'); } catch (e) {}
+      });
+    });
+  </script>
 
 </body>
 </html>

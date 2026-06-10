@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <title>Términos de Uso — FingerCode</title>
-  <meta name="description" content="Términos de uso de FingerCode. Condiciones de uso de la aplicación para iPhone.">
+  <title>Terms of Use — FingerCode</title>
+  <meta name="description" content="Terms of Use for FingerCode. Conditions of use for the iPhone application.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://koddo.tech/fingercode/legal/terms.html">
+  <link rel="canonical" href="https://koddo.tech/fingercode/legal/terms">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/fingercode/legal/terms">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/fingercode/es/legal/terms">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/fingercode/legal/terms">
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +61,7 @@
     }
     .nav-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 7px; }
 
+    .nav-right { display: flex; align-items: center; gap: 18px; }
     .nav-back {
       display: flex; align-items: center; gap: 6px;
       font-size: 0.82rem; font-weight: 500;
@@ -65,6 +69,12 @@
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
 
     /* PAGE HERO */
     .page-hero { padding-top: 120px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
@@ -164,18 +174,21 @@
       <img src="/images/fingercode-icon.png" alt="FingerCode">
       FingerCode
     </a>
-    <a href="/fingercode/support.html" class="nav-back">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
-      Soporte
-    </a>
+    <div class="nav-right">
+      <a href="/fingercode/es/legal/terms" class="lang-switch" data-lang-switch>ES</a>
+      <a href="/fingercode/support" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Support
+      </a>
+    </div>
   </nav>
 
   <main>
     <div class="page-hero">
       <div class="container">
         <div class="page-eyebrow">Legal</div>
-        <h1 class="page-title">Términos de Uso</h1>
-        <p class="page-meta">Última actualización: junio 2026</p>
+        <h1 class="page-title">Terms of Use</h1>
+        <p class="page-meta">Last updated: June 2026</p>
       </div>
     </div>
 
@@ -183,76 +196,76 @@
       <div class="container">
 
         <div class="highlight-box">
-          <p><strong>Resumen:</strong> FingerCode es una herramienta de recuperación de PINs propios. Al usarla, aceptás usarla de forma legal y responsable — únicamente para recuperar códigos sobre los que tenés autoridad legítima.</p>
+          <p><strong>Summary:</strong> FingerCode is a tool for recovering your own PINs. By using it, you agree to use it legally and responsibly — solely to recover codes over which you have legitimate authority.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">1. Aceptación de los términos</h2>
-          <p>Al descargar, instalar o usar FingerCode, aceptás estos Términos de Uso en su totalidad. Si no estás de acuerdo con alguna parte, no uses la aplicación.</p>
-          <p>Estos términos son un acuerdo legal entre vos y <strong>Koddo</strong> (Koddo Ingeniería de Datos y Software), desarrollador de FingerCode.</p>
+          <h2 class="section-title">1. Acceptance of the terms</h2>
+          <p>By downloading, installing or using FingerCode, you accept these Terms of Use in full. If you do not agree with any part, do not use the application.</p>
+          <p>These terms are a legal agreement between you and <strong>Koddo</strong> (Koddo Ingeniería de Datos y Software), developer of FingerCode.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">2. Descripción del servicio</h2>
-          <p>FingerCode es una aplicación para iPhone que analiza la memoria muscular del usuario. La app captura repeticiones de una secuencia introducidas manualmente por el usuario y organiza la estadística (frecuencia, probabilidad por posición, confianza estadística) de esos datos. <strong>No descifra, no adivina y no entrega certezas:</strong> presenta datos estadísticos para que el usuario los interprete y decida bajo su propio criterio.</p>
-          <p>La aplicación funciona <strong>completamente offline</strong> y no transmite ningún dato fuera del dispositivo.</p>
+          <h2 class="section-title">2. Description of the service</h2>
+          <p>FingerCode is an iPhone application that analyzes the user's muscle memory. The app captures repetitions of a sequence entered manually by the user and organizes the statistics (frequency, position probability, statistical confidence) of that data. <strong>It does not crack, does not guess and does not deliver certainties:</strong> it presents statistical data for the user to interpret and decide on their own judgment.</p>
+          <p>The application works <strong>completely offline</strong> and transmits no data outside the device.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">3. Uso permitido</h2>
-          <p>FingerCode está diseñada exclusivamente para:</p>
+          <h2 class="section-title">3. Permitted use</h2>
+          <p>FingerCode is designed exclusively to:</p>
           <ul>
-            <li>Recuperar tus propios PINs olvidados</li>
-            <li>Recuperar PINs de dispositivos de tu propiedad</li>
-            <li>Recuperar PINs de dispositivos sobre los que tenés autoridad legal (menores a tu cargo, herencia de un familiar fallecido, dispositivos corporativos de los que sos responsable)</li>
+            <li>Recover your own forgotten PINs</li>
+            <li>Recover PINs of devices you own</li>
+            <li>Recover PINs of devices over which you have legal authority (minors in your care, inheritance from a deceased relative, corporate devices you are responsible for)</li>
           </ul>
         </div>
 
         <div class="section">
-          <h2 class="section-title">4. Uso prohibido</h2>
-          <p>Queda expresamente prohibido usar FingerCode para:</p>
+          <h2 class="section-title">4. Prohibited use</h2>
+          <p>It is expressly forbidden to use FingerCode to:</p>
           <ul>
-            <li>Intentar acceder a dispositivos ajenos sin el consentimiento del propietario</li>
-            <li>Cualquier actividad que viole las leyes locales, nacionales o internacionales aplicables</li>
-            <li>Actividades de espionaje, vigilancia no autorizada o cualquier forma de intrusión digital</li>
-            <li>Facilitar el acceso no autorizado a cuentas, sistemas o datos de terceros</li>
+            <li>Attempt to access other people's devices without the owner's consent</li>
+            <li>Any activity that violates applicable local, national or international laws</li>
+            <li>Espionage, unauthorized surveillance or any form of digital intrusion</li>
+            <li>Facilitate unauthorized access to third-party accounts, systems or data</li>
           </ul>
-          <p>El incumplimiento de estas restricciones puede constituir un delito penal según la legislación de tu país.</p>
+          <p>Breaching these restrictions may constitute a criminal offense under the laws of your country.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">5. Limitación de responsabilidad</h2>
-          <p>FingerCode es una herramienta de análisis estadístico que se entrega <strong>"tal cual" (as-is)</strong>, sin garantías implícitas de comerciabilidad o idoneidad para un fin particular. <strong>No garantizamos</strong> que la app revele ningún PIN en ningún caso concreto. Los resultados son estimaciones estadísticas que dependen de la profundidad de la memoria muscular del usuario y de la cantidad de intentos realizados, y el patrón más frecuente puede no ser el código real.</p>
-          <p><strong>Riesgo de bloqueo o borrado de datos.</strong> Muchos dispositivos se bloquean o borran su contenido tras varios intentos fallidos de código. El usuario reconoce y asume que es el único responsable de introducir cualquier código en un dispositivo real y de las consecuencias de hacerlo. FingerCode nunca introduce códigos en ningún dispositivo.</p>
-          <p>Koddo no se hace responsable de:</p>
+          <h2 class="section-title">5. Limitation of liability</h2>
+          <p>FingerCode is a statistical-analysis tool provided <strong>"as is"</strong>, without implied warranties of merchantability or fitness for a particular purpose. <strong>We do not guarantee</strong> that the app will reveal any PIN in any specific case. The results are statistical estimates that depend on the depth of the user's muscle memory and the number of attempts made, and the most frequent pattern may not be the real code.</p>
+          <p><strong>Risk of device lockout or data erasure.</strong> Many devices lock or erase their contents after several failed passcode attempts. The user acknowledges and assumes that they are solely responsible for entering any code on a real device and for the consequences of doing so. FingerCode never enters codes on any device.</p>
+          <p>Koddo is not responsible for:</p>
           <ul>
-            <li>El uso indebido de la aplicación por parte del usuario</li>
-            <li>El bloqueo, la desactivación o la pérdida de datos de cualquier dispositivo derivada de introducir códigos basándose en los resultados de la app</li>
-            <li>Daños directos o indirectos derivados del uso de la app</li>
-            <li>La exactitud de los resultados estadísticos proporcionados</li>
-            <li>Consecuencias legales derivadas del uso fuera de los términos permitidos</li>
+            <li>Misuse of the application by the user</li>
+            <li>The lockout, disabling or data loss of any device resulting from entering codes based on the app's results</li>
+            <li>Direct or indirect damages arising from use of the app</li>
+            <li>The accuracy of the statistical results provided</li>
+            <li>Legal consequences arising from use outside the permitted terms</li>
           </ul>
         </div>
 
         <div class="section">
-          <h2 class="section-title">6. Propiedad intelectual</h2>
-          <p>FingerCode, su código fuente, diseño, marca y todos los materiales asociados son propiedad exclusiva de Koddo. Queda prohibida su reproducción, distribución o modificación sin autorización escrita.</p>
-          <p>La descarga de la app desde App Store te otorga una licencia personal, no exclusiva e intransferible para su uso en dispositivos Apple de tu propiedad.</p>
+          <h2 class="section-title">6. Intellectual property</h2>
+          <p>FingerCode, its source code, design, brand and all associated materials are the exclusive property of Koddo. Their reproduction, distribution or modification without written authorization is prohibited.</p>
+          <p>Downloading the app from the App Store grants you a personal, non-exclusive and non-transferable license to use it on Apple devices you own.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">7. Modificaciones</h2>
-          <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entran en vigor desde su publicación en esta URL. El uso continuado de la app tras la publicación de cambios implica la aceptación de los nuevos términos.</p>
+          <h2 class="section-title">7. Modifications</h2>
+          <p>We reserve the right to modify these terms at any time. Modifications take effect from their publication at this URL. Continued use of the app after changes are published implies acceptance of the new terms.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">8. Ley aplicable</h2>
-          <p>Estos términos se rigen por la legislación aplicable en el domicilio del desarrollador. Cualquier disputa que surja en relación con ellos se someterá a los tribunales competentes de dicha jurisdicción.</p>
+          <h2 class="section-title">8. Governing law</h2>
+          <p>These terms are governed by the law applicable at the developer's place of business. Any dispute arising in connection with them shall be submitted to the competent courts of that jurisdiction.</p>
         </div>
 
         <div class="section">
-          <h2 class="section-title">9. Contacto</h2>
-          <p>Para consultas sobre estos términos, escribinos a <strong>charls@koddo.tech</strong>. Respondemos en menos de 48 horas hábiles.</p>
+          <h2 class="section-title">9. Contact</h2>
+          <p>For questions about these terms, write to us at <strong>charls@koddo.tech</strong>. We reply within 48 business hours.</p>
         </div>
 
       </div>
@@ -267,13 +280,33 @@
           <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
         </div>
         <ul class="footer-links">
-          <li><a href="/fingercode/">Producto</a></li>
-          <li><a href="/fingercode/support.html">Soporte</a></li>
-          <li><a href="/fingercode/legal/privacy.html">Privacidad</a></li>
+          <li><a href="/fingercode/">Product</a></li>
+          <li><a href="/fingercode/support">Support</a></li>
+          <li><a href="/fingercode/legal/privacy">Privacy</a></li>
+          <li><a href="/fingercode/es/legal/terms">Español</a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Language auto-detection: send Spanish browsers to /es/ on first visit,
+    // unless the user has already chosen a language manually.
+    (function () {
+      try {
+        var stored = localStorage.getItem('fc_lang');
+        if (!stored && /^es/i.test(navigator.language || navigator.userLanguage || '')) {
+          location.replace('/fingercode/es/legal/terms');
+          return;
+        }
+      } catch (e) {}
+    })();
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('fc_lang', 'es'); } catch (e) {}
+      });
+    });
+  </script>
 
 </body>
 </html>

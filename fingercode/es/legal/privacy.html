@@ -6,7 +6,10 @@
   <title>Política de Privacidad — FingerCode</title>
   <meta name="description" content="Política de privacidad de FingerCode. La app no recopila, transmite ni almacena ningún dato fuera de tu dispositivo.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://koddo.tech/fingercode/es/legal/privacy.html">
+  <link rel="canonical" href="https://koddo.tech/fingercode/es/legal/privacy">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/fingercode/legal/privacy">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/fingercode/es/legal/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/fingercode/legal/privacy">
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +61,7 @@
     }
     .nav-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 7px; }
 
+    .nav-right { display: flex; align-items: center; gap: 18px; }
     .nav-back {
       display: flex; align-items: center; gap: 6px;
       font-size: 0.82rem; font-weight: 500;
@@ -65,6 +69,12 @@
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
 
     /* PAGE HERO */
     .page-hero { padding-top: 120px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
@@ -164,10 +174,13 @@
       <img src="/images/fingercode-icon.png" alt="FingerCode">
       FingerCode
     </a>
-    <a href="/fingercode/es/support.html" class="nav-back">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
-      Soporte
-    </a>
+    <div class="nav-right">
+      <a href="/fingercode/legal/privacy" class="lang-switch" data-lang-switch>EN</a>
+      <a href="/fingercode/es/support" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Soporte
+      </a>
+    </div>
   </nav>
 
   <main>
@@ -252,12 +265,20 @@
         </div>
         <ul class="footer-links">
           <li><a href="/fingercode/es/">Producto</a></li>
-          <li><a href="/fingercode/es/support.html">Soporte</a></li>
-          <li><a href="/fingercode/es/legal/terms.html">Términos de uso</a></li>
+          <li><a href="/fingercode/es/support">Soporte</a></li>
+          <li><a href="/fingercode/es/legal/terms">Términos de uso</a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('fc_lang', 'en'); } catch (e) {}
+      });
+    });
+  </script>
 
 </body>
 </html>

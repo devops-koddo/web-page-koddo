@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <title>Soporte — FingerCode</title>
-  <meta name="description" content="Soporte y preguntas frecuentes de FingerCode, la app para recuperar PINs olvidados mediante memoria muscular.">
+  <title>Support — FingerCode</title>
+  <meta name="description" content="Support and FAQ for FingerCode, the app that analyzes your muscle memory to help you rediscover a forgotten PIN.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://koddo.tech/fingercode/support.html">
+  <link rel="canonical" href="https://koddo.tech/fingercode/support">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/fingercode/support">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/fingercode/es/support">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/fingercode/support">
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,13 +58,21 @@
     .nav-logo {
       font-size: 1rem; font-weight: 700; color: var(--white);
       letter-spacing: -0.3px; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
     }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
     .nav-back {
       font-size: 0.82rem; font-weight: 500; color: var(--text-tertiary);
       text-decoration: none; transition: color 0.2s;
       display: flex; align-items: center; gap: 6px;
     }
     .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
 
     /* PAGE HEADER */
     .page-hero {
@@ -211,133 +222,136 @@
       <img src="/images/fingercode-icon.png" alt="FingerCode" style="height:30px;width:30px;object-fit:contain;border-radius:7px;">
       FingerCode
     </a>
-    <a href="/fingercode/" class="nav-back">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
-      Volver
-    </a>
+    <div class="nav-right">
+      <a href="/fingercode/es/support" class="lang-switch" data-lang-switch>ES</a>
+      <a href="/fingercode/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Back
+      </a>
+    </div>
   </nav>
 
   <main>
     <div class="page-hero">
       <div class="container">
-        <div class="page-eyebrow">Soporte</div>
-        <h1 class="page-title">¿En qué podemos ayudarte?</h1>
-        <p class="page-sub">Preguntas frecuentes, información de privacidad y contacto directo.</p>
+        <div class="page-eyebrow">Support</div>
+        <h1 class="page-title">How can we help?</h1>
+        <p class="page-sub">Frequently asked questions, privacy information and direct contact.</p>
       </div>
     </div>
 
     <div class="container">
 
       <!-- FAQ -->
-      <p class="sec-label">Preguntas frecuentes</p>
+      <p class="sec-label">Frequently asked questions</p>
       <div class="faq-list">
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿FingerCode puede romper el bloqueo de un iPhone?
+            Can FingerCode break an iPhone's lock?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p><strong>No.</strong> FingerCode no interactúa con ningún dispositivo, no hackea nada y no intenta ningún tipo de acceso forzado. Es una herramienta de captura y análisis estadístico que funciona enteramente dentro de la propia app.</p>
-            <p>Lo que hace es capturar el patrón de tu memoria muscular y organizar la estadística de tus toques. El resultado es una lista de secuencias ordenadas por frecuencia y confianza estadística — no una certeza — que vos interpretás y decidís si probar manualmente en tu dispositivo.</p>
+            <p><strong>No.</strong> FingerCode does not interact with any device, does not hack anything and never attempts any kind of forced access. It is a capture and statistical-analysis tool that works entirely inside the app itself.</p>
+            <p>What it does is capture the pattern of your muscle memory and organize the statistics of your taps. The result is a list of sequences ranked by frequency and statistical confidence — not a certainty — which you interpret and decide whether to try manually on your device.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Mis datos se suben a algún servidor?
+            Is my data uploaded to any server?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p><strong>No.</strong> FingerCode es 100% offline. No tiene servidores, no requiere conexión a internet y no recopila ningún dato. Todo lo que capturás se almacena únicamente en la memoria local de tu iPhone.</p>
-            <p>Si eliminás la app, todos los datos desaparecen permanentemente. No hay nada en la nube.</p>
+            <p><strong>No.</strong> FingerCode is 100% offline. It has no servers, requires no internet connection and collects no data. Everything you capture is stored only in your iPhone's local memory.</p>
+            <p>If you delete the app, all data disappears permanently. There is nothing in the cloud.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Qué tipos de PIN puedo analizar?
+            What kinds of PIN can I analyze?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p>Cualquier PIN numérico que hayas usado repetidamente: el PIN de un iPhone anterior, una tarjeta bancaria, una caja fuerte, una cerradura digital, una app con código de acceso, un candado de taquilla, etc.</p>
-            <p>La memoria muscular es más fuerte cuanto más tiempo hayas usado ese PIN en el pasado, así que el análisis tiende a ser más nítido en esos casos.</p>
+            <p>Any numeric PIN you have used repeatedly: the PIN of a previous iPhone, a bank card, a safe, a digital lock, an app passcode, a locker padlock, and so on.</p>
+            <p>Muscle memory is stronger the longer you used that PIN in the past, so the analysis tends to be sharper in those cases.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Cuántos intentos necesito hacer?
+            How many attempts do I need to make?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p>Depende de cuánto tiempo llevas sin usar el PIN. En general, <strong>entre 50 y 200 intentos</strong> suele ser suficiente para que emerja un patrón estadístico claro.</p>
-            <p>La app te muestra métricas en tiempo real para que puedas ver cuándo la confianza estadística se estabiliza y decidir cuándo parar.</p>
+            <p>It depends on how long it's been since you used the PIN. In general, <strong>between 50 and 200 attempts</strong> is usually enough for a clear statistical pattern to emerge.</p>
+            <p>The app shows you metrics in real time so you can see when the statistical confidence stabilizes and decide when to stop.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Para qué sirven los modos "Formas" y "En blanco"?
+            What are the "Shapes" and "Blank" modes for?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p><strong>Formas:</strong> reemplaza los números por símbolos de colores. Activa la memoria espacial en lugar de la memoria numérica. Útil cuando no recordás los dígitos pero sí el "camino" que hacía tu mano.</p>
-            <p><strong>En blanco:</strong> círculos vacíos, sin ninguna pista. Forzás el movimiento puramente por memoria muscular — el modo más exigente y el más confiable cuando funciona.</p>
+            <p><strong>Shapes:</strong> replaces the numbers with colored symbols. It activates spatial memory instead of numeric memory. Useful when you don't remember the digits but you do remember the "path" your hand made.</p>
+            <p><strong>Blank:</strong> empty circles, no hints at all. You force the movement purely from muscle memory — the most demanding mode, and the most reliable when it works.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Por qué el teclado se atenúa entre intentos?
+            Why does the keypad dim between attempts?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p>El ritmo guiado por vibración evita que entres en "bucles rápidos" mecánicos donde simplemente repetís la última secuencia sin pensar.</p>
-            <p>Cada intento debe ser una reproducción independiente y genuina de tu memoria. La vibración marca el momento exacto en que podés volver a teclear.</p>
+            <p>The vibration-guided rhythm stops you from falling into mechanical "fast loops" where you simply repeat the last sequence without thinking.</p>
+            <p>Each attempt should be an independent, genuine reproduction of your memory. The vibration marks the exact moment when you can type again.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Cómo funciona la "Confianza Estadística"?
+            How does "Statistical Confidence" work?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p>La confianza estadística combina dos factores: <strong>frecuencia</strong> (cuántas veces apareció esa secuencia) y <strong>proximidad</strong> (si sus repeticiones ocurren agrupadas en el tiempo).</p>
-            <p>Una secuencia que aparece muchas veces Y con repeticiones agrupadas obtiene confianza alta. Es una señal estadística fuerte de memoria muscular — pero sigue siendo una estimación que vos debés interpretar, no una certeza.</p>
+            <p>Statistical confidence combines two factors: <strong>frequency</strong> (how many times that sequence appeared) and <strong>proximity</strong> (whether its repeats happen clustered together in time).</p>
+            <p>A sequence that appears many times AND with clustered repeats gets high confidence. It's a strong statistical signal of muscle memory — but it remains an estimate that you must interpret, not a certainty.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿En qué se basa científicamente FingerCode?
+            What is FingerCode scientifically based on?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p>En tres líneas de investigación: la <strong>memoria procedimental y la fragmentación motora</strong> (el cerebro empaqueta secuencias muy repetidas como un solo movimiento automático), la <strong>interferencia cognitiva o "choking"</strong> (pensar conscientemente rompe el movimiento automático — por eso usamos el ritmo háptico) y la <strong>dinámica de tecleo</strong> (con suficientes muestras, la estadística cancela el ruido del movimiento humano).</p>
-            <p>Dentro de la app, la sección <strong>"La Ciencia"</strong> explica cada pilar y cita los estudios fundacionales (Grafton &amp; de Xivry, Beilock &amp; Carr, Killourhy &amp; Maxion, entre otros).</p>
+            <p>On three lines of research: <strong>procedural memory and motor chunking</strong> (the brain packs heavily repeated sequences into a single automatic movement), <strong>cognitive interference or "choking"</strong> (thinking consciously breaks the automatic movement — which is why we use the haptic rhythm), and <strong>keystroke dynamics</strong> (with enough samples, statistics cancel the noise of human movement).</p>
+            <p>Inside the app, the <strong>"The Science"</strong> section explains each pillar and cites the founding studies (Grafton &amp; de Xivry, Beilock &amp; Carr, Killourhy &amp; Maxion, among others).</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿La app funciona sin conexión a internet?
+            Does the app work without an internet connection?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p><strong>Sí, completamente.</strong> FingerCode funciona igual en avión, en zonas sin señal o con el Wi-Fi apagado. Toda la lógica, los datos y el análisis son locales.</p>
+            <p><strong>Yes, completely.</strong> FingerCode works the same on a plane, in areas with no signal, or with Wi-Fi off. All the logic, data and analysis are local.</p>
           </div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            ¿Puedo usar FingerCode para el PIN de otra persona?
+            Can I use FingerCode for someone else's PIN?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body"><div class="faq-body-inner">
-            <p>FingerCode está diseñada para recuperar <strong>tus propios PINs</strong> o los de dispositivos sobre los que tenés autoridad legítima (un familiar fallecido, un menor a tu cargo, un dispositivo de empresa del que sos responsable).</p>
-            <p>Usarla para intentar acceder a dispositivos ajenos sin autorización puede ser un delito. El usuario es responsable del uso que haga de la app.</p>
+            <p>FingerCode is designed to recover <strong>your own PINs</strong> or those of devices over which you have legitimate authority (a deceased relative, a minor in your care, a company device you are responsible for).</p>
+            <p>Using it to try to access other people's devices without authorization may be a crime. The user is responsible for how they use the app.</p>
           </div></div>
         </div>
 
@@ -345,35 +359,35 @@
 
       <div class="divider"></div>
 
-      <!-- PRIVACIDAD -->
-      <p class="sec-label">Política de privacidad</p>
+      <!-- PRIVACY -->
+      <p class="sec-label">Privacy</p>
       <div class="privacy-points">
         <div class="pp">
           <div class="pp-dot"></div>
           <div class="pp-text">
-            <h4>Sin recopilación de datos</h4>
-            <p>FingerCode no recopila, procesa ni transmite ningún dato personal. Ni siquiera sabemos cuántos usuarios tiene la app.</p>
+            <h4>No data collection</h4>
+            <p>FingerCode does not collect, process or transmit any personal data. We don't even know how many users the app has.</p>
           </div>
         </div>
         <div class="pp">
           <div class="pp-dot"></div>
           <div class="pp-text">
-            <h4>Sin analíticas ni telemetría</h4>
-            <p>No usamos herramientas de analítica, seguimiento de errores en la nube ni SDKs de terceros que recopilen datos.</p>
+            <h4>No analytics or telemetry</h4>
+            <p>We use no analytics tools, no cloud crash reporting and no third-party SDKs that collect data.</p>
           </div>
         </div>
         <div class="pp">
           <div class="pp-dot"></div>
           <div class="pp-text">
-            <h4>Almacenamiento local únicamente</h4>
-            <p>Todos los análisis e intentos se guardan localmente con SwiftData en tu dispositivo. Al desinstalar la app, todos los datos se eliminan permanentemente.</p>
+            <h4>Local storage only</h4>
+            <p>All analyses and attempts are saved locally with SwiftData on your device. When you uninstall the app, all data is permanently deleted.</p>
           </div>
         </div>
         <div class="pp">
           <div class="pp-dot"></div>
           <div class="pp-text">
-            <h4>Sin publicidad</h4>
-            <p>La app no muestra publicidad y no comparte datos con ninguna red publicitaria.</p>
+            <h4>No advertising</h4>
+            <p>The app shows no advertising and shares no data with any ad network.</p>
           </div>
         </div>
       </div>
@@ -381,34 +395,34 @@
       <div class="divider"></div>
 
       <!-- LEGAL -->
-      <p class="sec-label">Documentos legales</p>
+      <p class="sec-label">Legal documents</p>
       <div class="legal-links">
-        <a href="/fingercode/legal/privacy.html" class="legal-link">
-          Política de privacidad
+        <a href="/fingercode/legal/privacy" class="legal-link">
+          Privacy Policy
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
         </a>
-        <a href="/fingercode/legal/terms.html" class="legal-link">
-          Términos de uso
+        <a href="/fingercode/legal/terms" class="legal-link">
+          Terms of Use
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
         </a>
       </div>
 
       <div class="divider"></div>
 
-      <!-- USO RESPONSABLE -->
-      <p class="sec-label">Uso responsable</p>
+      <!-- RESPONSIBLE USE -->
+      <p class="sec-label">Responsible use</p>
       <div class="legal-note">
-        <h3>FingerCode es una herramienta de recuperación personal</h3>
-        <p>Está diseñada para ayudarte a recuperar PINs propios o de dispositivos sobre los que tenés autoridad legítima. No está pensada para acceder a dispositivos ajenos sin consentimiento. El desarrollador no se hace responsable del uso indebido de la aplicación.</p>
+        <h3>FingerCode is a personal recovery tool</h3>
+        <p>It is designed to help you recover your own PINs or those of devices over which you have legitimate authority. It is not intended to access other people's devices without consent. The developer is not responsible for any misuse of the application.</p>
       </div>
 
       <div class="divider"></div>
 
-      <!-- CONTACTO -->
-      <p class="sec-label">Contacto</p>
+      <!-- CONTACT -->
+      <p class="sec-label">Contact</p>
       <div class="contact-card">
-        <h3>¿No encontraste tu respuesta?</h3>
-        <p>Escribinos y te respondemos en menos de 48 horas (días hábiles).</p>
+        <h3>Didn't find your answer?</h3>
+        <p>Write to us and we'll reply within 48 hours (business days).</p>
         <a href="mailto:charls@koddo.tech" class="contact-email">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           charls@koddo.tech
@@ -426,15 +440,34 @@
           <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
         </div>
         <ul class="footer-links">
-          <li><a href="/fingercode/">Producto</a></li>
-          <li><a href="/fingercode/legal/privacy.html">Privacidad</a></li>
-          <li><a href="/fingercode/legal/terms.html">Términos</a></li>
+          <li><a href="/fingercode/">Product</a></li>
+          <li><a href="/fingercode/legal/privacy">Privacy</a></li>
+          <li><a href="/fingercode/legal/terms">Terms</a></li>
+          <li><a href="/fingercode/es/support">Español</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
   <script>
+    // Language auto-detection: send Spanish browsers to /es/ on first visit,
+    // unless the user has already chosen a language manually.
+    (function () {
+      try {
+        var stored = localStorage.getItem('fc_lang');
+        if (!stored && /^es/i.test(navigator.language || navigator.userLanguage || '')) {
+          location.replace('/fingercode/es/support');
+          return;
+        }
+      } catch (e) {}
+    })();
+
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('fc_lang', 'es'); } catch (e) {}
+      });
+    });
+
     document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');

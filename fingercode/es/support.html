@@ -6,7 +6,10 @@
   <title>Soporte — FingerCode</title>
   <meta name="description" content="Soporte y preguntas frecuentes de FingerCode, la app para recuperar PINs olvidados mediante memoria muscular.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://koddo.tech/fingercode/es/support.html">
+  <link rel="canonical" href="https://koddo.tech/fingercode/es/support">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/fingercode/support">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/fingercode/es/support">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/fingercode/support">
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,12 +59,19 @@
       font-size: 1rem; font-weight: 700; color: var(--white);
       letter-spacing: -0.3px; text-decoration: none;
     }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
     .nav-back {
       font-size: 0.82rem; font-weight: 500; color: var(--text-tertiary);
       text-decoration: none; transition: color 0.2s;
       display: flex; align-items: center; gap: 6px;
     }
     .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
 
     /* PAGE HEADER */
     .page-hero {
@@ -211,10 +221,13 @@
       <img src="/images/fingercode-icon.png" alt="FingerCode" style="height:30px;width:30px;object-fit:contain;border-radius:7px;">
       FingerCode
     </a>
-    <a href="/fingercode/es/" class="nav-back">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
-      Volver
-    </a>
+    <div class="nav-right">
+      <a href="/fingercode/support" class="lang-switch" data-lang-switch>EN</a>
+      <a href="/fingercode/es/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Volver
+      </a>
+    </div>
   </nav>
 
   <main>
@@ -383,11 +396,11 @@
       <!-- LEGAL -->
       <p class="sec-label">Documentos legales</p>
       <div class="legal-links">
-        <a href="/fingercode/es/legal/privacy.html" class="legal-link">
+        <a href="/fingercode/es/legal/privacy" class="legal-link">
           Política de privacidad
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
         </a>
-        <a href="/fingercode/es/legal/terms.html" class="legal-link">
+        <a href="/fingercode/es/legal/terms" class="legal-link">
           Términos de uso
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
         </a>
@@ -427,14 +440,20 @@
         </div>
         <ul class="footer-links">
           <li><a href="/fingercode/es/">Producto</a></li>
-          <li><a href="/fingercode/es/legal/privacy.html">Privacidad</a></li>
-          <li><a href="/fingercode/es/legal/terms.html">Términos</a></li>
+          <li><a href="/fingercode/es/legal/privacy">Privacidad</a></li>
+          <li><a href="/fingercode/es/legal/terms">Términos</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
   <script>
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('fc_lang', 'en'); } catch (e) {}
+      });
+    });
+
     document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
