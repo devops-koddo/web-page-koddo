@@ -5,9 +5,21 @@
   <!-- ===== Koddo (corporativo) ===== -->
   <url>
     <loc>https://koddo.tech/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://koddo.tech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koddo.tech/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koddo.tech/"/>
+  </url>
+  <url>
+    <loc>https://koddo.tech/en/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://koddo.tech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koddo.tech/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koddo.tech/"/>
   </url>
   <url>
     <loc>https://koddo.tech/about-koddo.md</loc>
@@ -17,9 +29,33 @@
   </url>
   <url>
     <loc>https://koddo.tech/blog</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://koddo.tech/blog/por-que-tu-erp-se-usa-a-la-mitad/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://koddo.tech/blog/como-mejorar-procesos-empresa-sin-cambiar-sistema/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://koddo.tech/blog/ti-interno-o-partner-tecnologico/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://koddo.tech/blog/como-construir-empresa-estos-dias/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://koddo.tech/legal</loc>

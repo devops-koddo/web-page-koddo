@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        mainEn: resolve(__dirname, 'en/index.html'),
         fingercode: resolve(__dirname, 'fingercode/index.html'),
         fingercodeSupport: resolve(__dirname, 'fingercode/support.html'),
         fingercodePrivacy: resolve(__dirname, 'fingercode/legal/privacy.html'),
@@ -15,6 +16,10 @@ export default defineConfig({
         fingercodeEsPrivacy: resolve(__dirname, 'fingercode/es/legal/privacy.html'),
         fingercodeEsTerms: resolve(__dirname, 'fingercode/es/legal/terms.html'),
         blog: resolve(__dirname, 'blog.html'),
+        blogErpMitad: resolve(__dirname, 'blog/por-que-tu-erp-se-usa-a-la-mitad/index.html'),
+        blogMejorarProcesos: resolve(__dirname, 'blog/como-mejorar-procesos-empresa-sin-cambiar-sistema/index.html'),
+        blogTiInterno: resolve(__dirname, 'blog/ti-interno-o-partner-tecnologico/index.html'),
+        blogConstruirEmpresa: resolve(__dirname, 'blog/como-construir-empresa-estos-dias/index.html'),
       },
     },
   },

@@ -3,57 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargando... | KODDO Blog</title>
-    
-    <!-- SEO Dinámico -->
-    <meta name="description" id="meta-description" content="KODDO Engineering Blog - Insights sobre IA, Datos y Software.">
-    <meta property="og:title" id="og-title" content="KODDO Blog">
-    <meta property="og:description" id="og-description" content="Exploramos el futuro de la ingeniería de datos y el desarrollo móvil.">
-    <meta property="og:image" id="og-image" content="/images/logo-red-nobk.png">
+    <title>Cómo construir una empresa en estos días | KODDO Blog</title>
+    <meta name="description" content="La transformación real no es usar IA, sino rediseñar la arquitectura de la organización desde una lógica nueva. La lección de las fábricas eléctricas aplicada a la empresa de hoy.">
+    <link rel="canonical" href="https://koddo.tech/blog/como-construir-empresa-estos-dias/">
+    <meta property="og:title" content="Cómo construir una empresa en estos días">
+    <meta property="og:description" content="La transformación real no es usar IA, sino rediseñar la arquitectura de la organización desde una lógica nueva.">
+    <meta property="og:image" content="https://koddo.tech/assets/mobile-mockup.png">
     <meta property="og:type" content="article">
-    
-    <!-- LLM Context & Citations -->
-    <link rel="alternate" type="text/markdown" id="llm-link" href="">
-    
+    <meta property="og:url" content="https://koddo.tech/blog/como-construir-empresa-estos-dias/">
     <link rel="stylesheet" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:wght@200..1000&display=swap" rel="stylesheet">
-    
-    <!-- Markdown & Syntax Highlighting -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Cómo construir una empresa en estos días",
+      "description": "La transformación real no es usar IA, sino rediseñar la arquitectura de la organización desde una lógica nueva.",
+      "image": "https://koddo.tech/assets/mobile-mockup.png",
+      "datePublished": "2026-04-09",
+      "author": { "@type": "Organization", "name": "KODDO", "url": "https://koddo.tech" },
+      "publisher": { "@type": "Organization", "name": "Koddo", "url": "https://koddo.tech" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://koddo.tech/blog/como-construir-empresa-estos-dias/" }
+    }
+    </script>
     <style>
         .post-container { max-width: 900px; margin: 0 auto; padding: 180px 20px 100px; }
-        .post-meta { color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+        .post-meta { color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; display: block; font-size: 0.8rem; }
         .post-title { font-family: var(--font-family-heading); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: white; }
         .post-date { color: var(--color-text-secondary); display: block; margin-bottom: 3rem; font-size: 0.9rem; }
-        
-        /* Markdown Styles */
         .post-content { font-size: 1.15rem; line-height: 1.8; color: var(--color-text-secondary); }
-        .post-content h1, .post-content h2, .post-content h3 { color: white; margin: 2.5rem 0 1.5rem; font-family: var(--font-family-heading); }
-        .post-content h1 { font-size: 2.5rem; }
-        .post-content h2 { font-size: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; }
-        .post-content h3 { font-size: 1.5rem; }
+        .post-content h2 { color: white; margin: 2.5rem 0 1.5rem; font-family: var(--font-family-heading); font-size: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; }
+        .post-content h3 { color: white; margin: 2.5rem 0 1.5rem; font-family: var(--font-family-heading); font-size: 1.5rem; }
         .post-content p { margin-bottom: 1.5rem; }
-        .post-content ul, .post-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-        .post-content li { margin-bottom: 0.5rem; }
-        
-        /* Code Blocks */
-        .post-content pre { background: #0d1117; border: 1px solid var(--glass-border); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; overflow-x: auto; }
-        .post-content code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.9rem; }
-        .post-content :not(pre) > code { background: rgba(212, 59, 49, 0.1); color: var(--color-accent); padding: 0.2rem 0.4rem; border-radius: 4px; }
-        
+        .post-content strong { color: white; }
         .back-link { display: inline-flex; align-items: center; gap: 10px; color: white; text-decoration: none; margin-bottom: 3rem; font-weight: 600; transition: var(--transition-smooth); }
-        .back-link:hover { color: var(--color-accent); transform: translateX(-5px); }
+        .back-link:hover { color: var(--color-accent); }
+        .post-cta { margin-top: 4rem; padding: 2.5rem; border-radius: 24px; background: rgba(212, 59, 49, 0.06); border: 1px solid var(--glass-border-bright); }
+        .post-cta h3 { color: white; font-family: var(--font-family-heading); margin-bottom: 1rem; font-size: 1.4rem; border: none; }
+        .post-cta p { margin-bottom: 1.5rem; }
     </style>
 </head>
 <body>
-    <div class="scroll-progress" aria-hidden="true"></div>
-    <div class="cursor" aria-hidden="true"></div>
-    
     <div id="app">
         <header class="site-header scrolled">
             <div class="header-content">
@@ -64,81 +56,63 @@
         </header>
 
         <main class="post-container">
-            <a href="/blog.html" class="back-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
-                Volver al Blog
-            </a>
-            <div id="post-render">
-                <p>Cargando artículo...</p>
-            </div>
+            <a href="/blog.html" class="back-link">← Volver al Blog</a>
+            <article>
+                <span class="post-meta">Enterprise · IA · Organización</span>
+                <h1 class="post-title">Cómo construir una empresa en estos días</h1>
+                <span class="post-date">9 de abril, 2026 — KODDO</span>
+
+                <div class="post-content">
+                    <p>Cuando la electricidad llegó a las fábricas a finales del siglo XIX, las primeras en adoptarla cometieron un error comprensible: mantuvieron la misma arquitectura que tenían con el vapor. Un motor central, el mismo sistema de poleas y correas transmitiendo fuerza a cada máquina, la misma disposición del espacio. Simplemente cambiaron la fuente de energía.</p>
+
+                    <p>Durante años, esas fábricas vieron mejoras marginales. Fue cuando alguien entendió que la electricidad permitía algo que el vapor nunca pudo, un motor por máquina, que todo cambió. Ese cambio reorganizó el layout, transformó los roles, redefinió los flujos de producción. Las fábricas que se reconfiguraron desde esa lógica nueva dejaron atrás a las que solo habían hecho el intercambio tecnológico.</p>
+
+                    <p>Hoy muchas empresas están en el mismo punto, aunque pocas lo reconocen así. Tienen herramientas de IA en el equipo de marketing, resúmenes automáticos en las reuniones, algún chatbot en la web. Y con eso sienten que están al día. Pero la lógica de fondo, cómo se organizan, quién ejecuta qué, cómo fluye la información, sigue siendo exactamente la misma.</p>
+
+                    <h2>Qué implica realmente ser AI-first</h2>
+
+                    <p>Una empresa AI-first rediseñó sus procesos asumiendo que la inteligencia artificial puede ejecutar partes completas de la operación, no solo asistir en tareas puntuales. La diferencia no está en cuántas herramientas usa, sino en cómo están construidos sus flujos de trabajo.</p>
+
+                    <p>En una empresa con esa arquitectura, los roles humanos se concentran donde el criterio y el contexto importan: decisiones estratégicas, relaciones, situaciones que requieren responsabilidad real. Las tareas repetitivas, el procesamiento de información, la ejecución de pasos definidos, los maneja el sistema. Los humanos supervisan, ajustan y deciden en los puntos donde eso tiene sentido.</p>
+
+                    <p>Eso requiere repensar desde cero qué pasos existen dentro de un proceso, quién o qué los ejecuta, dónde entra el juicio humano, cómo se valida el resultado. No es una optimización del proceso anterior. Es un proceso nuevo.</p>
+
+                    <h2>Los datos como infraestructura</h2>
+
+                    <p>Para que eso funcione, los datos de la empresa tienen que estar en condiciones de ser usados. Estructurados, actualizados, accesibles. Muchas organizaciones tienen su información dispersa en planillas, sistemas que no se hablan entre sí, bases de datos inconsistentes. Con esa base, cualquier sistema de IA opera con limitaciones severas.</p>
+
+                    <p>Las empresas AI-first tratan sus datos como infraestructura crítica, con la misma seriedad con la que tratan su infraestructura física. Porque sin eso, la capa de inteligencia no tiene dónde apoyarse.</p>
+
+                    <h2>Por qué es difícil hacer este cambio</h2>
+
+                    <p>La transformación real cuesta porque exige cuestionar procesos que funcionan. Un flujo que tarda tres días en completarse no parece urgente de cambiar si siempre tardó tres días. Pero si existe la posibilidad de rediseñarlo para que tarde tres horas, el costo de no hacerlo empieza a acumularse.</p>
+
+                    <p>También hay una dimensión organizacional. Rediseñar procesos mueve responsabilidades, cambia roles, y a veces elimina pasos que alguien considera importantes. Eso genera fricción interna. Las empresas que avanzan son las que logran enmarcar ese cambio como una decisión estratégica, no como una amenaza.</p>
+
+                    <h2>La pregunta con la que empezar</h2>
+
+                    <p>El punto de partida más productivo no es buscar qué herramienta de IA adoptar. Es identificar qué proceso, si se rediseñara desde cero con la capacidad actual de la IA, tendría una forma radicalmente distinta a la que tiene hoy.</p>
+
+                    <p>Esa pregunta lleva a proyectos concretos, con impacto medible, que además construyen capacidad real dentro de la organización. Cada proceso rediseñado es también una forma de entender mejor qué puede hacer el sistema y dónde siguen siendo indispensables las personas.</p>
+
+                    <p>Las empresas que empiecen a hacerse esa pregunta hoy van a estar en una posición muy diferente en cinco años. Y esa distancia, una vez que se abre, es difícil de acortar.</p>
+
+                    <div class="post-cta">
+                        <h3>Sobre KODDO</h3>
+                        <p>En KODDO ayudamos a empresas a hacer esa transición de forma concreta: identificando qué procesos rediseñar, cómo estructurar los datos, y cómo integrar sistemas que operen con inteligencia real dentro de la operación del negocio.</p>
+                        <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda una llamada conmigo</a>
+                    </div>
+                </div>
+            </article>
         </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-bottom glass-card">
+                    <p>&copy; 2026 KODDO. <a href="/" style="color: var(--color-accent); text-decoration: none;">Volver al Inicio</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <script type="module">
-        async function loadPost() {
-            // Get postId from directory name instead of query param
-            const pathParts = window.location.pathname.split('/').filter(p => p);
-            const postId = pathParts[pathParts.length - 1];
-            
-            try {
-                const response = await fetch('/blog/posts.json');
-                const posts = await response.json();
-                const post = posts.find(p => p.id === postId);
-                
-                if (post) {
-                    document.title = `${post.title} | KODDO Blog`;
-                    
-                    // Actualizar SEO y Metadatos para LLMs
-                    document.getElementById('meta-description').setAttribute('content', post.excerpt);
-                    document.getElementById('og-title').setAttribute('content', post.title);
-                    document.getElementById('og-description').setAttribute('content', post.excerpt);
-                    document.getElementById('og-image').setAttribute('content', post.image);
-                    
-                    // JSON-LD para Google y LLMs (Citas estructuradas)
-                    const schema = {
-                        "@context": "https://schema.org",
-                        "@type": "BlogPosting",
-                        "headline": post.title,
-                        "image": post.image,
-                        "datePublished": post.date,
-                        "author": {
-                            "@type": "Organization",
-                            "name": post.author
-                        },
-                        "description": post.excerpt,
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": window.location.href
-                        }
-                    };
-                    const script = document.createElement('script');
-                    script.type = 'application/ld+json';
-                    script.text = JSON.stringify(schema);
-                    document.head.appendChild(script);
-
-                    // Render Markdown with marked.js
-                    const contentHtml = marked.parse(post.content);
-                    
-                    document.getElementById('post-render').innerHTML = `
-                        <span class="post-meta">${post.category}</span>
-                        <h1 class="post-title">${post.title}</h1>
-                        <span class="post-date">Publicado el ${post.date} por ${post.author}</span>
-                        <div class="post-content">
-                            ${contentHtml}
-                        </div>
-                    `;
-                    
-                    // Trigger Syntax Highlighting
-                    hljs.highlightAll();
-                } else {
-                    document.getElementById('post-render').innerHTML = "<h1>Artículo no encontrado</h1>";
-                }
-            } catch (e) {
-                console.error(e);
-            }
-        }
-        loadPost();
-    </script>
-    <script type="module" src="/src/main.js"></script>
 </body>
 </html>

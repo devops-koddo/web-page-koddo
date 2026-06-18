@@ -1,0 +1,46 @@
+[
+  {
+    "id": "por-que-tu-erp-se-usa-a-la-mitad",
+    "title": "Por qué tu ERP se usa a la mitad (y cómo completar la última milla)",
+    "slug": "por-que-tu-erp-se-usa-a-la-mitad",
+    "date": "2026-06-11",
+    "category": "ENTERPRISE",
+    "excerpt": "Pagaste por un sistema que iba a integrar toda tu empresa. Hoy media operación sigue en planillas. No es culpa tuya — es la última milla que nadie construyó.",
+    "author": "Germán Charls — Koddo",
+    "image": "/assets/web-mockup.png",
+    "content": ""
+  },
+  {
+    "id": "como-mejorar-procesos-empresa-sin-cambiar-sistema",
+    "title": "Cómo mejorar los procesos de tu empresa sin cambiar de sistema",
+    "slug": "como-mejorar-procesos-empresa-sin-cambiar-sistema",
+    "date": "2026-06-11",
+    "category": "ENTERPRISE",
+    "excerpt": "La mayoría de las empresas no necesita un sistema nuevo. Necesita que el que ya tiene llegue a donde hoy no llega. Una guía práctica para decidir por dónde empezar.",
+    "author": "Germán Charls — Koddo",
+    "image": "/assets/web-mockup.png",
+    "content": ""
+  },
+  {
+    "id": "ti-interno-o-partner-tecnologico",
+    "title": "¿Contratar TI interno o trabajar con un partner tecnológico?",
+    "slug": "ti-interno-o-partner-tecnologico",
+    "date": "2026-06-11",
+    "category": "ENTERPRISE",
+    "excerpt": "Los números reales de cada opción para una empresa mediana en Bolivia: costos, riesgos y cuándo conviene cada camino.",
+    "author": "Germán Charls — Koddo",
+    "image": "/assets/web-mockup.png",
+    "content": ""
+  },
+  {
+    "id": "como-construir-empresa-estos-dias",
+    "title": "Cómo construir una empresa en estos días",
+    "slug": "como-construir-empresa-estos-dias",
+    "date": "2026-04-09",
+    "category": "ENTERPRISE",
+    "excerpt": "La transformación real no es usar IA, sino rediseñar la arquitectura de la organización desde una lógica nueva.",
+    "author": "KODDO",
+    "image": "/assets/mobile-mockup.png",
+    "content": ""
+  }
+]

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Koddo | The Last Mile of Your ERP — SAP B1, Apps & Data — Bolivia</title>
+
+  <meta name="description" content="Your ERP does part of the job. The rest is still done by hand. Koddo builds the last mile of your SAP B1: apps, integrations and dashboards your team actually uses. In weeks, not months.">
+
+  <meta name="keywords" content="SAP B1 integration Bolivia, SAP mobile apps, data engineering Bolivia, Flutter SAP Business One, SAP B1 dashboard, custom software Bolivia, Latin America">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://koddo.tech/en/">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/en/">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/">
+
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
+  <meta property="og:title" content="Koddo | The Last Mile of Your ERP">
+  <meta property="og:description" content="Your ERP reaches a certain point. Koddo builds the missing stretch: apps, integrations and dashboards your team actually uses. Bolivia and Latin America.">
+  <meta property="og:image" content="/assets/web-mockup.png">
+  <meta property="og:url" content="https://koddo.tech/en/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+  <!-- LLM -->
+  <link rel="alternate" type="text/markdown" href="/about-koddo.md">
+  <meta name="llm-context" content="/about-koddo.md">
+
+  <style>
+    /* Critical CSS to prevent FOUC */
+    :root {
+      --color-bg: #000000;
+      --color-text-primary: #f5f5f7;
+      --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-base);
+      margin: 0;
+    }
+    #app {
+      opacity: 0;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  </style>
+
+  <link rel="preload" href="/src/style.css" as="style">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Koddo",
+    "slogan": "The Last Mile of Your ERP",
+    "description": "Koddo builds the last mile of the ERP: mobile and web apps, SAP Business One (SAP B1) integrations and operational dashboards that take the system where the original implementation never reached. For mid-sized companies in Bolivia and Latin America.",
+    "url": "https://koddo.tech/en/",
+    "areaServed": ["Bolivia", "Peru", "Argentina"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Cruz",
+      "addressCountry": "Bolivia"
+    },
+    "serviceType": [
+      "SAP Business One Integration",
+      "Mobile Development",
+      "Data Engineering",
+      "Artificial Intelligence"
+    ],
+    "knowsAbout": ["SAP Business One", "SAP B1", "SAP S/4HANA", "Flutter", "NestJS", "NextJS", "Machine Learning", "Data Engineering"]
+  }
+  </script>
+
+</head>
+
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div id="app">
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo">
+           <img src="/images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img">
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Case Studies</a></li>
+            <li><a href="#start">Start Risk-Free</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/" class="lang-switch" hreflang="es" lang="es">ES</a></li>
+            <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Book 30 min</a></li>
+          </ul>
+        </nav>
+
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-overlay" aria-hidden="true">
+      <nav class="mobile-nav">
+        <ul>
+           <li><a href="#services">Services</a></li>
+           <li><a href="#work">Case Studies</a></li>
+           <li><a href="#start">Start Risk-Free</a></li>
+           <li><a href="/blog.html">Blog</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="/" class="lang-switch" hreflang="es" lang="es">Español</a></li>
+           <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Book 30 min</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-visuals">
+          <div class="glow-sphere sphere-1"></div>
+          <div class="glow-sphere sphere-2"></div>
+          <div class="grid-overlay"></div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              SAP B1 · Apps · Integrations · Data
+            </div>
+            <h3 id="hero-title" class="hero-title">
+              <span class="sr-only">Koddo: </span>
+              The <span class="text-gradient">Last Mile</span><br>
+              of your <span class="text-gradient">ERP</span>
+            </h3>
+            <p class="hero-subtitle">
+              Your ERP does part of the job. <strong>The rest is still done by hand</strong>: spreadsheets, transcriptions, reports assembled at the last minute. Koddo builds the missing pieces — and your entire operation starts running inside the system. In weeks, not months.
+            </p>
+            <div class="hero-actions">
+              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call with me</a>
+              <a href="#work" class="btn btn-secondary">See real cases</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-footer">
+          <div class="scroll-indicator">
+            <span class="scroll-text">Explore Koddo</span>
+            <span class="scroll-line"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" class="problem-section" aria-labelledby="problem-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="problem-title" class="section-title">Sound familiar?</h2>
+          </div>
+
+          <div class="problem-grid">
+            <article class="problem-card glass-card">
+              <span class="problem-emoji" aria-hidden="true"></span>
+              <p>Your team in the field, the warehouse or out on the street still writes things down on paper or WhatsApp — and only at the end of the day does someone enter it into the system. If they do.</p>
+            </article>
+            <article class="problem-card glass-card">
+              <span class="problem-emoji" aria-hidden="true"></span>
+              <p>The reports management needs are assembled by hand in Excel, cross-referencing data from three different places. Every week. The same hours lost.</p>
+            </article>
+            <article class="problem-card glass-card">
+              <span class="problem-emoji" aria-hidden="true"></span>
+              <p>You paid good money for a SAP B1 that was supposed to integrate your whole company. Today every department still works on its own island, and nobody sees the full picture.</p>
+            </article>
+          </div>
+
+          <p class="problem-closing">
+            That distance between what your ERP does and what your company needs is <strong>the last mile</strong>. Koddo builds it.
+          </p>
+        </div>
+      </section>
+
+      <section class="certs-section" aria-label="Certifications">
+        <div class="container">
+          <p class="certs-label">Certifications behind our work</p>
+          <div class="certs-grid">
+            <div class="cert-badge glass-card cert-primary">
+              <span class="cert-name">SAP B1</span>
+              <span class="cert-type">Official certification</span>
+            </div>
+            <div class="cert-badge glass-card">
+              <span class="cert-name">AWS</span>
+              <span class="cert-type">Certified</span>
+            </div>
+            <div class="cert-badge glass-card">
+              <span class="cert-name">Google</span>
+              <span class="cert-type">Certified</span>
+            </div>
+            <div class="cert-badge glass-card">
+              <span class="cert-name">Apple</span>
+              <span class="cert-type">Developer Program</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="last-mile" class="why-section" aria-labelledby="um-title">
+        <div class="container">
+          <div class="why-card glass-card">
+            <h2 id="um-title" class="section-title">The last mile of your ERP</h2>
+            <p>When you implemented your ERP, the project went as far as they all go: <strong>accounting, purchasing, central inventory</strong>. Then the ribbon was cut and the consultant left.</p>
+            <p>But your company doesn't end there. It continues on the street with your salespeople, in the warehouse with the stock counts, in the field with the machinery, in finance where someone transcribes invoices by hand. <strong>That stretch was never built.</strong></p>
+            <p>Koddo builds exactly that stretch: the apps, connections and dashboards that take your system to the furthest corner of your operation. <strong>Without replacing your ERP. Without never-ending projects.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services-section" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="services-title" class="section-title">How we cover that mile</h2>
+            <p class="section-tagline">Four ways to take your system where it doesn't reach today.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <h3>Apps for your team</h3>
+              <p>Your people record from their phones — on the street, in the warehouse or in the field, with or without signal — and everything flows straight into your SAP B1. No paper, no transcription.</p>
+            </article>
+
+            <article class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <h3>Dashboards for decisions</h3>
+              <p>Sales, inventory and operations on a single screen, updated in real time. No more waiting for Monday's Excel to know how your company is doing.</p>
+            </article>
+
+            <article class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3>Connections to your SAP B1</h3>
+              <p>Your invoicing system, your bank, your e-commerce, your weighing scale — whatever is moved by hand between systems today, we connect so it flows on its own.</p>
+            </article>
+
+            <article class="service-card glass-card">
+              <div class="service-icon-container">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              </div>
+              <h3>Applied intelligence</h3>
+              <p>Your historical data working for you: demand forecasts, sales recommendations, alerts before a problem costs money.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-text">
+              <h2 class="section-title">Who we are</h2>
+              <p>KODDO is a Bolivian <strong>software and data engineering</strong> firm specialized in one thing: making the system you already paid for work for your entire company.</p>
+              <p>We don't sell licenses or never-ending implementations. We build the missing pieces — fast, straight to the point, and speaking the language of your business, not the language of technology.</p>
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number">SAP B1</span>
+                  <span class="stat-label">Certification & integrations</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">APPS</span>
+                  <span class="stat-label">Web & mobile for your operation</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">DATA</span>
+                  <span class="stat-label">Dashboards & intelligence</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-image">
+              <div class="image-wrapper glass-card">
+                <img src="/images/koddo-mission-abstract.png" alt="Koddo Mission Tech Abstract" class="mission-img" loading="lazy">
+                <div class="tech-abstract-anim" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="process-section" aria-labelledby="process-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="process-title" class="section-title">From the first call to a system in production</h2>
+          </div>
+
+          <div class="process-grid">
+            <article class="process-step glass-card">
+              <span class="process-num">01</span>
+              <h3>Free review (30 min)</h3>
+              <p>We understand your operation and the real bottlenecks. No selling. Just diagnosis.</p>
+            </article>
+            <article class="process-step glass-card">
+              <span class="process-num">02</span>
+              <h3>Concrete proposal</h3>
+              <p>One document: what gets built, what it costs, when it's ready. No fine print.</p>
+            </article>
+            <article class="process-step glass-card">
+              <span class="process-num">03</span>
+              <h3>Focused development</h3>
+              <p>2–6 week projects. Weekly progress. You see the work advance in real time.</p>
+            </article>
+            <article class="process-step glass-card">
+              <span class="process-num">04</span>
+              <h3>Delivery & support</h3>
+              <p>System in production + team training + post-launch support.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="work-section">
+        <div class="container">
+          <h2 class="section-title">Last miles we've already built</h2>
+          <p class="section-tagline" style="margin-bottom: 0;">Real companies, with real systems, that stopped operating by hand.</p>
+          <div class="projects-vertical">
+
+            <article class="project-item glass-card">
+              <div class="project-content">
+                <span class="project-category">Agribusiness · Sales force</span>
+                <h3>Union Agronegocios</h3>
+                <div class="case-block">
+                  <span class="case-label">The missing last mile</span>
+                  <p>Salespeople went out without knowing what was in stock or what each customer had bought before. Orders were written down by hand and reached the system days late — with inventory errors and invoices that had to be corrected afterwards.</p>
+                </div>
+                <div class="case-block">
+                  <span class="case-label">What we built</span>
+                  <p>An app for the sales team that works even without signal: an up-to-date catalog with prices, each customer's history, on-the-spot order entry and suggestions on what to offer based on the buyer's profile. All connected directly to their central system.</p>
+                </div>
+                <div class="case-block">
+                  <span class="case-label">What changed</span>
+                  <p>The order a salesperson takes in the field enters the system the moment it happens. Management sees the day's sales the same day. Fewer stock errors, faster sales cycles, and zero manual transcription.</p>
+                </div>
+                <div class="project-tags">
+                  <span>Flutter</span> <span>NextJS</span> <span>NestJS</span> <span>PostgreSQL</span> <span>ERP Integration</span>
+                </div>
+              </div>
+              <div class="project-preview">
+                <img src="/images/agrosales-1-opt.png" alt="Union Agronegocios sales force mobile app" class="preview-img" loading="lazy" width="500" height="auto">
+              </div>
+            </article>
+
+            <article class="project-item glass-card">
+              <div class="project-content">
+                <span class="project-category">Agriculture · Machinery & fuel</span>
+                <h3>RCM / Incubatec</h3>
+                <div class="case-block">
+                  <span class="case-label">The missing last mile</span>
+                  <p>Heavy machinery usage and fuel consumption were logged on paper forms, in areas with no signal at all. Those forms reached the office days later — and someone had to type them into SAP B1 by hand. Real control didn't exist.</p>
+                </div>
+                <div class="case-block">
+                  <span class="case-label">What we built</span>
+                  <p>An app that works fully offline in the middle of the field: machinery, fuel and maintenance logging from the phone. When the supervisor gets signal again, everything syncs to SAP B1 on its own.</p>
+                </div>
+                <div class="case-block">
+                  <span class="case-label">What changed</span>
+                  <p>Fuel consumption and the status of every machine are visible from the office, up to date. Manual transcription was eliminated entirely. Real asset control from day one.</p>
+                </div>
+                <div class="project-tags">
+                  <span>Flutter</span> <span>NestJS</span> <span>PostgreSQL</span> <span>SAP B1</span> <span>Docker</span>
+                </div>
+              </div>
+              <div class="project-preview">
+                <img src="/assets/web-mockup.png" alt="RCM mobile platform visualization" class="preview-img" loading="lazy" width="500" height="auto">
+              </div>
+            </article>
+
+          </div>
+
+          <div class="other-projects">
+            <h3 class="other-projects-title">We also build our own products</h3>
+            <p class="other-projects-sub">Because the best proof that we know how to build is what we build for ourselves.</p>
+            <div class="mini-projects-grid">
+              <article class="mini-project-card glass-card">
+                <span class="project-category">iOS · App Store</span>
+                <h4>FingerCode</h4>
+                <p>Forgot a PIN your fingers still remember? FingerCode recovers it using your muscle memory. 100% private — nothing leaves your iPhone.</p>
+                <a href="/fingercode/" class="mini-project-link">See product →</a>
+              </article>
+              <article class="mini-project-card glass-card">
+                <span class="project-category">Health · Marketplace</span>
+                <h4>MediGO</h4>
+                <p>Finding a doctor by specialty and city in Bolivia used to be an odyssey. MediGO connects patients with verified specialists from their phone.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog-preview" class="blog-preview-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Ideas for your company</h2>
+            <p class="section-tagline">How mid-sized companies are closing the gap between their systems and their real operation. (Articles in Spanish.)</p>
+          </div>
+
+          <div class="blog-preview-grid">
+            <article class="blog-card glass-card">
+              <div class="blog-card-content">
+                <span class="blog-category">ERP · SAP B1</span>
+                <h3>Why your ERP is only half-used (and how to complete the last mile)</h3>
+                <p>You paid for a system that was supposed to integrate your whole company. Half your operation still runs on spreadsheets. It's not your fault — it's the last mile nobody built.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">Jun 11, 2026</span>
+                  <a href="/blog/por-que-tu-erp-se-usa-a-la-mitad/" class="blog-link">Read article →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card glass-card">
+              <div class="blog-card-content">
+                <span class="blog-category">Processes</span>
+                <h3>How to improve your company's processes without changing systems</h3>
+                <p>Most companies don't need a new system. They need the one they already have to reach where it doesn't reach today. A practical guide to deciding where to start.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">Jun 11, 2026</span>
+                  <a href="/blog/como-mejorar-procesos-empresa-sin-cambiar-sistema/" class="blog-link">Read article →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card glass-card">
+              <div class="blog-card-content">
+                <span class="blog-category">Decisions · Costs</span>
+                <h3>Hire in-house IT or work with a technology partner?</h3>
+                <p>The real numbers behind each option for a mid-sized company in Bolivia: costs, risks and when each path makes sense.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">Jun 11, 2026</span>
+                  <a href="/blog/ti-interno-o-partner-tecnologico/" class="blog-link">Read article →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card glass-card">
+              <div class="blog-card-content">
+                <span class="blog-category">AI · Organization</span>
+                <h3>How to build a company these days</h3>
+                <p>Real transformation isn't using AI — it's redesigning the architecture of the organization from a new logic.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">Apr 9, 2026</span>
+                  <a href="/blog/como-construir-empresa-estos-dias/" class="blog-link">Read article →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="section-actions center">
+            <a href="/blog.html" class="btn btn-secondary">View full Blog</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="start" class="start-section" aria-labelledby="start-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="start-title" class="section-title">Your first project with Koddo can happen in 1 week</h2>
+            <p class="section-tagline">Before committing to a large project, you can start with something small that already delivers real value — and shows you exactly what to build next.</p>
+          </div>
+
+          <div class="start-grid">
+            <article class="start-card glass-card">
+              <span class="start-price">$300–500 USD</span>
+              <h3>SAP B1 Health Check + Roadmap</h3>
+              <p>A 1-week audit of how your company uses SAP B1. We identify the 3 most critical bottlenecks and deliver a prioritized improvement roadmap.</p>
+              <p class="start-outcome">Outcome: you know exactly what to build first and what it will cost.</p>
+              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Request Health Check</a>
+            </article>
+
+            <article class="start-card glass-card">
+              <span class="start-price">$500–800 USD</span>
+              <h3>SAP B1 Operational Dashboard</h3>
+              <p>We connect your SAP B1 to a real-time web dashboard. Sales, inventory, orders — visible to management without exporting to Excel.</p>
+              <p class="start-outcome">Delivered in 2 weeks.</p>
+              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Request Dashboard</a>
+            </article>
+
+            <article class="start-card glass-card">
+              <span class="start-price">$400–700 USD</span>
+              <h3>Targeted SAP B1 Integration</h3>
+              <p>You have a specific process that isn't connected to your SAP B1. We solve it in 1–2 weeks. One endpoint, one flow, one sync — whatever you need.</p>
+              <p class="start-outcome">Start where it hurts most.</p>
+              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Describe my problem</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-koddo" class="why-section" aria-labelledby="why-title">
+        <div class="container">
+          <div class="why-card glass-card">
+            <h2 id="why-title" class="section-title">Hire in-house IT or work with Koddo?</h2>
+            <p>An IT architect in Bolivia costs <strong>$800–1,200/month</strong> in salary, plus benefits, plus ramp-up time, plus turnover.</p>
+            <p>Koddo delivers a system that <strong>lasts 5+ years</strong>, in weeks, with no payroll, no turnover, no management overhead.</p>
+            <p>And if the project doesn't meet what was agreed, <strong>you don't pay</strong>. No in-house employee can guarantee that.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="final-cta glass-card">
+            <h2 class="section-title">Did your system reach the office and stop there?</h2>
+            <p>Let's talk for 30 minutes. I'll tell you exactly which stretch you're missing, what it costs, and when it would be up and running.</p>
+            <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call with me</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="/images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img footer-logo">
+            <p class="footer-tagline">Engineering Data, Building Impact.</p>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/company/koddo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4 class="footer-title">Solutions</h4>
+            <ul>
+              <li><a href="#services">SAP B1 Connections</a></li>
+              <li><a href="#services">Apps for your team</a></li>
+              <li><a href="#services">Dashboards & intelligence</a></li>
+              <li><a href="#start">SAP B1 Health Check</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4 class="footer-title">Company</h4>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#work">Case Studies</a></li>
+              <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Book 30 min</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom glass-card">
+          <p>&copy; 2026 KODDO Data & Software Engineering. All rights reserved.</p>
+          <nav class="footer-legal">
+            <a href="/legal.html">Legal & Privacy</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
