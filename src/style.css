@@ -16,6 +16,26 @@
     --glass-border-bright: rgba(255, 255, 255, 0.35);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
     --liquid-blur: blur(25px) saturate(180%);
+
+    /* Liquid glass layers — degradado + brillo especular + luz interior.
+       Esto es lo que da la sensación de "cristal real" tipo iOS. */
+    --glass-gradient: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.10) 0%,
+        rgba(255, 255, 255, 0.045) 40%,
+        rgba(255, 255, 255, 0.025) 100%
+    );
+    /* Sombra exterior suave + highlight interior superior + sombra interior inferior */
+    --glass-elevation:
+        0 1px 0 0 rgba(255, 255, 255, 0.10) inset,
+        0 8px 24px -8px rgba(0, 0, 0, 0.55),
+        0 2px 6px -2px rgba(0, 0, 0, 0.4);
+    --glass-elevation-hover:
+        0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+        0 20px 50px -12px rgba(0, 0, 0, 0.65),
+        0 4px 12px -2px rgba(0, 0, 0, 0.45);
+    /* Blur más liviano para grillas con muchas tarjetas — protege el scroll en móvil */
+    --liquid-blur-light: blur(14px) saturate(160%);
     
     /* Typography */
     --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
@@ -142,10 +162,13 @@ body {
     padding: 0.7rem 1.5rem;
     z-index: 1000;
     border-radius: 100px;
-    background: rgba(10, 10, 10, 0.4);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(10, 10, 10, 0.45));
     backdrop-filter: var(--liquid-blur);
     -webkit-backdrop-filter: var(--liquid-blur);
     border: 1px solid var(--glass-border);
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.12) inset,
+        0 10px 30px -10px rgba(0, 0, 0, 0.6);
     transition: var(--transition-smooth);
 }
 
@@ -1228,28 +1251,48 @@ section {
     .hero-headline { letter-spacing: -1px; }
 }
 
-/* Buttons */
+/* Buttons — pill premium estilo Apple (unificado) */
 .btn {
-    padding: 1.2rem 2.5rem;
-    border-radius: 4px;
+    padding: 1.1rem 2.4rem;
+    border-radius: 100px;
+    font-size: 0.92rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
+    text-transform: none;
     text-decoration: none;
-    transition: var(--transition-smooth);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.35s ease, border-color 0.35s ease;
     display: inline-block;
+    will-change: transform;
 }
 
-.btn-primary { background: #f5f5f7; color: #0a0a0b; }
+.btn-primary {
+    background: #f5f5f7;
+    color: #0a0a0b;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+                0 6px 20px -6px rgba(255, 255, 255, 0.25);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) inset,
+                0 12px 28px -8px rgba(255, 255, 255, 0.35);
+}
+
+/* Secundario: vidrio líquido translúcido */
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--glass-gradient);
     color: white;
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(5px);
+    backdrop-filter: var(--liquid-blur-light);
+    -webkit-backdrop-filter: var(--liquid-blur-light);
+    box-shadow: var(--glass-elevation);
 }
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: var(--glass-elevation-hover);
 }
 
 /* Blog Preview Section */
@@ -1614,10 +1657,47 @@ section {
    Shared glass card base (new sections)
    ============================================ */
 .glass-card {
-    background: var(--glass-bg);
+    position: relative;
+    background: var(--glass-gradient);
     border: 1px solid var(--glass-border);
-    backdrop-filter: var(--liquid-blur);
-    -webkit-backdrop-filter: var(--liquid-blur);
+    backdrop-filter: var(--liquid-blur-light);
+    -webkit-backdrop-filter: var(--liquid-blur-light);
+    box-shadow: var(--glass-elevation);
+    isolation: isolate;
+}
+
+/* Brillo especular: una línea de luz que recorre el borde superior,
+   igual que el reflejo del cristal esmerilado de iOS. Es solo un gradiente,
+   así que no cuesta nada de rendimiento. */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(255, 255, 255, 0.08) 22%,
+        rgba(255, 255, 255, 0) 50%
+    );
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.glass-card:hover::before {
+    opacity: 1;
+}
+
+.glass-card:hover {
+    box-shadow: var(--glass-elevation-hover);
 }
 
 /* ============================================
@@ -2031,4 +2111,34 @@ section {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* ============================================
+   Accesibilidad y agilidad UX
+   ============================================ */
+
+/* En pantallas táctiles desactivamos los hover-lift para que el
+   scroll se sienta inmediato (los :hover en móvil "pegan"). */
+@media (hover: none) {
+    .glass-card:hover,
+    .service-card:hover,
+    .problem-card:hover,
+    .process-step:hover,
+    .start-card:hover,
+    .benefit:hover,
+    .cert-badge:hover {
+        transform: none;
+    }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
 }
