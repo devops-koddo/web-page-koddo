@@ -430,6 +430,92 @@
             color: var(--t3);
         }
 
+        /* ---- SCREENS SHOWCASE ---- */
+        .screens-wrap {
+            padding: 0 48px 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .screens-mobile-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .screen-mobile {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--bd2);
+            background: var(--surface);
+            aspect-ratio: 9/16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+
+        .screen-mobile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .screen-web {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--bd2);
+            background: var(--surface);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+
+        .screen-web-bar {
+            background: #1a1a1e;
+            border-bottom: 1px solid var(--bd);
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .screen-web-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--bd2);
+        }
+
+        .screen-web img {
+            width: 100%;
+            display: block;
+        }
+
+        .screens-caption {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 4px;
+        }
+
+        .caption-mobile {
+            font-family: var(--F);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--t3);
+        }
+
+        .caption-web {
+            font-family: var(--F);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--t3);
+        }
+
         /* ---- WHY KODDO ---- */
         .why-wrap {
             padding: 48px 48px 0;
@@ -717,6 +803,33 @@
                         <div class="res-title">De campo a oficina</div>
                         <div class="res-desc">La venta y los datos dejan de estar desconectados</div>
                     </div>
+                </div>
+            </div>
+
+            <!-- SCREENS -->
+            <div class="screens-wrap">
+                <div class="screens-mobile-row">
+                    <div class="screen-mobile">
+                        <img src="/images/uniSanity/uniSanityMovile/unisanity-movil-2.png" alt="App móvil — inicio vendedor" loading="eager">
+                    </div>
+                    <div class="screen-mobile">
+                        <img src="/images/uniSanity/uniSanityMovile/unisanity-movil-4.png" alt="App móvil — catálogo de productos" loading="eager">
+                    </div>
+                    <div class="screen-mobile">
+                        <img src="/images/uniSanity/uniSanityMovile/unisanity-movil-clientes.png" alt="App móvil — clientes" loading="eager">
+                    </div>
+                </div>
+                <div class="screens-caption">
+                    <span class="caption-mobile">App móvil — fuerza de venta en campo</span>
+                    <span class="caption-web">Plataforma web de gestión →</span>
+                </div>
+                <div class="screen-web">
+                    <div class="screen-web-bar">
+                        <div class="screen-web-dot"></div>
+                        <div class="screen-web-dot"></div>
+                        <div class="screen-web-dot"></div>
+                    </div>
+                    <img src="/images/uniSanity/unisanity-clientes.png" alt="Plataforma web — directorio de clientes sincronizado al ERP" loading="eager">
                 </div>
             </div>
         </section>
