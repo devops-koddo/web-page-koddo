@@ -68,6 +68,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Galería de capturas por proyecto + lightbox
+    const galleries = document.querySelectorAll('[data-gallery]');
+    if (galleries.length) {
+        // Lightbox compartido, creado una sola vez
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <button type="button" class="lightbox-btn lightbox-close" aria-label="Cerrar">&times;</button>
+            <button type="button" class="lightbox-btn lightbox-prev" aria-label="Anterior">&#8249;</button>
+            <img class="lightbox-img" src="" alt="">
+            <button type="button" class="lightbox-btn lightbox-next" aria-label="Siguiente">&#8250;</button>
+        `;
+        document.body.appendChild(lightbox);
+
+        const lbImg = lightbox.querySelector('.lightbox-img');
+        let activeImages = [];
+        let activeIndex = 0;
+
+        const renderLightbox = () => {
+            const item = activeImages[activeIndex];
+            if (item) {
+                lbImg.src = item.src;
+                lbImg.alt = item.alt;
+            }
+        };
+        const openLightbox = (images, index) => {
+            activeImages = images;
+            activeIndex = index;
+            renderLightbox();
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        };
+        const step = (dir) => {
+            if (!activeImages.length) return;
+            activeIndex = (activeIndex + dir + activeImages.length) % activeImages.length;
+            renderLightbox();
+        };
+
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+        lightbox.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') step(-1);
+            if (e.key === 'ArrowRight') step(1);
+        });
+
+        galleries.forEach(gallery => {
+            const mainBtn = gallery.querySelector('.gallery-main');
+            const mainImg = gallery.querySelector('.gallery-main-img');
+            const thumbs = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+            const images = thumbs.map(t => ({ src: t.dataset.src, alt: t.dataset.alt || '' }));
+
+            const setActive = (index) => {
+                const item = images[index];
+                if (!item) return;
+                mainImg.style.opacity = '0';
+                setTimeout(() => {
+                    mainImg.src = item.src;
+                    mainImg.alt = item.alt;
+                    mainImg.style.opacity = '1';
+                }, 150);
+                thumbs.forEach((t, i) => t.classList.toggle('is-active', i === index));
+                gallery.dataset.current = index;
+            };
+
+            thumbs.forEach((thumb, i) => {
+                thumb.addEventListener('click', () => setActive(i));
+            });
+
+            if (mainBtn) {
+                mainBtn.addEventListener('click', () => {
+                    openLightbox(images, Number(gallery.dataset.current || 0));
+                });
+            }
+        });
+    }
+
     // Carga dinámica de los últimos posts en el Index
     const latestPostsContainer = document.getElementById('latest-posts-container');
     if (latestPostsContainer) {
