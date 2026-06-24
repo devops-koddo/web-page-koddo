@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koddo — Ingeniería de Software</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;1,6..12,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:      #08080a;
+            --bg2:     #0d0d10;
+            --surface: #111115;
+            --bd:      rgba(255,255,255,0.07);
+            --bd2:     rgba(255,255,255,0.14);
+            --t1:      #efefef;
+            --t2:      rgba(239,239,239,0.56);
+            --t3:      rgba(239,239,239,0.30);
+            --red:     #d42b22;
+            --red-bg:  rgba(212,43,34,0.09);
+            --red-bd:  rgba(212,43,34,0.22);
+            --F:       'Space Grotesk', system-ui, sans-serif;
+            --FB:      'Nunito Sans', system-ui, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--FB);
+            background: var(--bg);
+            color: var(--t1);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* ============================================================
+           GATE
+        ============================================================ */
+        #gate {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.35s ease;
+        }
+
+        .gate-inner {
+            width: 100%;
+            max-width: 320px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gate-wordmark {
+            font-family: var(--F);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--t1);
+            margin-bottom: 3px;
+        }
+
+        .gate-tagline {
+            font-family: var(--F);
+            font-size: 0.58rem;
+            font-weight: 500;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--t3);
+            margin-bottom: 52px;
+        }
+
+        .gate-lbl {
+            align-self: flex-start;
+            font-family: var(--F);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--t3);
+            margin-bottom: 10px;
+        }
+
+        .gate-input {
+            width: 100%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--bd2);
+            border-radius: 2px;
+            color: var(--t1);
+            font-family: var(--F);
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
+            text-align: center;
+            padding: 16px 20px;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            margin-bottom: 14px;
+            user-select: auto;
+            -webkit-user-select: auto;
+        }
+
+        .gate-input:focus {
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .gate-btn {
+            width: 100%;
+            background: var(--t1);
+            color: #08080a;
+            font-family: var(--F);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            border: none;
+            padding: 15px 24px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .gate-btn:hover { opacity: 0.82; }
+        .gate-btn:active { opacity: 0.65; }
+
+        .gate-error {
+            margin-top: 14px;
+            font-family: var(--F);
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            color: var(--red);
+            opacity: 0;
+            transition: opacity 0.25s;
+            text-align: center;
+        }
+
+        /* ============================================================
+           DOWNLOAD BAR  (fixed, never inside PDF capture)
+        ============================================================ */
+        #dl-bar {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 500;
+            display: none;
+        }
+
+        .dl-btn {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(8,8,10,0.85);
+            border: 1px solid var(--bd2);
+            color: var(--t1);
+            font-family: var(--F);
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            padding: 11px 20px;
+            border-radius: 2px;
+            cursor: pointer;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: background 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .dl-btn:hover {
+            background: rgba(14,14,18,0.96);
+            border-color: rgba(255,255,255,0.26);
+        }
+
+        .dl-btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .dl-btn svg {
+            width: 13px;
+            height: 13px;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           CONTENT WRAPPER
+        ============================================================ */
+        #content {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: none;
+        }
+
+        /* ============================================================
+           DOCUMENT
+        ============================================================ */
+        #doc {
+            max-width: 860px;
+            margin: 0 auto;
+            border-top: 3px solid var(--red);
+        }
+
+        /* ---- TOP STRIP ---- */
+        .doc-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 48px;
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .strip-left { display: flex; flex-direction: column; gap: 3px; }
+
+        .wordmark {
+            font-family: var(--F);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--t1);
+        }
+
+        .wordmark-sub {
+            font-family: var(--F);
+            font-size: 0.57rem;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--t3);
+        }
+
+        .strip-right {
+            font-family: var(--F);
+            font-size: 0.57rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--t3);
+            text-align: right;
+            line-height: 2;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            padding: 58px 48px 52px;
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .eyebrow {
+            font-family: var(--F);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--t3);
+            margin-bottom: 22px;
+        }
+
+        .hero-h1 {
+            font-family: var(--F);
+            font-size: 2.55rem;
+            font-weight: 700;
+            line-height: 1.18;
+            letter-spacing: -0.03em;
+            color: var(--t1);
+            margin-bottom: 26px;
+            max-width: 680px;
+        }
+
+        .hero-lead {
+            font-family: var(--FB);
+            font-size: 0.96rem;
+            line-height: 1.78;
+            color: var(--t2);
+            max-width: 600px;
+        }
+
+        /* ---- PAIN STRIP ---- */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .pain-cell {
+            padding: 36px 30px;
+            border-right: 1px solid var(--bd);
+        }
+
+        .pain-cell:first-child { padding-left: 48px; }
+        .pain-cell:last-child  { padding-right: 48px; border-right: none; }
+
+        .pain-title {
+            font-family: var(--F);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--t1);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .pain-desc {
+            font-family: var(--FB);
+            font-size: 0.79rem;
+            line-height: 1.7;
+            color: var(--t2);
+        }
+
+        /* ---- SECTION LABEL ---- */
+        .sec-lbl {
+            font-family: var(--F);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 24px;
+        }
+
+        /* ---- CASE STUDY ---- */
+        .case-wrap {
+            padding: 48px 48px 0;
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .case-meta {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .case-co {
+            font-family: var(--F);
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--t1);
+            margin-bottom: 4px;
+        }
+
+        .case-co-sub {
+            font-family: var(--F);
+            font-size: 0.66rem;
+            color: var(--t3);
+            letter-spacing: 0.05em;
+        }
+
+        .tag-prod {
+            flex-shrink: 0;
+            font-family: var(--F);
+            font-size: 0.56rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--red);
+            background: var(--red-bg);
+            border: 1px solid var(--red-bd);
+            padding: 5px 12px;
+            border-radius: 2px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .case-body {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            padding-bottom: 48px;
+        }
+
+        .case-narrative {
+            padding-right: 40px;
+            border-right: 1px solid var(--bd);
+        }
+
+        .case-narrative p {
+            font-family: var(--FB);
+            font-size: 0.85rem;
+            line-height: 1.78;
+            color: var(--t2);
+            margin-bottom: 16px;
+        }
+
+        .case-narrative p:last-child { margin-bottom: 0; }
+
+        .case-narrative strong {
+            color: var(--t1);
+            font-weight: 600;
+        }
+
+        .case-results {
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .res-item {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .res-item:first-child { padding-top: 0; }
+        .res-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+        .res-title {
+            font-family: var(--F);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--t1);
+            margin-bottom: 5px;
+        }
+
+        .res-desc {
+            font-family: var(--FB);
+            font-size: 0.77rem;
+            line-height: 1.58;
+            color: var(--t3);
+        }
+
+        /* ---- WHY KODDO ---- */
+        .why-wrap {
+            padding: 48px 48px 0;
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-bottom: 48px;
+        }
+
+        .why-card {
+            padding: 0 32px;
+            border-right: 1px solid var(--bd);
+        }
+
+        .why-card:first-child { padding-left: 0; }
+        .why-card:last-child  { padding-right: 0; border-right: none; }
+
+        .why-num {
+            font-family: var(--F);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--t3);
+            margin-bottom: 14px;
+        }
+
+        .why-title {
+            font-family: var(--F);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--t1);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .why-desc {
+            font-family: var(--FB);
+            font-size: 0.79rem;
+            line-height: 1.68;
+            color: var(--t2);
+        }
+
+        /* ---- ALSO BUILT ---- */
+        .also-wrap {
+            padding: 30px 48px;
+            border-bottom: 1px solid var(--bd);
+            display: flex;
+            align-items: baseline;
+            gap: 28px;
+        }
+
+        .also-lbl {
+            font-family: var(--F);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--t3);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .also-text {
+            font-family: var(--FB);
+            font-size: 0.82rem;
+            line-height: 1.68;
+            color: var(--t2);
+        }
+
+        .also-text strong {
+            font-family: var(--F);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--t1);
+        }
+
+        /* ---- CTA ---- */
+        .cta-wrap {
+            padding: 56px 48px;
+            background: var(--bg2);
+            border-bottom: 1px solid var(--bd);
+        }
+
+        .cta-eyebrow {
+            font-family: var(--F);
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--t3);
+            margin-bottom: 16px;
+        }
+
+        .cta-h2 {
+            font-family: var(--F);
+            font-size: 1.95rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--t1);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .cta-note {
+            font-family: var(--FB);
+            font-size: 0.85rem;
+            color: var(--t3);
+            margin-bottom: 38px;
+            line-height: 1.65;
+        }
+
+        .contact-name {
+            font-family: var(--F);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--t1);
+            margin-bottom: 3px;
+        }
+
+        .contact-role {
+            font-family: var(--FB);
+            font-size: 0.8rem;
+            color: var(--t3);
+            margin-bottom: 12px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .contact-link {
+            font-family: var(--F);
+            font-size: 0.78rem;
+            color: var(--t2);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover { color: var(--t1); }
+
+        /* ---- FOOTER ---- */
+        .doc-footer {
+            padding: 18px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-txt {
+            font-family: var(--F);
+            font-size: 0.56rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--t3);
+        }
+
+        .footer-yr {
+            font-family: var(--F);
+            font-size: 0.56rem;
+            color: var(--t3);
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           RESPONSIVE — narrow screens can scroll horizontally
+        ============================================================ */
+        @media (max-width: 700px) {
+            body { overflow-x: auto; }
+            #doc { min-width: 700px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================================================
+     PASSWORD GATE
+================================================ -->
+<div id="gate">
+    <div class="gate-inner">
+        <div class="gate-wordmark">KODDO</div>
+        <div class="gate-tagline">Ingeniería de Software</div>
+        <p class="gate-lbl">Clave de acceso</p>
+        <input
+            type="password"
+            id="pass"
+            class="gate-input"
+            placeholder="·····"
+            maxlength="12"
+            autocomplete="off"
+            autofocus
+        >
+        <button class="gate-btn" id="gate-btn">Acceder</button>
+        <div class="gate-error" id="gate-err">Clave incorrecta — intente nuevamente</div>
+    </div>
+</div>
+
+<!-- ================================================
+     DOWNLOAD BAR  (fixed, outside PDF capture)
+================================================ -->
+<div id="dl-bar">
+    <button class="dl-btn" id="dl-btn" onclick="downloadPDF()">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2v8M5 7l3 3 3-3"/>
+            <path d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2"/>
+        </svg>
+        Descargar PDF
+    </button>
+</div>
+
+<!-- ================================================
+     DOCUMENT CONTENT
+================================================ -->
+<div id="content">
+    <div id="doc">
+
+        <!-- TOP STRIP -->
+        <div class="doc-strip">
+            <div class="strip-left">
+                <div class="wordmark">KODDO</div>
+                <div class="wordmark-sub">Ingeniería de Software</div>
+            </div>
+            <div class="strip-right">
+                Empresas comerciales · Veterinarias · Farma<br>
+                Insumos · Industria
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <p class="eyebrow">Para dueños y gerentes generales</p>
+            <h1 class="hero-h1">Su empresa crece. Y su proceso de ventas todavía corre en WhatsApp y Excel.</h1>
+            <p class="hero-lead">Construimos software que conecta a su fuerza de venta en campo con su ERP — haciendo más eficiente el proceso de venta y potenciando a sus vendedores con la tecnología de nuestros días.</p>
+        </section>
+
+        <!-- PAIN POINTS -->
+        <div class="pain-grid">
+            <div class="pain-cell">
+                <h3 class="pain-title">Catálogo desactualizado</h3>
+                <p class="pain-desc">Vendedores en campo trabajando con precios y stock que ya cambiaron en oficina.</p>
+            </div>
+            <div class="pain-cell">
+                <h3 class="pain-title">Visibilidad cero en el momento de la venta</h3>
+                <p class="pain-desc">Su equipo de oficina se entera de un quiebre de stock o un problema con un cliente días después de que pasó en el campo — cuando ya no hay nada que hacer.</p>
+            </div>
+            <div class="pain-cell">
+                <h3 class="pain-title">Precios fijos en un negocio que no lo es</h3>
+                <p class="pain-desc">Sin reglas de descuento ni precios por temporada, cada vendedor negocia a su criterio — y la empresa pierde margen sin darse cuenta.</p>
+            </div>
+        </div>
+
+        <!-- CASE STUDY -->
+        <section class="case-wrap">
+            <div class="sec-lbl">Caso real — Unión Agronegocios</div>
+            <div class="case-meta">
+                <div>
+                    <div class="case-co">Distribuidora de productos veterinarios</div>
+                    <div class="case-co-sub">400+ empleados · Alcance nacional</div>
+                </div>
+                <div class="tag-prod">En producción</div>
+            </div>
+            <div class="case-body">
+                <div class="case-narrative">
+                    <p>El crecimiento de la empresa superó lo que el proceso manual podía sostener. Construimos una <strong>app móvil para su fuerza de venta</strong> con catálogo siempre actualizado e inteligencia de sus clientes en la palma de la mano de cada uno de sus vendedores, conectada a su <strong>ERP</strong>, y una <strong>plataforma web</strong> de gestión.</p>
+                    <p>Sobre esa base, se lanzó un <strong>plan sanitario digital</strong>, realizado por expertos y entregado a través de la misma app, con alcance al 100% de sus clientes y planes personalizados que antes eran limitados por el proceso manual. Esto permitió fidelizar más a sus clientes, mejorando su productividad y brindando un servicio integral de sanidad.</p>
+                    <p>El resultado no es solo una venta más fácil — es un cliente que ya no piensa en cambiar de proveedor.</p>
+                </div>
+                <div class="case-results">
+                    <div class="res-item">
+                        <div class="res-title">App + Web + ERP</div>
+                        <div class="res-desc">Sistema completo entregado, integrado al ERP existente de la empresa</div>
+                    </div>
+                    <div class="res-item">
+                        <div class="res-title">Servicio, no solo software</div>
+                        <div class="res-desc">Plan sanitario digital como capa de fidelización imposible de copiar</div>
+                    </div>
+                    <div class="res-item">
+                        <div class="res-title">De campo a oficina</div>
+                        <div class="res-desc">La venta y los datos dejan de estar desconectados</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY KODDO -->
+        <section class="why-wrap">
+            <div class="sec-lbl">Por qué Koddo</div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-num">01</div>
+                    <div class="why-title">Profundidad en ERP</div>
+                    <div class="why-desc">Integración real con SAP, otros ERP y cualquier otro sistema — no una app aislada que su equipo de sistemas tiene que conectar a mano después.</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">02</div>
+                    <div class="why-title">Ejecución rápida</div>
+                    <div class="why-desc">Lidero cada proyecto como ingeniero principal, con un equipo reducido y AI como multiplicador — sin la lentitud ni el costo de una consultora grande.</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">03</div>
+                    <div class="why-title">Pensamos en negocio</div>
+                    <div class="why-desc">No entregamos solo apps o funcionalidades. Entregamos una razón para que su cliente se quede, basada en cómo opera su industria.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALSO BUILT -->
+        <div class="also-wrap">
+            <div class="also-lbl">También construimos →</div>
+            <div class="also-text">
+                <strong>RCM</strong> — Sistema de control de personal, combustible y maquinaria para operaciones agrícolas de campo, desde la idea hasta producción. Redujo el proceso de reconciliación de 5 días a 60 segundos. Auditoría de combustible, máquinas y trabajo de personal agrícola.
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <section class="cta-wrap">
+            <div class="cta-eyebrow">Siguiente paso</div>
+            <h2 class="cta-h2">Conversemos 20 minutos</h2>
+            <p class="cta-note">Sin compromiso. Le muestro cómo se vería esto aplicado a su operación específica.</p>
+            <div class="contact-name">Germán Charls Tardio Pérez</div>
+            <div class="contact-role">Founder &amp; Principal Engineer, Koddo</div>
+            <div class="contact-links">
+                <a href="https://koddo.tech" class="contact-link">koddo.tech</a>
+                <a href="mailto:charls@koddo.tech" class="contact-link">charls@koddo.tech</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="doc-footer">
+            <div class="footer-txt">Koddo · Santa Cruz de la Sierra, Bolivia · Software a medida con integración ERP para empresas comerciales</div>
+            <div class="footer-yr">2025</div>
+        </footer>
+
+    </div><!-- /#doc -->
+</div><!-- /#content -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-mv6XBCO7ehMkS3+O1mKJdK2CC0MpYDjw1IGEUhPzxFwn4TtHXjDV7NhFidHFJEpPMGjCiOQrGbrYrXOt5CHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+(function init() {
+    // Auto-unlock if already authenticated this session
+    if (sessionStorage.getItem('k_auth') === '1') {
+        unlock(false);
+        return;
+    }
+
+    // Gate interactions
+    document.getElementById('pass').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') checkPass();
+    });
+
+    document.getElementById('gate-btn').addEventListener('click', checkPass);
+})();
+
+function checkPass() {
+    const val = document.getElementById('pass').value;
+    if (val === '12345') {
+        sessionStorage.setItem('k_auth', '1');
+        unlock(true);
+    } else {
+        const err = document.getElementById('gate-err');
+        err.style.opacity = '1';
+        document.getElementById('pass').value = '';
+        document.getElementById('pass').focus();
+        setTimeout(function() { err.style.opacity = '0'; }, 2800);
+    }
+}
+
+function unlock(animate) {
+    const gate    = document.getElementById('gate');
+    const content = document.getElementById('content');
+    const dlBar   = document.getElementById('dl-bar');
+
+    if (animate) {
+        gate.style.opacity = '0';
+        setTimeout(function() {
+            gate.style.display = 'none';
+            content.style.display = 'block';
+            dlBar.style.display   = 'block';
+            setTimeout(function() { content.style.opacity = '1'; }, 20);
+        }, 360);
+    } else {
+        gate.style.display    = 'none';
+        content.style.display = 'block';
+        content.style.opacity = '1';
+        dlBar.style.display   = 'block';
+    }
+}
+
+// ---- Protections ----
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+document.addEventListener('keydown', function(e) {
+    var ctrl = e.ctrlKey || e.metaKey;
+    if (ctrl && ['s','p','u'].includes(e.key.toLowerCase())) e.preventDefault();
+    if (e.key === 'F12') e.preventDefault();
+    if (ctrl && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) e.preventDefault();
+});
+
+// ---- PDF Download ----
+function downloadPDF() {
+    var btn = document.getElementById('dl-btn');
+    btn.disabled = true;
+    btn.textContent = 'Generando…';
+
+    var el     = document.getElementById('doc');
+    var hPx    = el.scrollHeight;
+    var wMm    = 228;   // 860px @ 96dpi ≈ 228mm
+    var hMm    = Math.ceil(hPx * 25.4 / 96);
+
+    var opt = {
+        margin: 0,
+        filename: 'koddo-deck.pdf',
+        image: { type: 'jpeg', quality: 0.97 },
+        html2canvas: {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: '#08080a',
+            logging: false,
+            windowWidth: 860,
+        },
+        jsPDF: {
+            unit: 'mm',
+            format: [wMm, hMm],
+            orientation: 'portrait',
+        },
+    };
+
+    html2pdf().set(opt).from(el).save().then(function() {
+        btn.disabled = false;
+        btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2"/></svg> Descargar PDF';
+    });
+}
+</script>
+</body>
+</html>
