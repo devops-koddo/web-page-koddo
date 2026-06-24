@@ -63,23 +63,11 @@
             align-items: center;
         }
 
-        .gate-wordmark {
-            font-family: var(--F);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: var(--t1);
-            margin-bottom: 3px;
-        }
-
-        .gate-tagline {
-            font-family: var(--F);
-            font-size: 0.58rem;
-            font-weight: 500;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: var(--t3);
-            margin-bottom: 52px;
+        .gate-logo {
+            width: 132px;
+            height: auto;
+            display: block;
+            margin-bottom: 48px;
         }
 
         .gate-lbl {
@@ -222,23 +210,12 @@
             border-bottom: 1px solid var(--bd);
         }
 
-        .strip-left { display: flex; flex-direction: column; gap: 3px; }
+        .strip-left { display: flex; align-items: center; }
 
-        .wordmark {
-            font-family: var(--F);
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: var(--t1);
-        }
-
-        .wordmark-sub {
-            font-family: var(--F);
-            font-size: 0.57rem;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--t3);
+        .strip-logo {
+            width: 86px;
+            height: auto;
+            display: block;
         }
 
         .strip-right {
@@ -703,8 +680,7 @@
 ================================================ -->
 <div id="gate">
     <div class="gate-inner">
-        <div class="gate-wordmark">KODDO</div>
-        <div class="gate-tagline">Ingeniería de Software</div>
+        <img src="/images/logo-red-nobk.png" alt="KODDO" class="gate-logo">
         <p class="gate-lbl">Clave de acceso</p>
         <input
             type="password"
@@ -742,8 +718,7 @@
         <!-- TOP STRIP -->
         <div class="doc-strip">
             <div class="strip-left">
-                <div class="wordmark">KODDO</div>
-                <div class="wordmark-sub">Ingeniería de Software</div>
+                <img src="/images/logo-red-nobk.png" alt="KODDO" class="strip-logo">
             </div>
             <div class="strip-right">
                 Empresas comerciales · Veterinarias · Farma<br>
