@@ -1231,55 +1231,36 @@ section {
     }
 }
 
-/* ===== Showcase full-bleed: cada imagen ocupa la pantalla tipo hero ===== */
+/* ===== Showcase full-bleed: imágenes a todo el ancho, contiguas ===== */
 .showcase-slides {
     /* rompe el contenedor para ir de borde a borde */
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    margin-top: clamp(2.5rem, 6vw, 5rem);
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.5rem, 4vw, 3rem);
+    margin-top: clamp(2rem, 5vw, 4rem);
+    display: block;
+    font-size: 0; /* elimina cualquier espacio entre imágenes */
 }
 
 .showcase-slide {
     position: relative;
     width: 100%;
-    min-height: 88vh;
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    isolation: isolate;
+    display: block;
+    line-height: 0;
 }
 
-/* Fondo difuminado de la misma imagen — llena la pantalla sin recortar el screenshot */
-.showcase-bg {
-    position: absolute;
-    inset: -10%;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    filter: blur(70px) brightness(0.35) saturate(1.1);
-    transform: scale(1.15);
-}
+/* el fondo difuminado ya no hace falta: la imagen ocupa todo el ancho */
+.showcase-bg { display: none; }
 
 .showcase-img {
-    max-width: min(1100px, 92%);
-    max-height: 82vh;
-    width: auto;
+    width: 100%;
     height: auto;
-    object-fit: contain;
-    border-radius: 20px;
-    box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.75);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.showcase-slide:hover .showcase-img { transform: scale(1.02); }
-
-@media (max-width: 768px) {
-    .showcase-slide { min-height: 60vh; }
-    .showcase-img { max-height: 64vh; border-radius: 14px; }
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 /* ===== Galería de capturas por proyecto ===== */
@@ -2567,6 +2548,21 @@ section {
 }
 .theme-cream .tech-abstract-anim,
 .theme-cream .tech-abstract-anim::after { background: var(--color-cream-alt); }
+
+/* Imagen "we" ocupa todo el alto de la sección Nosotros */
+#about .about-grid { align-items: stretch; }
+#about .about-image { display: flex; }
+#about .image-wrapper {
+    aspect-ratio: auto;
+    height: 100%;
+    width: 100%;
+    min-height: 440px;
+}
+#about .mission-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 /* etiqueta superior tipo "chapter marker" */
 .theme-cream .cream-eyebrow {
