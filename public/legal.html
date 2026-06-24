@@ -3,89 +3,137 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>KODDO | Legal & Privacidad</title>
+  <title>KODDO | Términos & Privacidad</title>
+  <meta name="description" content="Términos de servicio y política de privacidad de KODDO. Somos una empresa de desarrollo de software a medida: no recopilamos datos personales en este sitio y tratamos cada proyecto de cliente como confidencial.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/webp" href="images/web-icon.webp">
+  <link rel="canonical" href="https://koddo.tech/legal.html">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../src/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+  <style>
+    /* Critical CSS para evitar flash */
+    :root { --color-bg: #121720; --color-text-primary: #f4f2ee; }
+    body { background-color: var(--color-bg); color: var(--color-text-primary); margin: 0; font-family: 'Nunito Sans', system-ui, sans-serif; }
+  </style>
+
+  <link rel="stylesheet" href="/src/style.css">
+
   <style>
     .legal-content {
-      padding-top: 180px;
+      padding-top: clamp(140px, 18vw, 200px);
       padding-bottom: 100px;
     }
     .legal-card {
-      padding: clamp(2rem, 5vw, 5rem);
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
+      padding: clamp(2rem, 5vw, 4.5rem);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid transparent;
       backdrop-filter: var(--liquid-blur);
-      border-radius: 48px;
+      -webkit-backdrop-filter: var(--liquid-blur);
+      border-radius: clamp(28px, 4vw, 40px);
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .legal-eyebrow {
+      display: inline-block;
+      font-family: var(--font-family-mono);
+      font-size: 0.74rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-coral);
+      margin-bottom: 1.2rem;
+    }
+    .legal-card .section-title { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1rem; }
+    .legal-lead {
+      color: var(--color-text-secondary);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .legal-updated {
+      font-family: var(--font-family-mono);
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2.5rem;
     }
     .legal-text h2 {
       font-family: var(--font-family-heading);
-      font-size: 2rem;
-      color: var(--color-accent);
-      margin: 3rem 0 1.5rem;
-      letter-spacing: -1px;
+      font-size: 1.5rem;
+      color: var(--color-text-primary);
+      margin: 2.8rem 0 1rem;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+    .legal-text h2 .num {
+      font-family: var(--font-family-mono);
+      font-size: 0.95rem;
+      color: var(--color-coral);
     }
     .legal-text p {
       color: var(--color-text-secondary);
       line-height: 1.8;
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
     }
-    .legal-text ul {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
+    .legal-text ul { list-style: none; margin: 0 0 1.5rem; padding: 0; }
     .legal-text li {
       color: var(--color-text-secondary);
       margin-bottom: 0.8rem;
-      padding-left: 1.5rem;
+      padding-left: 1.6rem;
       position: relative;
+      line-height: 1.7;
     }
     .legal-text li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0.6rem;
+      top: 0.65rem;
       width: 6px;
       height: 6px;
-      background: var(--color-accent);
+      background: var(--color-coral);
       border-radius: 50%;
+    }
+    .legal-text strong { color: var(--color-text-primary); font-weight: 700; }
+    .legal-placeholder {
+      font-family: var(--font-family-mono);
+      font-size: 0.85rem;
+      color: var(--color-coral);
+      background: var(--color-coral-soft);
+      border: 1px dashed rgba(218, 60, 51, 0.4);
+      border-radius: 6px;
+      padding: 1px 7px;
     }
     .back-home {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: white;
+      color: var(--color-text-secondary);
       text-decoration: none;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       font-weight: 600;
       transition: var(--transition-smooth);
     }
-    .back-home:hover {
-      color: var(--color-accent);
-      transform: translateX(-5px);
-    }
+    .back-home:hover { color: var(--color-coral); transform: translateX(-4px); }
   </style>
 </head>
 
 <body>
-  <div class="cursor" aria-hidden="true"></div>
-  
   <div id="app">
     <header class="site-header">
       <div class="header-content">
         <div class="logo">
-           <a href="/"><img src="images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img"></a>
+          <a href="/"><img src="/images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img"></a>
         </div>
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Navegación principal">
           <ul>
             <li><a href="/#services">Servicios</a></li>
-            <li><a href="/#work">Proyectos</a></li>
-            <li><a href="/#contact" class="nav-cta">Iniciar un Proyecto</a></li>
+            <li><a href="/#work">Casos</a></li>
+            <li><a href="/#about">Nosotros</a></li>
+            <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Agenda 30 min</a></li>
           </ul>
         </nav>
       </div>
@@ -94,36 +142,47 @@
     <main class="legal-content">
       <div class="container">
         <a href="/" class="back-home">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-          Volver al Inicio
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Volver al inicio
         </a>
-        
+
         <article class="legal-card">
-          <div class="section-header">
-            <h1 class="section-title">Legal & <span class="text-gradient">Privacidad</span></h1>
-            <p class="section-tagline">Transparencia en la ingeniería de datos y el desarrollo de software.</p>
-          </div>
+          <span class="legal-eyebrow">Legal · Privacidad</span>
+          <h1 class="section-title">Términos &amp; <span class="text-coral-glow">Privacidad</span></h1>
+          <p class="legal-lead">Cómo trabajamos, qué protegemos y cómo tratamos la información. En corto: somos una empresa que construye software para otras empresas, este sitio no recopila tus datos, y todo proyecto de cliente es confidencial.</p>
+          <p class="legal-updated">Última actualización: junio 2026</p>
 
           <div class="legal-text">
-            <h2>1. Introducción</h2>
-            <p>En KODDO, la integridad de los datos y la seguridad de la información son pilares fundamentales de nuestra arquitectura. Este documento establece los términos bajo los cuales operamos y protegemos la información en nuestros ecosistemas digitales.</p>
+            <h2><span class="num">01</span> Quiénes somos</h2>
+            <p>KODDO es una empresa boliviana de <strong>desarrollo de software y datos</strong>. Construimos aplicaciones, integraciones con SAP Business One y tableros a medida para otras empresas que nos contratan. No operamos una plataforma de consumo masivo: trabajamos <strong>por proyecto y bajo contrato</strong>, para clientes.</p>
 
-            <h2>2. Política de Privacidad</h2>
-            <p>Nuestra gestión de datos se rige por principios de seguridad de grado empresarial. Recopilamos información estrictamente necesaria para la ejecución de proyectos de ingeniería y desarrollo móvil.</p>
+            <h2><span class="num">02</span> Privacidad de este sitio</h2>
+            <p>Este sitio web es <strong>informativo</strong>. No recopilamos ni almacenamos datos personales de quienes lo visitan: no hay formularios que guarden tu información en nuestros servidores.</p>
             <ul>
-              <li><strong>Protección de Datos:</strong> Implementamos cifrado avanzado en todas las integraciones de ERP y aplicaciones móviles.</li>
-              <li><strong>Uso de Información:</strong> Los datos recolectados se utilizan exclusivamente para optimizar la UX y el rendimiento operativo de las soluciones entregadas.</li>
-              <li><strong>No Divulgación:</strong> KODDO mantiene acuerdos de confidencialidad estrictos, garantizando que su core de negocio permanezca privado.</li>
+              <li>Si decides <strong>agendar una reunión</strong>, lo haces a través de una herramienta externa (Cal.com), sujeta a su propia política de privacidad.</li>
+              <li>No vendemos, alquilamos ni compartimos información de navegación con terceros.</li>
             </ul>
 
-            <h2>3. Términos de Servicio</h2>
-            <p>El acceso a nuestras plataformas e integraciones implica la aceptación de estándares técnicos de uso responsable. KODDO se reserva el derecho de optimizar y actualizar arquitecturas para garantizar la continuidad del negocio.</p>
+            <h2><span class="num">03</span> Confidencialidad de los proyectos</h2>
+            <p>Todo lo que construimos para un cliente —su información, sus datos, su lógica de negocio y su código— es <strong>estrictamente confidencial</strong>.</p>
+            <ul>
+              <li>No compartimos información de un cliente con nadie: ni con otros clientes ni con terceros.</li>
+              <li>Trabajamos bajo <strong>acuerdos de confidencialidad (NDA)</strong> cuando el proyecto lo requiere.</li>
+              <li>Los datos que procesan las aplicaciones que desarrollamos <strong>pertenecen a cada cliente</strong>. KODDO no los reutiliza, no los analiza para fines propios ni los comercializa.</li>
+            </ul>
 
-            <h2>4. Propiedad Intelectual</h2>
-            <p>Todas las metodologías, algoritmos de Machine Learning y frameworks propietarios utilizados en el desarrollo de nuestras soluciones son propiedad intelectual de KODDO Engineering, a menos que se especifique lo contrario en acuerdos contractuales individuales.</p>
+            <h2><span class="num">04</span> Uso de material promocional</h2>
+            <p>La <strong>única excepción</strong> a la confidencialidad es el material que mostramos con fines promocionales en este sitio —por ejemplo, capturas de pantalla, nombres de proyecto o reseñas de clientes—, que se publica únicamente con el <strong>consentimiento del cliente</strong> correspondiente.</p>
+            <p>Si eres cliente y quieres que retiremos material tuyo de este sitio, escríbenos y lo hacemos.</p>
 
-            <h2>5. Contacto Legal</h2>
-            <p>Para consultas técnicas sobre nuestra arquitectura de seguridad o el manejo de datos, puede contactarnos directamente a través de nuestra plataforma de comunicación oficial.</p>
+            <h2><span class="num">05</span> Propiedad intelectual</h2>
+            <p>La titularidad del software desarrollado se define en el <strong>contrato de cada proyecto</strong>. Salvo acuerdo distinto por escrito, los entregables específicos del proyecto se transfieren al cliente según lo pactado, mientras que los frameworks, metodologías y componentes propios de KODDO siguen siendo de KODDO.</p>
+
+            <h2><span class="num">06</span> Términos de servicio</h2>
+            <p>Nuestros servicios se prestan bajo <strong>propuesta y contrato individual</strong>, donde se acuerdan alcance, plazos, costos y responsabilidades antes de empezar. La información de este sitio es referencial y no constituye una oferta vinculante.</p>
+
+            <h2><span class="num">07</span> Jurisdicción y contacto</h2>
+            <p>Estos términos se rigen por las leyes de Bolivia, con domicilio en Santa Cruz de la Sierra. Para cualquier consulta legal, de privacidad o sobre material publicado, contáctanos a través de nuestro <a href="https://www.linkedin.com/company/koddo" target="_blank" rel="noopener noreferrer" style="color:var(--color-coral);text-decoration:none;">LinkedIn</a> o por correo a <span class="legal-placeholder">correo legal — completar</span>.</p>
           </div>
         </article>
       </div>
@@ -131,17 +190,18 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-bottom glass-card">
+        <div class="footer-bottom">
           <p>&copy; 2026 KODDO Ingeniería de Datos y Software. Todos los derechos reservados.</p>
           <nav class="footer-legal">
             <a href="/">Inicio</a>
-            <a href="https://www.linkedin.com/company/koddo" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/company/koddo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </nav>
         </div>
       </div>
     </footer>
   </div>
 
-  <script type="module" src="src/main.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
