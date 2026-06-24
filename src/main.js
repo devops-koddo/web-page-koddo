@@ -40,6 +40,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Glow que sigue al cursor en el Hero (refracción dinámica tras el cristal)
+    const cursorGlow = document.querySelector('[data-cursor-glow]');
+    const heroSection = document.querySelector('.hero');
+    if (cursorGlow && heroSection && window.matchMedia('(hover: hover)').matches
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let rafId = null;
+        heroSection.addEventListener('pointermove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                cursorGlow.style.transform = `translate(${x}px, ${y}px)`;
+                cursorGlow.style.opacity = '0.7';
+            });
+        });
+        heroSection.addEventListener('pointerleave', () => {
+            cursorGlow.style.opacity = '0';
+        });
+    }
+
     // Semantic Intersection Observer for Animations (LLM Friendly)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

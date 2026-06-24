@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
   <!-- LLM -->
   <link rel="alternate" type="text/markdown" href="/about-koddo.md">
@@ -34,8 +34,8 @@
   <style>
     /* Critical CSS to prevent FOUC */
     :root {
-      --color-bg: #000000;
-      --color-text-primary: #f5f5f7;
+      --color-bg: #121720;
+      --color-text-primary: #f4f2ee;
       --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
     }
     body {
@@ -138,33 +138,99 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-visuals">
-          <div class="glow-sphere sphere-1"></div>
-          <div class="glow-sphere sphere-2"></div>
+        <div class="hero-visuals" aria-hidden="true">
+          <!-- <div class="glow-sphere sphere-coral"></div> -->
+          <div class="glow-sphere sphere-steel"></div>
+          <div class="glow-cursor" data-cursor-glow></div>
           <div class="grid-overlay"></div>
         </div>
-        
+
         <div class="container">
-          <div class="hero-content">
-            <div class="hero-badge">
-              <span class="badge-dot"></span>
-              SAP B1 · Apps · Integraciones · Datos
+          <div class="hero-layout">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="badge-dot"></span>
+                SAP B1 · Apps · Integraciones · Datos
+              </div>
+              <h1 id="hero-title" class="hero-title">
+                <span class="sr-only">Koddo: </span>
+                La <span class="text-gradient">Última Milla</span><br>
+                de tu <span class="text-coral-glow">ERP</span>
+              </h1>
+              <p class="hero-subtitle">
+                Tu ERP hace una parte del trabajo. <strong>El resto todavía lo hace tu equipo a mano</strong>: planillas, transcripciones, reportes armados a última hora. Koddo construye las piezas que faltan y tu operación completa empieza a correr dentro del sistema.
+              </p>
+              <div class="hero-actions">
+                <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda una llamada conmigo</a>
+                <a href="#work" class="btn btn-secondary btn-arrow">
+                  <span>Ver casos reales</span>
+                  <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
             </div>
-            <h3 id="hero-title" class="hero-title">
-              <span class="sr-only">Koddo: </span>
-              La <span class="text-gradient">Última Milla</span><br>
-              de tu <span class="text-gradient">ERP</span>
-            </h3>
-            <p class="hero-subtitle">
-              Tu ERP hace una parte del trabajo. <strong>El resto todavía lo hace tu equipo a mano</strong>: planillas, transcripciones, reportes armados a última hora. Koddo construye las piezas que faltan y tu operación completa empieza a correr dentro del sistema. Haz el ajuste fino a tu ERP.
-            </p>
-            <div class="hero-actions">
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda una llamada conmigo</a>
-              <a href="#work" class="btn btn-secondary">Ver casos reales</a>
-            </div>
+
+            <!-- Bento mini-grid: flujo de datos en tiempo real -->
+            <aside class="hero-bento glass-card" aria-label="Flujo de integración de datos">
+              <div class="bento-head">
+                <span class="mono-label">live · data pipeline</span>
+                <span class="bento-pulse"><span class="bento-pulse-dot"></span>running</span>
+              </div>
+              <div class="flow-graph">
+                <svg viewBox="0 0 440 360" class="graph-svg" role="img" aria-label="Grafo: ERP conecta con API y MCP, y de ahí fluye a Apps y Agentes">
+                  <!-- Aristas (conexiones entre nodos) -->
+                  <g class="graph-edges">
+                    <path id="e-erp-api"  d="M220,44 L120,144"></path>
+                    <path id="e-erp-mcp"  d="M220,44 L322,144"></path>
+                    <path id="e-api-mcp"  d="M120,144 L322,144"></path>
+                    <path id="e-api-apps" d="M120,144 L138,288"></path>
+                    <path id="e-mcp-apps" d="M322,144 L138,288"></path>
+                    <path id="e-mcp-agt"  d="M322,144 L318,288"></path>
+                    <path id="e-apps-agt" d="M138,288 L318,288"></path>
+                  </g>
+
+                  <!-- Paquetes de info viajando por las aristas -->
+                  <g class="graph-packets">
+                    <circle r="3.2"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#e-erp-api"/></animateMotion></circle>
+                    <circle r="3.2"><animateMotion dur="2s" begin="0.4s" repeatCount="indefinite"><mpath href="#e-erp-mcp"/></animateMotion></circle>
+                    <circle r="3.2"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#e-api-mcp"/></animateMotion></circle>
+                    <circle r="3.2" class="graph-packet--accent"><animateMotion dur="2.2s" begin="0.6s" repeatCount="indefinite"><mpath href="#e-mcp-apps"/></animateMotion></circle>
+                    <circle r="3.2" class="graph-packet--accent"><animateMotion dur="1.9s" begin="1.1s" repeatCount="indefinite"><mpath href="#e-mcp-agt"/></animateMotion></circle>
+                    <circle r="3.2" class="graph-packet--accent"><animateMotion dur="2.6s" begin="0.2s" repeatCount="indefinite"><mpath href="#e-api-apps"/></animateMotion></circle>
+                  </g>
+
+                  <!-- Nodos -->
+                  <g class="graph-nodes">
+                    <g class="graph-node" style="--i:0">
+                      <rect x="160" y="22" width="120" height="44" rx="14"></rect>
+                      <text x="220" y="49">ERP</text>
+                    </g>
+                    <g class="graph-node" style="--i:1">
+                      <rect x="60" y="122" width="120" height="44" rx="14"></rect>
+                      <text x="120" y="149">API</text>
+                    </g>
+                    <g class="graph-node" style="--i:2">
+                      <rect x="262" y="122" width="120" height="44" rx="14"></rect>
+                      <text x="322" y="149">MCP</text>
+                    </g>
+                    <g class="graph-node graph-node--accent" style="--i:3">
+                      <rect x="78" y="266" width="120" height="44" rx="14"></rect>
+                      <text x="138" y="293">APPS</text>
+                    </g>
+                    <g class="graph-node graph-node--accent" style="--i:4">
+                      <rect x="258" y="266" width="120" height="44" rx="14"></rect>
+                      <text x="318" y="293">AGENTES</text>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="bento-foot mono-label">
+                <span>sync: <b>OK</b></span>
+                <span>latency: <b>42ms</b></span>
+              </div>
+            </aside>
           </div>
         </div>
-        
+
         <div class="hero-footer">
           <div class="scroll-indicator">
             <span class="scroll-text">Explore Koddo</span>
@@ -181,15 +247,12 @@
 
           <div class="problem-grid">
             <article class="problem-card glass-card">
-              <span class="problem-emoji" aria-hidden="true"></span>
               <p>Tu equipo en la calle, en el almacén o en el campo sigue anotando en papel o WhatsApp. Al final del día alguien lo pasa al sistema.</p>
             </article>
             <article class="problem-card glass-card">
-              <span class="problem-emoji" aria-hidden="true"></span>
               <p>Los reportes que gerencia necesita se arman a mano en Excel, cruzando datos de tres lugares distintos. Cada semana. Las mismas horas perdidas.</p>
             </article>
             <article class="problem-card glass-card">
-              <span class="problem-emoji" aria-hidden="true"></span>
               <p>Pagaste caro por un SAP B1 que iba a integrar toda tu empresa. Hoy cada área sigue trabajando en su propia isla, y nadie ve el panorama completo.</p>
             </article>
           </div>
@@ -206,19 +269,19 @@
           <div class="certs-grid">
             <div class="cert-badge glass-card cert-primary">
               <span class="cert-name">SAP B1</span>
-              <span class="cert-type">Certificación oficial</span>
+              <span class="cert-type">Implementación e integración</span>
             </div>
             <div class="cert-badge glass-card">
-              <span class="cert-name">AWS</span>
-              <span class="cert-type">Certificado</span>
+              <span class="cert-name">Apple Developer Program</span>
+              <span class="cert-type">Publicación en App Store</span>
             </div>
             <div class="cert-badge glass-card">
-              <span class="cert-name">Google</span>
-              <span class="cert-type">Certificado</span>
+              <span class="cert-name">Google Play Developer</span>
+              <span class="cert-type">Publicación en Play Store</span>
             </div>
             <div class="cert-badge glass-card">
-              <span class="cert-name">Apple</span>
-              <span class="cert-type">Developer Program</span>
+              <span class="cert-name">AWS Cloud</span>
+              <span class="cert-type">Infraestructura · EC2 · S3</span>
             </div>
           </div>
         </div>
@@ -231,6 +294,15 @@
             <p>Cuando implementaste tu ERP, el proyecto llegó hasta donde llegan todos: <strong>contabilidad, compras, inventario central</strong>. Ahí se cortó la cinta y se fue el consultor.</p>
             <p>Pero tu empresa no termina ahí. Sigue en la calle con tus vendedores, en el almacén con los conteos, en el campo con la maquinaria, en finanzas con las facturas que alguien transcribe a mano. <strong>Ese tramo nunca se construyó.</strong></p>
             <p>Koddo construye exactamente ese tramo: las apps, conexiones y tableros que llevan tu sistema hasta el último rincón de tu operación. <strong>Sin cambiar tu ERP. Sin proyectos eternos.</strong></p>
+            <div class="tech-pills">
+              <span class="tech-pill" style="--p:0">SAP B1 Service Layer</span>
+              <span class="tech-pill" style="--p:1">API Integrations</span>
+              <span class="tech-pill" style="--p:2">Data Engineering</span>
+              <span class="tech-pill" style="--p:3">Apps offline-first</span>
+              <span class="tech-pill" style="--p:4">Dashboards en vivo</span>
+              <span class="tech-pill" style="--p:5">Mapeo de procesos</span>
+              <span class="tech-pill" style="--p:6">UI Prototyping</span>
+            </div>
           </div>
         </div>
       </section>
@@ -278,13 +350,14 @@
         </div>
       </section>
 
-      <section id="about" class="about-section">
+      <section id="about" class="about-section theme-cream theme-cream--full">
         <div class="container">
           <div class="about-grid">
             <div class="about-text">
-              <h2 class="section-title">Quiénes somos</h2>
-              <p>KODDO es una firma boliviana de <strong>ingeniería de software y datos</strong> especializada en una sola cosa: hacer que tu ERP el cual ya fue implementado y pagaste trabaje para toda tu empresa.</p>
-              <p>No vendemos licencia tampoco implementaciones sin final. Construimos las piezas que faltan somos rápidos, sin rodeos y hablamos el idioma de tu negocio.</p>
+              <span class="cream-eyebrow">Quiénes somos</span>
+              <h2 class="section-title">Agencia de Software</h2>
+              <p>KODDO es una firma boliviana de <strong>ingeniería de software y datos</strong> especializada en una sola cosa: hacer que tu ERP el cual ya fue implementado y pagasto trabaje para toda tu empresa.</p>
+              <p>No vendemos licencias ni suscripciones. Construimos las piezas que faltan en tu sistema. Somos rápidos, sin rodeos y hablamos el idioma de tu negocio.</p>
               <div class="about-stats">
                 <div class="stat-item">
                   <span class="stat-number">SAP B1</span>
@@ -343,8 +416,11 @@
 
       <section id="work" class="work-section">
         <div class="container">
-          <h2 class="section-title">Proyectos en los que trabajamos para nuestros socios.</h2>
-          <p class="section-tagline" style="margin-bottom: 0;">Empresas reales, con sistemas reales, que dejaron de operar a mano.</p>
+          <div class="work-intro">
+            <span class="work-eyebrow mono-label">Casos reales · partners</span>
+            <h2 class="section-title work-title">Proyectos en los que<br>trabajamos para nuestros socios</h2>
+            <p class="work-sub">Empresas reales, con sistemas reales, que dejaron de operar a mano.</p>
+          </div>
         </div>
 
         <article class="product-showcase">
@@ -379,6 +455,20 @@
                 <p>Inventario de ganado, campañas y actividades al día, no a fin de mes.</p>
               </li>
             </ul>
+            <div class="metrics-strip" data-placeholder="reemplazar con métricas reales de UniSanity">
+              <div class="metric-block">
+                <span class="metric-number">+XX<span class="metric-unit">%</span></span>
+                <span class="metric-label">menos tiempo de registro sanitario <em>(placeholder)</em></span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-number">XK<span class="metric-unit">+</span></span>
+                <span class="metric-label">cabezas de ganado gestionadas <em>(placeholder)</em></span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-number">XX<span class="metric-unit">%</span></span>
+                <span class="metric-label">sincronización automática con el ERP <em>(placeholder)</em></span>
+              </div>
+            </div>
             <div class="project-preview">
               <div class="project-gallery" data-gallery>
                 <button type="button" class="gallery-main" aria-label="Ampliar captura">
@@ -431,6 +521,20 @@
                 <p>Lo que se registra en el campo entra al sistema sin que nadie lo copie a mano.</p>
               </li>
             </ul>
+            <div class="metrics-strip" data-placeholder="reemplazar con métricas reales de RCM">
+              <div class="metric-block">
+                <span class="metric-number">+XX<span class="metric-unit">%</span></span>
+                <span class="metric-label">control de consumo de combustible <em>(placeholder)</em></span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-number">XX<span class="metric-unit">h</span></span>
+                <span class="metric-label">ahorradas por semana en planillas <em>(placeholder)</em></span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-number">100<span class="metric-unit">%</span></span>
+                <span class="metric-label">operativo sin señal en campo <em>(placeholder)</em></span>
+              </div>
+            </div>
             <div class="project-preview">
               <div class="project-gallery" data-gallery>
                 <button type="button" class="gallery-main" aria-label="Ampliar captura">
@@ -470,6 +574,38 @@
         </div>
       </section>
       
+      <section id="testimonials" class="testimonials-section theme-cream theme-cream--full" aria-labelledby="testimonials-title">
+        <div class="container">
+            <span class="placeholder-note">⚠ placeholder — reemplazar con testimonios reales</span>
+            <span class="cream-eyebrow">Gente que ama las soluciones</span>
+            <h2 id="testimonials-title" class="section-title">Lo que dicen quienes ya cerraron la última milla</h2>
+
+            <div class="testimonials-grid">
+              <article class="testimonial-card">
+                <p class="testimonial-quote">"Dejamos de armar el reporte de gerencia a mano. Ahora <b>lo que antes tomaba un día, sale solo</b>. El equipo por fin confía en los números."</p>
+                <div class="testimonial-author">
+                  <span class="testimonial-avatar">NN</span>
+                  <span class="testimonial-meta">
+                    <span class="testimonial-name">Nombre Apellido</span>
+                    <span class="testimonial-role">Cargo · Empresa (placeholder)</span>
+                  </span>
+                </div>
+              </article>
+
+              <article class="testimonial-card">
+                <p class="testimonial-quote">"En semanas teníamos la app funcionando en el campo, <b>sin señal y conectada al SAP B1</b>. Koddo entendió nuestra operación mejor que consultoras que pagamos años."</p>
+                <div class="testimonial-author">
+                  <span class="testimonial-avatar">NN</span>
+                  <span class="testimonial-meta">
+                    <span class="testimonial-name">Nombre Apellido</span>
+                    <span class="testimonial-role">Cargo · Empresa (placeholder)</span>
+                  </span>
+                </div>
+              </article>
+            </div>
+        </div>
+      </section>
+
       <section id="blog-preview" class="blog-preview-section">
         <div class="container">
           <div class="section-header">
