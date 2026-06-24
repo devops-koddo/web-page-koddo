@@ -2,24 +2,24 @@
 
 :root {
     /* Colors - Apple Deep Dark Palette */
-    --color-bg: #000000;
-    --color-bg-alt: #0b0b0b;
+    --color-bg: #0a0a0b; /* casi-negro: más premium que el negro puro */
+    --color-bg-alt: #111113;
     --color-text-primary: #f5f5f7;
-    --color-text-secondary: rgba(245, 245, 247, 0.6);
-    --color-accent: #d43b31; /* Nuevo color solicitado */
-    --color-accent-glow: rgba(212, 59, 49, 0.4);
-    --color-electric: #007aff; 
+    --color-text-secondary: rgba(245, 245, 247, 0.72);
+    --color-accent: #cfd0d6; /* neutro claro — sitio casi monocromo; el rojo queda solo en el logo */
+    --color-accent-glow: rgba(255, 255, 255, 0.4);
+    --color-electric: #3a3a46; /* glow neutro (antes azul) — da profundidad sin teñir; rojo = único acento */
     
     /* Apple Liquid Glass System */
     --glass-bg: rgba(255, 255, 255, 0.04);
     --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-border-bright: rgba(212, 59, 49, 0.35);
+    --glass-border-bright: rgba(255, 255, 255, 0.35);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
     --liquid-blur: blur(25px) saturate(180%);
     
     /* Typography */
     --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
-    --font-family-heading: 'Asimovian', 'Nunito Sans', sans-serif;
+    --font-family-heading: 'Space Grotesk', 'Nunito Sans', sans-serif;
     
     --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -45,11 +45,10 @@ body {
 
 /* Premium Text Gradient */
 .text-gradient {
-    background: linear-gradient(135deg, #fff 30%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, #ffffff 20%, #b9b9c2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    filter: drop-shadow(0 0 20px rgba(255, 45, 85, 0.2));
 }
 
 .hero-badge {
@@ -168,7 +167,7 @@ body {
     max-width: 240px; 
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 12px rgba(212, 59, 49, 0.25));
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
     transition: var(--transition-smooth);
 }
 
@@ -416,14 +415,14 @@ body {
     height: 600px;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.15;
+    opacity: 0.10;
     z-index: -1;
 }
 
 .sphere-1 {
     top: -100px;
     right: -100px;
-    background: var(--color-accent);
+    background: var(--color-electric);
     animation: floating 15s infinite alternate ease-in-out;
 }
 
@@ -475,7 +474,7 @@ body {
 .service-icon-container {
     width: 50px;
     height: 50px;
-    background: rgba(212, 59, 49, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -504,7 +503,7 @@ body {
 
 .service-card:hover {
     border-color: var(--color-accent);
-    background: rgba(212, 59, 49, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     transform: translateY(-10px);
 }
 
@@ -597,13 +596,13 @@ section {
 }
 
 .services-section {
-    background: radial-gradient(circle at 50% 0%, rgba(212, 59, 49, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
 }
 
 /* About Section Refinement */
 .about-section {
     position: relative;
-    background: radial-gradient(circle at 100% 50%, rgba(212, 59, 49, 0.03) 0%, transparent 50%);
+    background: radial-gradient(circle at 100% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
 }
 
 .about-grid {
@@ -746,7 +745,7 @@ section {
 /* Work Section Refinement */
 .work-section {
     position: relative;
-    background: radial-gradient(circle at 0% 100%, rgba(212, 59, 49, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
 }
 
 .projects-vertical {
@@ -769,7 +768,7 @@ section {
 }
 
 .project-item:hover {
-    border-color: rgba(212, 59, 49, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
@@ -1112,7 +1111,8 @@ section {
 .hero-eyebrow {
     display: inline-block;
     color: #fff;
-    background: var(--color-accent);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     font-weight: 800;
     text-transform: uppercase;
     font-size: 0.72rem;
@@ -1166,7 +1166,7 @@ section {
 
 .benefit:hover {
     transform: translateY(-6px);
-    border-color: rgba(212, 59, 49, 0.35);
+    border-color: rgba(255, 255, 255, 0.35);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -1178,7 +1178,7 @@ section {
     height: 3rem;
     margin-bottom: 1.3rem;
     border-radius: 14px;
-    background: rgba(212, 59, 49, 0.12);
+    background: rgba(255, 255, 255, 0.12);
     color: var(--color-accent);
 }
 
@@ -1240,7 +1240,7 @@ section {
     display: inline-block;
 }
 
-.btn-primary { background: var(--color-accent); color: white; }
+.btn-primary { background: #f5f5f7; color: #0a0a0b; }
 .btn-secondary {
     background: rgba(255, 255, 255, 0.05);
     color: white;
@@ -1254,7 +1254,7 @@ section {
 
 /* Blog Preview Section */
 .blog-preview-section {
-    background: radial-gradient(circle at 50% 50%, rgba(212, 59, 49, 0.05) 0%, transparent 80%);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
 }
 
 .blog-preview-grid {
@@ -1365,7 +1365,7 @@ section {
 /* Contact Section Refinement */
 .contact-section {
     position: relative;
-    background: radial-gradient(circle at 50% 100%, rgba(212, 59, 49, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
 }
 
 .contact-card {
@@ -1446,7 +1446,7 @@ section {
 /* Footer Elite Design */
 .site-footer {
     padding: 100px 0 50px;
-    background: linear-gradient(to bottom, transparent, rgba(212, 59, 49, 0.02));
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.02));
     border-top: 1px solid var(--glass-border);
     margin-top: 150px;
     position: relative;
@@ -1464,7 +1464,7 @@ section {
     width: auto;
     object-fit: contain;
     margin-bottom: 2rem;
-    filter: drop-shadow(0 0 15px rgba(212, 59, 49, 0.3));
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
 }
 
 .footer-tagline {
@@ -1495,11 +1495,11 @@ section {
 }
 
 .footer-social a:hover {
-    background: rgba(212, 59, 49, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     border-color: var(--color-accent);
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(212, 59, 49, 0.2);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 .footer-social svg {
@@ -1624,7 +1624,7 @@ section {
    Problem Section — "¿Te suena familiar?"
    ============================================ */
 .problem-section {
-    background: radial-gradient(circle at 50% 0%, rgba(212, 59, 49, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
 }
 
 .problem-grid {
@@ -1756,7 +1756,7 @@ section {
    Start Section — "Empieza sin riesgo"
    ============================================ */
 .start-section {
-    background: radial-gradient(circle at 50% 100%, rgba(212, 59, 49, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
 }
 
 .start-grid {
@@ -1855,7 +1855,7 @@ section {
     padding: clamp(3rem, 7vw, 6rem);
     border-radius: 48px;
     text-align: center;
-    background: radial-gradient(circle at 50% 0%, rgba(212, 59, 49, 0.1) 0%, var(--glass-bg) 70%);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1) 0%, var(--glass-bg) 70%);
 }
 
 /* ============================================
@@ -1900,7 +1900,7 @@ section {
 
 .cert-badge.cert-primary {
     border-color: var(--glass-border-bright);
-    background: rgba(212, 59, 49, 0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .cert-name {
