@@ -1238,13 +1238,14 @@ section {
     margin-left: calc(50% - 50vw);
     margin-top: clamp(2rem, 5vw, 4rem);
     display: block;
-    font-size: 0; /* elimina cualquier espacio entre imágenes */
+    font-size: 0; 
 }
 
 .showcase-slide {
     position: relative;
     width: 100%;
     margin: 0;
+    margin-bottom: 5rem;
     display: block;
     line-height: 0;
 }
