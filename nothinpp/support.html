@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Support — nothinpp</title>
+  <meta name="description" content="Support and FAQ for nothinpp, the focus tool that blocks your phone except the essentials.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://koddo.tech/nothinpp/support">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/nothinpp/support">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/nothinpp/es/support">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/nothinpp/support">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --bg-raised: #0a0a0a;
+      --border: rgba(255,255,255,0.08);
+      --border-bright: rgba(255,255,255,0.18);
+      --text-primary: #f5f5f7;
+      --text-secondary: rgba(255,255,255,0.48);
+      --text-tertiary: rgba(255,255,255,0.22);
+      --white: #ffffff;
+      --accent: rgba(255,255,255,0.55);
+      --accent-glow: rgba(255,255,255,0.12);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.95rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.3px; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-back {
+      font-size: 0.82rem; font-weight: 500; color: var(--text-tertiary);
+      text-decoration: none; transition: color 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+    .page-hero { padding-top: 128px; padding-bottom: 64px; }
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 16px;
+    }
+    .page-title {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;
+      letter-spacing: -1.5px; color: var(--white);
+      line-height: 1.08; margin-bottom: 12px;
+    }
+    .page-sub { font-size: 1rem; color: var(--text-secondary); line-height: 1.65; }
+
+    .divider { height: 1px; background: var(--border); margin: 56px 0; }
+
+    .sec-label {
+      font-family: var(--mono);
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 24px;
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .faq-item { background: var(--bg); }
+    .faq-item:hover { background: #0a0a0a; }
+    .faq-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 22px 24px; text-align: left;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      color: var(--white); font-family: var(--font);
+      font-size: 0.95rem; font-weight: 600; line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .faq-btn:hover { color: rgba(255,255,255,0.9); }
+    .faq-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1px solid var(--border-bright);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--text-tertiary);
+      font-size: 0.9rem; line-height: 1;
+      transition: all 0.25s; user-select: none;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); border-color: rgba(255,255,255,0.3); color: var(--text-secondary); }
+    .faq-body { overflow: hidden; max-height: 0; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1); }
+    .faq-item.open .faq-body { max-height: 400px; }
+    .faq-body-inner {
+      padding: 0 24px 22px;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 16px;
+    }
+    .faq-body-inner p + p { margin-top: 8px; }
+    .faq-body-inner strong { color: rgba(255,255,255,0.72); }
+
+    .privacy-points { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .pp { background: var(--bg); padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; }
+    .pp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 4px var(--accent-glow); flex-shrink: 0; margin-top: 7px; }
+    .pp-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .pp-text p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+    .legal-links {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .legal-link {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 24px; background: var(--bg);
+      text-decoration: none; color: var(--text-secondary);
+      font-size: 0.9rem; font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .legal-link:hover { background: #0a0a0a; color: var(--white); }
+    .legal-link svg { opacity: 0.3; flex-shrink: 0; }
+    .legal-link:hover svg { opacity: 0.6; }
+
+    .contact-card {
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--bg-raised);
+    }
+    .contact-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--white); text-decoration: none;
+      font-size: 0.9rem; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .contact-email:hover { opacity: 0.7; }
+
+    .footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; }
+    .footer .container { max-width: 720px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-left { display: flex; flex-direction: column; gap: 4px; }
+    .footer-product { font-family: var(--mono); font-size: 0.875rem; font-weight: 700; color: var(--white); }
+    .footer-by { font-size: 0.74rem; color: var(--text-tertiary); }
+    .footer-by a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-by a:hover { color: var(--text-secondary); }
+    .footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="/nothinpp/" class="nav-logo">nothinpp</a>
+    <div class="nav-right">
+      <a href="/nothinpp/es/support" class="lang-switch" data-lang-switch>ES</a>
+      <a href="/nothinpp/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Home
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-eyebrow">Support</div>
+        <h1 class="page-title">How can we help?</h1>
+        <p class="page-sub">Frequently asked questions, privacy information and direct contact.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <p class="sec-label">Frequently asked questions</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            I can't turn on blocking / the app keeps asking for permission
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>nothinpp needs iOS's <strong>Screen Time</strong> permission to work. Go to Settings → Screen Time and confirm nothinpp is authorized. If you revoked it by accident, reopen the app and accept the permission when prompted.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            My app selection got lost
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>This can happen after an iOS or app update. Don't worry: <strong>nothing stays blocked by mistake</strong> in that case (fail-open), and the app itself will show you a banner to pick your apps again. Choose them again and your session continues.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            I lost my streak by accident
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Every 7 days you get an <strong>automatic repair</strong> that absorbs one slip. If you've already used it, or if you broke your commitment by disabling Screen Time (not covered by the automatic repair), the streak stays broken — a slip is meant to be absorbed, not erased retroactively.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            I want to delete my data / stop using the app
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p><strong>Uninstalling the app deletes everything.</strong> This version stores all data locally on your device and never uploads anything, so there is nothing on our side to delete. See the <a href="/nothinpp/legal/privacy" style="color:inherit;text-decoration:underline;">Privacy Policy</a> for the full detail.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Blocking doesn't come back on its own after a break ends (iOS 17)
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>If you're on iOS 17 and notice your phone stays unlocked longer than it should, update to the latest nothinpp version — this specific iOS 17 issue is already fixed in recent builds. If you still see it, write to us with your iOS and app version.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            I need to make an emergency call and my phone is blocked
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>System call and emergency apps are <strong>never blocked</strong> — that's an Apple guarantee, not a nothinpp one. You can call without turning anything off, immediately.</p>
+            <p>For any other reason: press and hold the focus screen to open the options, then "I want to stop". It takes five minutes on purpose, and it resets your streak. If you want the block gone right now, turning off Screen Time for nothinpp in iOS Settings — or deleting the app — lifts it instantly.</p>
+          </div></div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sec-label">Privacy</p>
+      <div class="privacy-points">
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>No data collection</h4>
+            <p>nothinpp does not collect, process or transmit any personal data. This version makes no network connections of its own.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>No analytics or tracking</h4>
+            <p>No analytics tools, no crash-reporting services, no advertising, and no third-party SDKs of any kind.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Local storage only</h4>
+            <p>Your selection, your reasons and your counters live in an App Group on your device. Uninstalling the app deletes all of it.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Screen Time data stays private</h4>
+            <p>The blocking runs through Apple's Screen Time. That data is never used for advertising — a condition Apple requires, and we honor it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sec-label">Legal documents</p>
+      <div class="legal-links">
+        <a href="/nothinpp/legal/privacy" class="legal-link">
+          Privacy Policy
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
+        </a>
+        <a href="/nothinpp/legal/terms" class="legal-link">
+          Terms of Use
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
+        </a>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sec-label">Contact</p>
+      <div class="contact-card">
+        <h3>Didn't find your answer?</h3>
+        <p>Write to us and we'll reply within 48 hours (business days).</p>
+        <a href="mailto:germantardiop@gmail.com" class="contact-email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          germantardiop@gmail.com
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-product">nothinpp</span>
+          <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/nothinpp/">Product</a></li>
+          <li><a href="/nothinpp/legal/privacy">Privacy</a></li>
+          <li><a href="/nothinpp/legal/terms">Terms</a></li>
+          <li><a href="/nothinpp/es/support">Español</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('np_lang');
+        if (!stored && /^es/i.test(navigator.language || navigator.userLanguage || '')) {
+          location.replace('/nothinpp/es/support');
+          return;
+        }
+      } catch (e) {}
+    })();
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('np_lang', 'es'); } catch (e) {}
+      });
+    });
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Soporte — nothinpp</title>
+  <meta name="description" content="Soporte y preguntas frecuentes de nothinpp, la herramienta de enfoque que bloquea el teléfono salvo los esenciales.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://koddo.tech/nothinpp/es/support">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/nothinpp/support">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/nothinpp/es/support">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/nothinpp/support">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --bg-raised: #0a0a0a;
+      --border: rgba(255,255,255,0.08);
+      --border-bright: rgba(255,255,255,0.18);
+      --text-primary: #f5f5f7;
+      --text-secondary: rgba(255,255,255,0.48);
+      --text-tertiary: rgba(255,255,255,0.22);
+      --white: #ffffff;
+      --accent: rgba(255,255,255,0.55);
+      --accent-glow: rgba(255,255,255,0.12);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text-primary); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .nav-logo { font-family: var(--mono); font-size: 0.95rem; font-weight: 700; color: var(--white); letter-spacing: -0.3px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-back { font-size: 0.82rem; font-weight: 500; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch { border: 1px solid var(--border-bright); border-radius: 100px; padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .page-hero { padding-top: 128px; padding-bottom: 64px; }
+    .page-eyebrow { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 16px; }
+    .page-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -1.5px; color: var(--white); line-height: 1.08; margin-bottom: 12px; }
+    .page-sub { font-size: 1rem; color: var(--text-secondary); line-height: 1.65; }
+    .divider { height: 1px; background: var(--border); margin: 56px 0; }
+    .sec-label { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 24px; }
+    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .faq-item { background: var(--bg); }
+    .faq-item:hover { background: #0a0a0a; }
+    .faq-btn { width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--white); font-family: var(--font); font-size: 0.95rem; font-weight: 600; line-height: 1.4; transition: color 0.2s; }
+    .faq-btn:hover { color: rgba(255,255,255,0.9); }
+    .faq-icon { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--border-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--text-tertiary); font-size: 0.9rem; line-height: 1; transition: all 0.25s; user-select: none; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); border-color: rgba(255,255,255,0.3); color: var(--text-secondary); }
+    .faq-body { overflow: hidden; max-height: 0; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1); }
+    .faq-item.open .faq-body { max-height: 420px; }
+    .faq-body-inner { padding: 0 24px 22px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 16px; }
+    .faq-body-inner p + p { margin-top: 8px; }
+    .faq-body-inner strong { color: rgba(255,255,255,0.72); }
+    .privacy-points { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .pp { background: var(--bg); padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; }
+    .pp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 4px var(--accent-glow); flex-shrink: 0; margin-top: 7px; }
+    .pp-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .pp-text p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+    .legal-links { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .legal-link { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: var(--bg); text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
+    .legal-link:hover { background: #0a0a0a; color: var(--white); }
+    .legal-link svg { opacity: 0.3; flex-shrink: 0; }
+    .legal-link:hover svg { opacity: 0.6; }
+    .contact-card { padding: 28px 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg-raised); }
+    .contact-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+    .contact-email { display: inline-flex; align-items: center; gap: 8px; color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: opacity 0.2s; }
+    .contact-email:hover { opacity: 0.7; }
+    .footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; }
+    .footer .container { max-width: 720px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-left { display: flex; flex-direction: column; gap: 4px; }
+    .footer-product { font-family: var(--mono); font-size: 0.875rem; font-weight: 700; color: var(--white); }
+    .footer-by { font-size: 0.74rem; color: var(--text-tertiary); }
+    .footer-by a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-by a:hover { color: var(--text-secondary); }
+    .footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+    @media (max-width: 600px) { .footer-inner { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="/nothinpp/es/" class="nav-logo">nothinpp</a>
+    <div class="nav-right">
+      <a href="/nothinpp/support" class="lang-switch" data-lang-switch>EN</a>
+      <a href="/nothinpp/es/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Inicio
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-eyebrow">Soporte</div>
+        <h1 class="page-title">¿Necesitás ayuda?</h1>
+        <p class="page-sub">Preguntas frecuentes, información de privacidad y contacto directo.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <p class="sec-label">Preguntas frecuentes</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            No puedo activar el bloqueo / la app pide permiso todo el tiempo
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>nothinpp necesita el permiso de <strong>Tiempo de Uso</strong> (Screen Time) de iOS para funcionar. Andá a Ajustes → Tiempo de Uso y confirmá que nothinpp tiene autorización. Si lo revocaste sin querer, volvé a abrir la app y aceptá el permiso cuando te lo pida.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Se me perdió la selección de apps que había elegido
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Puede pasar tras una actualización de iOS o de la app. No te preocupes: <strong>nada queda bloqueado por error</strong> en ese caso (fail-open), y la propia app te va a mostrar un aviso para volver a elegir tus apps. Elegilas de nuevo y el enfoque sigue.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Perdí mi racha por accidente
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Cada 7 días tenés disponible una <strong>reparación automática</strong> que absorbe un tropiezo. Si ya la usaste, o si rompiste el compromiso desactivando Tiempo de Uso (eso no lo cubre la reparación automática), la racha queda rota — un resbalón se absorbe, no se borra hacia atrás.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Quiero borrar mis datos / dejar de usar la app
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p><strong>Desinstalar la app borra todo.</strong> Esta versión guarda todos los datos localmente en tu dispositivo y no sube nada, así que no hay nada de nuestro lado que borrar. Ver la <a href="/nothinpp/es/legal/privacy" style="color:inherit;text-decoration:underline;">Política de Privacidad</a> para el detalle completo.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            El bloqueo no vuelve solo al terminar un rato (iOS 17)
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Si estás en iOS 17 y notás que el teléfono queda desbloqueado más tiempo del que debería, actualizá a la última versión de nothinpp — este problema específico de iOS 17 ya está resuelto en builds recientes. Si seguís viéndolo, escribinos con tu versión de iOS y de la app.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Necesito hacer una llamada de emergencia y el teléfono está bloqueado
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Las apps de llamadas y emergencias del sistema <strong>nunca se bloquean</strong> — es una garantía de Apple, no de nothinpp. Podés llamar sin tener que desactivar nada, al instante.</p>
+            <p>Por cualquier otro motivo: mantené presionada la pantalla de enfoque para abrir las opciones, y tocá "Quiero parar". Tarda cinco minutos a propósito, y vuelve tu racha a cero. Si querés que el bloqueo se vaya ya, desactivar Tiempo de Uso para nothinpp en Ajustes de iOS —o borrar la app— lo levanta al instante.</p>
+          </div></div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sec-label">Privacidad</p>
+      <div class="privacy-points">
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Sin recolección de datos</h4>
+            <p>nothinpp no recolecta, procesa ni transmite ningún dato personal. Esta versión no hace ninguna conexión de red propia.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Sin analítica ni rastreo</h4>
+            <p>Sin herramientas de analítica, sin reporte de fallos en la nube, sin publicidad y sin SDKs de terceros de ningún tipo.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Solo almacenamiento local</h4>
+            <p>Tu selección, tus motivos y tus contadores viven en un App Group en tu dispositivo. Desinstalar la app borra todo eso.</p>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-dot"></div>
+          <div class="pp-text">
+            <h4>Los datos de Tiempo de Uso quedan privados</h4>
+            <p>El bloqueo corre sobre Tiempo de Uso de Apple. Ese dato nunca se usa para publicidad — una condición que Apple exige, y la cumplimos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sec-label">Documentos legales</p>
+      <div class="legal-links">
+        <a href="/nothinpp/es/legal/privacy" class="legal-link">
+          Política de Privacidad
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
+        </a>
+        <a href="/nothinpp/es/legal/terms" class="legal-link">
+          Términos de Uso
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,3 11,8 6,13"/></svg>
+        </a>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sec-label">Contacto</p>
+      <div class="contact-card">
+        <h3>¿No encontraste tu respuesta?</h3>
+        <p>Escribinos y te respondemos dentro de las 48 horas (días hábiles).</p>
+        <a href="mailto:germantardiop@gmail.com" class="contact-email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          germantardiop@gmail.com
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-product">nothinpp</span>
+          <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/nothinpp/es/">Producto</a></li>
+          <li><a href="/nothinpp/es/legal/privacy">Privacidad</a></li>
+          <li><a href="/nothinpp/es/legal/terms">Términos</a></li>
+          <li><a href="/nothinpp/support">English</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('np_lang', 'en'); } catch (e) {}
+      });
+    });
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  </script>
+
+</body>
+</html>

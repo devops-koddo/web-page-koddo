@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Terms of Use — nothinpp</title>
+  <meta name="description" content="Terms of use for nothinpp, a focus tool that blocks apps on your phone using Apple's Screen Time.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://koddo.tech/nothinpp/legal/terms">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/nothinpp/legal/terms">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/nothinpp/es/legal/terms">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/nothinpp/legal/terms">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --bg-raised: #0a0a0a;
+      --border: rgba(255,255,255,0.08);
+      --border-bright: rgba(255,255,255,0.16);
+      --text-primary: #f5f5f7;
+      --text-secondary: rgba(255,255,255,0.48);
+      --text-tertiary: rgba(255,255,255,0.22);
+      --white: #fff;
+      --accent: rgba(255,255,255,0.55);
+      --accent-glow: rgba(255,255,255,0.12);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--white);
+      font-family: var(--mono);
+      font-size: 0.95rem; font-weight: 700; letter-spacing: -0.3px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.82rem; font-weight: 500;
+      color: var(--text-tertiary); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text-secondary); }
+    .lang-switch {
+      border: 1px solid var(--border-bright); border-radius: 100px;
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+    .page-hero { padding-top: 120px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 14px;
+    }
+    .page-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800;
+      letter-spacing: -1px; color: var(--white); line-height: 1.1; margin-bottom: 10px;
+    }
+    .page-meta { font-size: 0.82rem; color: var(--text-tertiary); }
+
+    .content { padding-bottom: 100px; }
+    .section { margin-bottom: 40px; }
+    .section-title {
+      font-size: 0.95rem; font-weight: 700; color: var(--white);
+      margin-bottom: 14px;
+      display: flex; align-items: baseline; gap: 10px;
+    }
+    .section-title .num {
+      font-family: var(--mono);
+      font-size: 0.8rem; color: var(--text-tertiary); flex-shrink: 0;
+    }
+
+    p {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: rgba(255,255,255,0.75); font-weight: 600; }
+
+
+    .footer { border-top: 1px solid var(--border); padding: 36px 0; margin-top: 40px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-left { display: flex; flex-direction: column; gap: 4px; }
+    .footer-product { font-family: var(--mono); font-size: 0.875rem; font-weight: 700; color: var(--white); }
+    .footer-by { font-size: 0.74rem; color: var(--text-tertiary); }
+    .footer-by a { color: var(--text-tertiary); text-decoration: none; }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="/nothinpp/" class="nav-logo">nothinpp</a>
+    <div class="nav-right">
+      <a href="/nothinpp/es/legal/terms" class="lang-switch" data-lang-switch>ES</a>
+      <a href="/nothinpp/support" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+        Support
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-eyebrow">Legal</div>
+        <h1 class="page-title">Terms of Use</h1>
+        <p class="page-meta">Last updated: August 28, 2026</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="container">
+
+        <p style="margin-bottom:40px;">By using nothinpp, you agree to these terms.</p>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">1</span> What the app is</h2>
+          <p>nothinpp is a focus tool that blocks apps and sites on your device using Apple's Screen Time. It is not a parental control service or a security tool; it's a self-control tool you choose to use against yourself.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">2</span> You choose the block, knowingly</h2>
+          <p>By starting a focus session, you are deliberately choosing to restrict your own access to your phone. The app is designed so that leaving has friction (waits, a written reason, a physical gesture) — this is intentional and is the heart of the product, not a defect. If you don't want that friction, don't start the session.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">3</span> Dependence on Apple services</h2>
+          <p>nothinpp runs on top of Screen Time and Family Controls — Apple services. If Apple changes, restricts, or interrupts these, some features may stop working temporarily. We prioritize never leaving you locked out with no way out (fail-open), but we can't guarantee continuous availability of infrastructure we don't operate.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">4</span> Not a substitute for medical or emergency assistance</h2>
+          <p>If you've blocked your phone and need to make an emergency call, all system call/emergency apps remain available — Apple's Screen Time never blocks emergency calls. This is immediate and requires nothing from nothinpp.</p>
+          <p>For any other reason, "I want to stop" in the options menu ends the session, but on purpose it is not instant: it starts a five-minute wait, and ending this way resets your streak. If you need the block gone immediately, you can turn off Screen Time for nothinpp in iOS Settings, or delete the app — neither of those depends on us.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">5</span> Appropriate use</h2>
+          <p>nothinpp is meant for restricting your own access to your own device. You will not use it to restrict another person's phone access without their explicit knowledge and consent.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">6</span> Changes and service availability</h2>
+          <p>We may modify, pause, or discontinue features with reasonable notice when possible.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">7</span> Liability</h2>
+          <p>The app is provided "as is." To the extent permitted by applicable law, we are not liable for indirect damages arising from use of the app, including but not limited to temporary loss of phone access resulting from the user's own decision.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">8</span> Governing law</h2>
+          <p>These terms are governed by the law applicable at KODDO's place of business, in Santa Cruz de la Sierra. If you have a complaint, please write to <strong>germantardiop@gmail.com</strong> first — we would rather resolve it with you directly than through a court.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title"><span class="num">9</span> Contact</h2>
+          <p>Questions about these terms: <strong>germantardiop@gmail.com</strong>.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-product">nothinpp</span>
+          <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/nothinpp/">Product</a></li>
+          <li><a href="/nothinpp/support">Support</a></li>
+          <li><a href="/nothinpp/legal/privacy">Privacy Policy</a></li>
+          <li><a href="/nothinpp/es/legal/terms">Español</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('np_lang');
+        if (!stored && /^es/i.test(navigator.language || navigator.userLanguage || '')) {
+          location.replace('/nothinpp/es/legal/terms');
+          return;
+        }
+      } catch (e) {}
+    })();
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('np_lang', 'es'); } catch (e) {}
+      });
+    });
+  </script>
+
+</body>
+</html>

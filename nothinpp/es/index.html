@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>nothinpp — No es un sistema de seguridad. Es una compañera.</title>
+  <meta name="description" content="nothinpp bloquea tu teléfono salvo los esenciales, usando Tiempo de Uso de Apple. Ponés tu intención, y siempre hay salida — con un costo transparente. 100% en el dispositivo.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://koddo.tech/nothinpp/es/">
+  <link rel="alternate" hreflang="en" href="https://koddo.tech/nothinpp/">
+  <link rel="alternate" hreflang="es" href="https://koddo.tech/nothinpp/es/">
+  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/nothinpp/">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+
+  <meta property="og:title" content="nothinpp — No es un sistema de seguridad. Es una compañera.">
+  <meta property="og:description" content="Bloquea tu teléfono salvo los esenciales. Ponés tu intención; siempre hay salida, con un costo transparente. 100% en el dispositivo.">
+  <meta property="og:url" content="https://koddo.tech/nothinpp/es/">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --bg-raised: #0a0a0a;
+      --border: rgba(255,255,255,0.08);
+      --border-bright: rgba(255,255,255,0.18);
+      --text-primary: #f5f5f7;
+      --text-secondary: rgba(255,255,255,0.48);
+      --text-tertiary: rgba(255,255,255,0.22);
+      --white: #fff;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--mono); font-size: 0.95rem; font-weight: 700; color: var(--white); letter-spacing: -0.3px; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-right a { font-size: 0.82rem; font-weight: 500; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--text-secondary); }
+    .lang-switch { border: 1px solid var(--border-bright); border-radius: 100px; padding: 5px 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px; color: var(--text-secondary) !important; }
+    .lang-switch:hover { color: var(--white) !important; border-color: rgba(255,255,255,0.4); }
+    .hero { padding-top: 148px; padding-bottom: 72px; border-bottom: 1px solid var(--border); }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--text-tertiary); margin-bottom: 20px; }
+    .hero-title { font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 800; letter-spacing: -1.2px; color: var(--white); line-height: 1.12; margin-bottom: 22px; }
+    .hero-body { font-size: 1rem; color: var(--text-secondary); margin-bottom: 14px; }
+    .hero-body strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+    .store-line { margin-top: 30px; font-family: var(--mono); font-size: 0.8rem; color: var(--text-tertiary); display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border-bright); border-radius: 100px; padding: 8px 16px; }
+    .section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .section:last-of-type { border-bottom: none; }
+    .section h2 { font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 28px; letter-spacing: -0.3px; }
+    .principles { display: flex; flex-direction: column; gap: 22px; }
+    .principle { display: flex; gap: 16px; align-items: flex-start; }
+    .principle .dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.5); flex-shrink: 0; margin-top: 10px; }
+    .principle p { font-size: 0.925rem; color: var(--text-secondary); line-height: 1.7; }
+    .principle strong { color: rgba(255,255,255,0.82); font-weight: 600; }
+    .how { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .how-step { background: var(--bg); padding: 22px 24px; }
+    .how-step .k { font-family: var(--mono); font-size: 0.72rem; color: var(--text-tertiary); letter-spacing: 2px; text-transform: uppercase; }
+    .how-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin: 6px 0 6px; }
+    .how-step p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+    .footer { padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-left { display: flex; flex-direction: column; gap: 4px; }
+    .footer-product { font-family: var(--mono); font-size: 0.875rem; font-weight: 700; color: var(--white); }
+    .footer-by { font-size: 0.74rem; color: var(--text-tertiary); }
+    .footer-by a { color: var(--text-tertiary); text-decoration: none; }
+    .footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+    @media (max-width: 600px) { .footer-inner { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="/nothinpp/es/" class="nav-logo">nothinpp</a>
+    <div class="nav-right">
+      <a href="/nothinpp/es/support">Soporte</a>
+      <a href="/nothinpp/" class="lang-switch" data-lang-switch>EN</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-eyebrow">Manifiesto</div>
+        <h1 class="hero-title">nothinpp no es un sistema de seguridad.<br>Es una compañera.</h1>
+        <p class="hero-body">Hay dos formas de encarar el problema del teléfono. Una es la de las apps de "bloqueo": tratan tu impulso como una amenaza y a vos como alguien de quien hay que defenderse. La otra es la que elegimos nosotros.</p>
+        <p class="hero-body">nothinpp parte de una idea simple: <strong>vos ya sabés lo que querés hacer con tu tiempo.</strong> El problema no es de voluntad, es de fricción — el teléfono está diseñado para que abrirlo no cueste nada. Nosotros le devolvemos el costo, pero de forma honesta. Nunca te encerramos. Siempre podés salir.</p>
+        <span class="store-line">Pronto en la App Store</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Cómo funciona</h2>
+        <div class="how">
+          <div class="how-step">
+            <span class="k">01</span>
+            <h3>Elegís tus esenciales</h3>
+            <p>Las apps que de verdad necesitás (llamadas, mapas, lo que decidas) quedan afuera del bloqueo. Todo lo demás, adentro.</p>
+          </div>
+          <div class="how-step">
+            <span class="k">02</span>
+            <h3>Ponés tu intención</h3>
+            <p>Antes de empezar, escribís para qué querés este tiempo. Es tu porqué, no una regla que te impone la app.</p>
+          </div>
+          <div class="how-step">
+            <span class="k">03</span>
+            <h3>Te enfocás</h3>
+            <p>El resto del teléfono queda bloqueado. Si necesitás un rato, hay fricción real para desbloquear: no es instantáneo, a propósito. Cada apertura cuenta contra tu tiempo del día, y el bloqueo vuelve solo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Los principios que sostienen cada pantalla</h2>
+        <div class="principles">
+          <div class="principle"><span class="dot"></span><p><strong>Tu palabra vale.</strong> Cuando escribís por qué te querés enfocar, esa frase es lo primero que ves al abrir la app bloqueada. No un contador, no un logotipo — tus propias palabras.</p></div>
+          <div class="principle"><span class="dot"></span><p><strong>La salida siempre existe, con un costo transparente.</strong> Fricción, una espera, un candado que hay que forzar a mano. Nunca un muro. Lo que no hacemos es que salir sea gratis y automático.</p></div>
+          <div class="principle"><span class="dot"></span><p><strong>Un tropiezo no borra semanas.</strong> Perder una racha larga de un día para el otro es el momento en que la mayoría abandona del todo. Por eso existe la reparación: un resbalón se absorbe, no se castiga.</p></div>
+          <div class="principle"><span class="dot"></span><p><strong>Nada te deja encerrado por un bug.</strong> Si algo falla, la app se abre hacia vos, nunca en tu contra. Preferimos fallar dejándote pasar que fallar dejándote afuera.</p></div>
+          <div class="principle"><span class="dot"></span><p><strong>Sin colores, sin ruido, sin gamificación barata.</strong> La estética es deliberadamente austera. La app no compite por tu atención — existe para devolvértela.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Privacidad</h2>
+        <p class="hero-body">Esta versión no recolecta ningún dato personal y no hace ninguna conexión de red propia. Tu selección, tus motivos y tus contadores viven en tu dispositivo y en ningún otro lado. Sin analítica, sin publicidad, sin SDKs de terceros. Leé la <a href="/nothinpp/es/legal/privacy" style="color:rgba(255,255,255,0.8);">Política de Privacidad</a> completa.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-product">nothinpp</span>
+          <span class="footer-by">by <a href="/">Koddo</a> · © 2026</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/nothinpp/es/support">Soporte</a></li>
+          <li><a href="/nothinpp/es/legal/privacy">Privacidad</a></li>
+          <li><a href="/nothinpp/es/legal/terms">Términos</a></li>
+          <li><a href="/nothinpp/">English</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        try { localStorage.setItem('np_lang', 'en'); } catch (e) {}
+      });
+    });
+  </script>
+
+</body>
+</html>
